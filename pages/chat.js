@@ -3,16 +3,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 export default class chat extends React.Component {
-  handelChat (e) {
-    e.preventDefault()
-    window.Tawk_API.toggle()
-    window.Tawk_API.onChatMinimized = function () {
-      window.Tawk_API.hideWidget()
-    }
-    window.Tawk_API.onChatEnded = function () {
-      window.Tawk_API.hideWidget()
-    }
-  }
   render () {
     return (
       <div>
@@ -41,9 +31,13 @@ export default class chat extends React.Component {
           <div className='tawk'>
             <div className='title'>Or</div>
             <p>
-              Click on below button to open in browser chat window.
+              Click on below button to open in-browser chat window.
             </p>
-            <a onClick={this.handelChat.bind(this)} className='link btn'>
+            <a
+              target='_blank'
+              href='https://tawk.to/tutorbro'
+              className='link btn'
+            >
               <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 473 473'>
                 <g fill='#ffffff'>
                   <path

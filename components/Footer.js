@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import isMobile from '../utils/isMobile'
 
 export default class Footer extends React.Component {
   componentDidMount () {
@@ -14,11 +13,6 @@ export default class Footer extends React.Component {
       s1.setAttribute('crossorigin', '*')
       document.body.appendChild(s1)
     })()
-    if (isMobile()) {
-      window.Tawk_API.onLoad = function () {
-        window.Tawk_API.hideWidget()
-      }
-    }
   }
   render () {
     return (
