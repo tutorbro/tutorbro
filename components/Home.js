@@ -40,7 +40,7 @@ export default () => (
           align-items: center;
         }
         .home__desc, .home__query {
-          padding: 20px;
+          padding: 50px 20px;
           flex: 1;
           position: relative;
         }

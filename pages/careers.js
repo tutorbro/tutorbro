@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 
 export default () => (
   <div>
-    <Header />
+    <Header title='TutorBro | Careers' />
     <main>
       <div className='carrers__container'>
         <section className='carrers'>

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default () => (
+export default ({ title }) => (
   <Head>
     <meta charset='utf-8' />
     <meta
@@ -11,7 +11,7 @@ export default () => (
       name='viewport'
       content='width=device-width, initial-scale=1.0, maximum-scale=1.0'
     />
-    <title>TutorBro | Get Personal Tutor For Homework Help</title>
+    <title>{title}</title>
     <link
       rel='apple-touch-icon'
       sizes='57x57'

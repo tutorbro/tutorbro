@@ -1,10 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
+import isMobile from '../utils/isMobile'
 
 export default class Footer extends React.Component {
   componentDidMount () {
-    global.Tawk_API = global.Tawk_API || {}
-    global.Tawk_LoadStart = new Date();
+    window.Tawk_API = window.Tawk_API || {}
+    window.Tawk_LoadStart = new Date();
     (function () {
       const s1 = document.createElement('script')
       s1.async = true
@@ -13,6 +14,11 @@ export default class Footer extends React.Component {
       s1.setAttribute('crossorigin', '*')
       document.body.appendChild(s1)
     })()
+    if (isMobile()) {
+      window.Tawk_API.onLoad = function () {
+        window.Tawk_API.hideWidget()
+      }
+    }
   }
   render () {
     return (
@@ -33,14 +39,14 @@ export default class Footer extends React.Component {
           </div>
         </div>
         <div className='credits'>
-          Site Designed and Developed by{' '}
+          Site Designed and Developed by
           <strong>
             <a
               rel='noopener'
               target='_blank'
               href='https://www.vinaypuppal.com'
             >
-              @VinayPuppal
+              {' '}@VinayPuppal
             </a>
           </strong>
         </div>
@@ -98,6 +104,14 @@ export default class Footer extends React.Component {
               }
               .credits {
                 background: #f9fbfb;
+              }
+            }
+            @media (max-width: 380px) {
+              .credits {
+                font-size: 9px;
+              }
+              strong a{
+                font-size: 9px;
               }
             }
           `}

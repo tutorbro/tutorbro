@@ -146,8 +146,7 @@ export default class Subjects extends React.Component {
             .subjects__container {
               max-width: 1280px;
               margin: 0 auto;
-              padding: 20px;
-              padding-bottom: 50px;
+              padding: 50px 20px;
             }
             .subjects__title {
               text-align: center;

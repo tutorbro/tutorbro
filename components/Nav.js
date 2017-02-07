@@ -3,7 +3,7 @@ import Logo from './Logo'
 import NavLinks from './NavLinks'
 import ContactLinks from './ContactLinks'
 
-export default () => (
+export default props => (
   <nav className='nav'>
     <div className='nav__brand'>
       <Link href='/'>
@@ -14,7 +14,7 @@ export default () => (
     </div>
     <div className='nav__links'>
       <NavLinks />
-      <ContactLinks />
+      <ContactLinks {...props} />
     </div>
     <style jsx>
       {`

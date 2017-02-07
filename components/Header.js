@@ -13,13 +13,13 @@ Router.onRouteChangeComplete = () => NProgress.done()
 
 Router.onRouteChangeError = () => NProgress.done()
 
-export default () => (
+export default props => (
   <Headroom>
     <header>
-      <Meta />
+      <Meta title={props.title} />
       <GlobalStyles />
       <div className='header__container'>
-        <Nav />
+        <Nav {...props} />
       </div>
       <style jsx>
         {`

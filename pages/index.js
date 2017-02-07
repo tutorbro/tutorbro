@@ -25,7 +25,7 @@ export default class App extends React.Component {
     const AlertContainer = this.state.isBrowser && this.alertContainer
     return (
       <div>
-        <Header />
+        <Header title='TutorBro | Get Personal Tutor For Homework Help' />
         <main>
           <Home />
           <Subjects />

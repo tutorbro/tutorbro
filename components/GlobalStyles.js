@@ -28,6 +28,11 @@ export default () => (
         background: #fff;
         color: #888;
       }
+      @media (max-width: 480px) {
+        #tawkchat-container {
+          display: none !important;
+        }
+      }
       #nprogress {
         pointer-events: none;
       }
