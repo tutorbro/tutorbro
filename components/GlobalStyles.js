@@ -66,7 +66,6 @@ export default () => (
         right: 14px;
         width: 7px;
         height: 4px;
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAICAYAAAA1BOUGAAAABGdBT…xAvBZNFsQHuQesmxPIOQZVAKI54UZDFYgABbcBsQhMAgDIVGYSqZsn6wAAAABJRU5ErkJggg==);
       }
       .fp__btn:hover {
         background: #4183C4;
