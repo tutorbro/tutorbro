@@ -93,8 +93,8 @@ export default () => (
           align-items: center;
         }
         .svg {
-          min-width: 100px;
-          min-height: 100px;
+          width: 100px;
+          height: 100px;
           border-radius: 50%;
           background: #ccc;
         }

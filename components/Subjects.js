@@ -193,8 +193,8 @@ export default class Subjects extends React.Component {
               border-radius: 8px 8px 0 0;
             }
             .svg {
-              min-width: 80px;
-              min-height: 80px;
+              width: 100px;
+              height: 100px;
               border-radius: 50%;
               background: #ccc;
             }
