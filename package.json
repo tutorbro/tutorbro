@@ -18,8 +18,8 @@
     "build": "next build",
     "start": "NODE_ENV=production node server",
     "lint": "standard",
-    "deploy": "now -t $TB --alias www.tutorbro.com",
-    "deploy-test": "now -t $TB --alias test.tutorbro.com"
+    "deploy": "now -t $TB",
+    "deploy-test": "now -t $TB"
   },
   "devDependencies": {
     "standard": "^8.6.0",

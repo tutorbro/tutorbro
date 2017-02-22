@@ -181,7 +181,8 @@ export default class Subjects extends React.Component {
               cursor: pointer;
             }
             .subject:hover {
-              transform: scale(1.02);
+              box-shadow: 0 15px 20px rgba(60,71,81,.1);
+              transform: translate(0, -5px);
             }
             .subject__title {
               display: flex;
