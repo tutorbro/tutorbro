@@ -1,7 +1,4 @@
 {
   "name": "tutorbro",
-  "alias": ["www.tutorbro.com"],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "alias": ["www.tutorbro.com"]
 }

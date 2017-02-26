@@ -19,6 +19,7 @@
     "start": "NODE_ENV=production node server",
     "lint": "standard",
     "deploy": "now -t $TB",
+    "alias": "now -t $TB alias",
     "deploy-test": "now -t $TB"
   },
   "devDependencies": {
