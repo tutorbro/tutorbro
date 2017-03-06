@@ -98,10 +98,7 @@ export default ({ title }) => (
       description='Our Expert Tutor are available 24x7 for your Homework/Assignment Help, Online Classes or Test Preparation with Zero Plagiarism.'
     />
     <meta property='og:type' content='website' />
-    <meta
-      property='og:title'
-      content='TutorBro | Get Personal Tutor For Homework Help'
-    />
+    <meta property='og:title' content={title} />
     <meta property='og:url' content='https://www.tutorbro.com' />
     <meta
       property='og:image'
