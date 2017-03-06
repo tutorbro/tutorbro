@@ -176,12 +176,12 @@ export default class Subjects extends React.Component {
               flex-direction: column;
               justify-content: space-between;
               transform: scale(1);
-              transition: transform 375ms cubic-bezier(.165,.85,.45,1);
+              transition: box-shadow .35s ease-out, transform .3s ease-out, opacity .2s ease-out;
               will-change: transform;
               cursor: pointer;
             }
             .subject:hover {
-              box-shadow: 0 15px 20px rgba(60,71,81,.1);
+              box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
               transform: translate(0, -5px);
             }
             .subject__title {
