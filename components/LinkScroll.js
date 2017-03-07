@@ -12,7 +12,9 @@ export default class LinkScroll extends React.Component {
     Router
       .push(this.props.href)
       .then(() => {
-        smoothScroll(this.props.href)
+        return smoothScroll(this.props.href)
+      })
+      .then(() => {
         this.props.done && this.props.done()
       })
       .catch(err => {
