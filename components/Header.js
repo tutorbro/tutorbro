@@ -7,11 +7,20 @@ import GlobalStyles from './GlobalStyles'
 import Nav from './Nav'
 import '../utils/offlineInstaller'
 
-Router.onRouteChangeStart = () => NProgress.start()
+Router.onRouteChangeStart = url => {
+  console.log(url)
+  NProgress.start()
+}
 
-Router.onRouteChangeComplete = () => NProgress.done()
+Router.onRouteChangeComplete = url => {
+  console.log(url)
+  NProgress.done()
+}
 
-Router.onRouteChangeError = () => NProgress.done()
+Router.onRouteChangeError = err => {
+  console.log(err)
+  NProgress.done()
+}
 
 export default props => (
   <Headroom>

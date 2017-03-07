@@ -11,8 +11,7 @@ export default class LinkScroll extends React.Component {
     e.preventDefault()
     Router
       .push(this.props.href)
-      .then(success => {
-        if (!success) return
+      .then(() => {
         smoothScroll(this.props.href)
         this.props.done && this.props.done()
       })

@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactGA from 'react-ga'
 import Header from '../components/Header'
 import Home from '../components/Home'
 import Subjects from '../components/Subjects'
@@ -20,6 +21,7 @@ export default class App extends React.Component {
   componentDidMount () {
     this.alertContainer = require('react-alert')
     this.setState({ isBrowser: true })
+    ReactGA.initialize('UA-82271980-1')
   }
   render () {
     const AlertContainer = this.state.isBrowser && this.alertContainer
