@@ -79,6 +79,6 @@ export default url => {
         return
       }
     }
-    reject('Error: hash in URL is invalid or element not found!')
+    reject(new Error('Error: hash in URL is invalid or element not found!'))
   })
 }

@@ -15,8 +15,8 @@ export default (
     fullname,
     subject,
     message,
-    attachment1: files[0] && files[0].url || '',
-    attachment2: files[1] && files[1].url || '',
+    attachment1: files[0] && (files[0].url || ''),
+    attachment2: files[1] && (files[1].url || ''),
     countryCode
   }
   return axios({
