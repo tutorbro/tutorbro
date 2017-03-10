@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { logEvent } from '../utils/analytics'
 
 export default class Footer extends React.Component {
   componentDidMount () {
@@ -36,6 +37,7 @@ export default class Footer extends React.Component {
           Site Designed and Developed by
           <strong>
             <a
+              onClick={() => logEvent('credits', 'vinaypuppal link is clicked')}
               rel='noopener'
               target='_blank'
               href='https://www.vinaypuppal.com'

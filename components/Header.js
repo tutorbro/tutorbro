@@ -6,19 +6,23 @@ import Meta from './Meta'
 import GlobalStyles from './GlobalStyles'
 import Nav from './Nav'
 import '../utils/offlineInstaller'
+import { initGA, logEvent, logException } from '../utils/analytics'
 
-Router.onRouteChangeStart = url => {
-  console.log(url)
+initGA()
+
+Router.onRouteChangeStart = () => {
   NProgress.start()
 }
 
 Router.onRouteChangeComplete = url => {
-  console.log(url)
+  logEvent('Navigation', `Navigated to ${url}`)
   NProgress.done()
 }
 
-Router.onRouteChangeError = err => {
-  console.log(err)
+Router.onRouteChangeError = (err, url) => {
+  if (err.cancelled) {
+    logException(`Route to ${url} was cancelled!`)
+  }
   NProgress.done()
 }
 

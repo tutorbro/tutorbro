@@ -9,6 +9,7 @@ import ReactSpinner from 'react-spinjs'
 // TODO: replace fa icons with svg icons
 import validate from '../utils/validate'
 import submitForm from '../utils/submitForm'
+import { logEvent, logException } from '../utils/analytics'
 
 export default class SupportForm extends React.Component {
   constructor (props) {
@@ -33,6 +34,7 @@ export default class SupportForm extends React.Component {
       .catch(err => console.log(err))
   }
   fileUploaded (files) {
+    logEvent('Files', 'File/s uploaded')
     if (files instanceof Array) {
       files = files.map(({ filename, url }) => {
         return { filename, url }
@@ -49,6 +51,7 @@ export default class SupportForm extends React.Component {
   }
   handelSubmit (e) {
     e.preventDefault()
+    logEvent('CTA', 'Query Submit btn is clicked')
     const {
       mobilenumber,
       email,
@@ -85,12 +88,14 @@ export default class SupportForm extends React.Component {
           files: []
         })
         msg.show('Submitted successfully', { type: 'success' })
+        logEvent('QueryForm', 'QueryForm successfully Submitted')
       })
       .catch(e => {
         this.setState({ submitting: false })
         msg.show(`Error while submitting form, ${e.message && e.message}`, {
           type: 'error'
         })
+        logException(`QueryForm Submission failed`, true)
       })
   }
   render () {

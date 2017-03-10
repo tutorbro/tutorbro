@@ -1,10 +1,15 @@
 import Link from 'next/link'
+import { logEvent } from '../utils/analytics'
 
 export default props => (
   <div className='contact'>
     <ul className='contact__list'>
       <li className='contact__listItem hide--s'>
-        <a className='link' href='tel:+919958156558'>
+        <a
+          onClick={() => logEvent('Contact', 'mobilenumber link is clicked')}
+          className='link'
+          href='tel:+919958156558'
+        >
           <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 418.1 418.1'>
             <g fill='#7AD06D'>
               <path
@@ -19,7 +24,11 @@ export default props => (
         </a>
       </li>
       <li className='contact__listItem hide--s'>
-        <a className='link' href='mailto:support@tutorbro.com'>
+        <a
+          onClick={() => logEvent('contact', 'Email link is clicked')}
+          className='link'
+          href='mailto:support@tutorbro.com'
+        >
           <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 518.1 418.1'>
             <rect width='100%' height='100%' fill='none' />
             <path

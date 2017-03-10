@@ -1,8 +1,12 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { logPageView, logEvent } from '../utils/analytics'
 
 export default class chat extends React.Component {
+  componentDidMount () {
+    logPageView()
+  }
   render () {
     return (
       <div>
@@ -13,7 +17,11 @@ export default class chat extends React.Component {
             <p>
               Click on below button to open our mobile number directly in whatsapp or to add it to contacts and then chat.
             </p>
-            <a href='tel:+919958156558' className='btn'>
+            <a
+              onClick={() => logEvent('chat', 'mobilenumber link is clicked')}
+              href='tel:+919958156558'
+              className='btn'
+            >
               <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 418.1 418.1'>
                 <g fill='#7AD06D'>
                   <path
@@ -34,6 +42,7 @@ export default class chat extends React.Component {
               Click on below button to open in-browser chat window.
             </p>
             <a
+              onClick={() => logEvent('chat', 'tawk link is clicked')}
               target='_blank'
               href='https://tawk.to/tutorbro'
               className='link btn'

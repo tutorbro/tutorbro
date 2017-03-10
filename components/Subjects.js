@@ -1,4 +1,5 @@
 import React from 'react'
+import { logEvent } from '../utils/analytics'
 
 const subjects = [
   {
@@ -89,6 +90,7 @@ const subjects = [
 ]
 export default class Subjects extends React.Component {
   done () {
+    logEvent('CTA', 'Get Quote btn is clicked')
     global.msg.show('Fill this form we will send you a quote', {
       type: 'info'
     })
@@ -125,7 +127,13 @@ export default class Subjects extends React.Component {
                   </ul>
                   <div className='subject__cta'>
                     <div className='btns'>
-                      <a href='tel:+91-9958156558' className='btn show-s'>
+                      <a
+                        onClick={
+                            () => logEvent('CTA', 'Call Us btn is clicked')
+                          }
+                        href='tel:+91-9958156558'
+                        className='btn show-s'
+                        >
                           Call Us
                         </a>
                       <a onClick={this.done.bind(this)} className='btn'>

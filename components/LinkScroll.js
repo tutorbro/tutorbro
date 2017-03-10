@@ -1,6 +1,7 @@
 import React, { Children } from 'react'
 import Router from 'next/router'
 import smoothScroll from '../utils/smoothScroll'
+import { logEvent } from '../utils/analytics'
 
 export default class LinkScroll extends React.Component {
   constructor (props) {
@@ -15,6 +16,7 @@ export default class LinkScroll extends React.Component {
         return smoothScroll(this.props.href)
       })
       .then(() => {
+        logEvent('Navigation', `Navigated to ${this.props.href}`)
         this.props.done && this.props.done()
       })
       .catch(err => {

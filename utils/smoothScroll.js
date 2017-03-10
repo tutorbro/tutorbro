@@ -67,7 +67,6 @@ const smoothScroll = function (el, duration, callback, context) {
   step()
 }
 export default url => {
-  console.log(url)
   return new Promise(function (resolve, reject) {
     const pattern = /^(\/#.+)|(.+(\/#.+))$/
     if (pattern.test(url)) {
