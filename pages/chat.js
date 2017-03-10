@@ -1,10 +1,11 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { logPageView, logEvent } from '../utils/analytics'
+import { initGA, logPageView, logEvent } from '../utils/analytics'
 
 export default class chat extends React.Component {
   componentDidMount () {
+    initGA()
     logPageView()
   }
   render () {

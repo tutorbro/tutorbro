@@ -6,9 +6,7 @@ import Meta from './Meta'
 import GlobalStyles from './GlobalStyles'
 import Nav from './Nav'
 import '../utils/offlineInstaller'
-import { initGA, logEvent, logException } from '../utils/analytics'
-
-initGA()
+import { logEvent, logException } from '../utils/analytics'
 
 Router.onRouteChangeStart = () => {
   NProgress.start()

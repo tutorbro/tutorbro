@@ -4,7 +4,7 @@ import Home from '../components/Home'
 import Subjects from '../components/Subjects'
 import Services from '../components/Services'
 import Footer from '../components/Footer'
-import { logPageView } from '../utils/analytics'
+import { initGA, logPageView } from '../utils/analytics'
 
 export default class App extends React.Component {
   constructor (props) {
@@ -21,6 +21,7 @@ export default class App extends React.Component {
   componentDidMount () {
     this.alertContainer = require('react-alert')
     this.setState({ isBrowser: true })
+    initGA()
     logPageView()
   }
   render () {
