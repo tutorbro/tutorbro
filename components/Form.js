@@ -27,7 +27,7 @@ export default class SupportForm extends React.Component {
   }
   componentDidMount () {
     axios
-      .get('https://ip-info.now.sh/')
+      .get('/api/ip')
       .then(({ data }) => {
         this.setState({ countryCode: data.country_code })
       })

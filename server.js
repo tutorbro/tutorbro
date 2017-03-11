@@ -1,4 +1,5 @@
 const express = require('express')
+const axios = require('axios')
 const path = require('path')
 const next = require('next')
 
@@ -13,7 +14,20 @@ app.prepare().then(_ => {
     '/sw.js',
     (req, res) => res.sendFile(path.resolve('./.next/sw.js'))
   )
-
+  server.get('/api/ip', (req, res) => {
+    let ip = req.headers['x-forwarded-for'] ||
+      req.connection.remoteAddress ||
+      req.socket.remoteAddress ||
+      req.connection.socket.remoteAddress
+    ip = ip.split(':').pop()
+    axios
+      .get(`http://freegeoip.net/json/${ip}`)
+      .then(({ data }) => {
+        console.log(data)
+        res.send(data)
+      })
+      .catch(e => res.status(404).send(ip))
+  })
   server.get('*', (req, res) => handle(req, res))
 
   server.listen(3000, err => {
