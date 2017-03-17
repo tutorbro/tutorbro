@@ -157,6 +157,7 @@ export default class Subjects extends React.Component {
               padding: 50px 20px;
             }
             .subjects__title {
+              color: #607d8b;
               text-align: center;
               font-weight: bold;
               padding: 5px;
@@ -252,11 +253,12 @@ export default class Subjects extends React.Component {
             }
             @media (max-width: 1200px) {
               .subjects__list {
-                max-width: 600px;
+                max-width: 800px;
                 margin: 0 auto;
               }
               .subject {
-                width: calc(50% - 40px)
+                width: calc(50% - 80px);
+                margin: 30px 40px;
               }
             }
             @media (max-width: 800px) {
@@ -264,8 +266,8 @@ export default class Subjects extends React.Component {
                 background: #fff;
               }
               .subject {
-                width: calc(100% - 40px);
-                margin: 10px auto;
+                width: calc(320px - 20px);
+                margin: 30px auto;
               }
             }
             @media (max-width: 480px) {

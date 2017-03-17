@@ -11,6 +11,9 @@ export default () => (
         <figure className='home__figure'>
           <TutorSvg />
           <figcaption className='home__caption'>
+            <div className='home__captionTitle'>
+          Get Personal Tutor For Your Homework Help
+        </div>
             Boost Your Grades With Our Tutor.
             <strong> Guaranteed…!!!</strong>
           </figcaption>
@@ -44,12 +47,16 @@ export default () => (
           flex: 1;
           position: relative;
         }
-        .home__title {
+        .home__title, .home__captionTitle {
+          color: #607d8b;
           text-align: center;
           font-weight: bold;
           padding: 5px;
           font-size: 28px;
-          margin-bottom: 15px;
+          margin-bottom: 30px;
+        }
+        .home__captionTitle {
+          display: none;
         }
         .home__figure {
           text-align: center;
@@ -62,13 +69,20 @@ export default () => (
         .home__text {
           text-align: center;
         }
-        @media (max-width: 800px) {
+        @media (max-width: 1100px) {
           .home__container {
             flex-direction: column;
             align-items: stretch;
           }
+          .home__desc {
+            padding-top: 20px;
+          }
           .home__query {
-            background: #f9f9f9;
+            background: #fafafa;
+          }
+          .home__text {
+            max-width: 600px;
+            margin: 16px auto;
           }
         }
         @media (max-width: 480px) {
@@ -78,6 +92,11 @@ export default () => (
           }
           .home__title {
             display: none;
+          }
+          .home__captionTitle {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 0;
           }
         }
       `}

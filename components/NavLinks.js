@@ -1,7 +1,18 @@
+import {Scrollspy} from 'react-scrollspy'
 import LinkScroll from './LinkScroll'
 
+// since styled jsx cant apply scoped styles to classname attached to HOC
+const navListStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  padding: 0,
+  margin: 0,
+  listStyleType: 'none'
+}
+
 export default () => (
-  <ul className='nav__list'>
+  <Scrollspy style={navListStyle} items={['home', 'subjects', 'services']} currentClassName='is-current' offset={50}>
+
     <li className='nav__listItem'>
       <LinkScroll href='/#home'>
         <a className='link'>Home</a>
@@ -17,6 +28,7 @@ export default () => (
         <a className='link'>Services</a>
       </LinkScroll>
     </li>
+
     <style jsx>
       {`
         .link {
@@ -43,6 +55,12 @@ export default () => (
         .link:hover::after {
           width: 100%;
         }
+        .is-current .link {
+          color: #23a5cf;
+        }
+        .is-current .link::after {
+          width: 100%;
+        }
         .nav__list {
           display: flex;
           align-items: center;
@@ -53,25 +71,12 @@ export default () => (
         .nav__listItem {
           margin: 0 20px;
         }
-        @media (max-width: 950px) {
-          .nav__list {
-            flex-direction: column;
-            position: absolute;
-            width: 100%;
-            top: 70px;
-            left: 0;
-            background: #fff;
-            box-shadow: 0px 2px 4px #eee;
-            display: none;
-          }
+        @media (max-width: 1100px) {
           .nav__listItem {
-            margin: 0;
-            padding: 15px 0;
-            width: 100%;
-            text-align: center;
+            display: none;
           }
         }
       `}
     </style>
-  </ul>
+  </Scrollspy>
 )

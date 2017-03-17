@@ -26,7 +26,7 @@ app.prepare().then(_ => {
         console.log(data)
         res.send(data)
       })
-      .catch(e => res.status(404).send(ip))
+      .catch(e => res.status(404).send(e.response.statusText))
   })
   server.get('*', (req, res) => handle(req, res))
 

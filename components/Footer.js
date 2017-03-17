@@ -34,7 +34,7 @@ export default class Footer extends React.Component {
           </div>
         </div>
         <div className='credits'>
-          Site Designed and Developed by
+          Made with ❤ by
           <strong>
             <a
               onClick={() => logEvent('credits', 'vinaypuppal link is clicked')}
@@ -87,7 +87,7 @@ export default class Footer extends React.Component {
             }
             @media (max-width: 800px) {
               .footer {
-                background: #fff;
+                background: #F3E5F5;
               }
               .content {
                 flex-direction: column;

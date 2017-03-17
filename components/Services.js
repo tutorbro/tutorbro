@@ -62,6 +62,7 @@ export default () => (
           padding: 50px 20px;
         }
         .services__title {
+          color: #607d8b;
           text-align: center;
           font-weight: bold;
           padding: 5px;
@@ -113,23 +114,28 @@ export default () => (
         }
         @media (max-width: 1200px) {
           .services__list {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
           }
           .service {
-            width: calc(50% - 40px);
+            width: calc(50% - 80px);
+            margin:20px 40px;
           }
         }
         @media (max-width: 800px) {
           .services {
-            background: #FAFAFA;
+            background: #EFEBE9;
           }
           .services__list {
             flex-direction: column;
           }
           .service {
             width: calc(100% - 40px);
-            margin: 20px auto;
+            margin: 30px auto;
+          }
+          .service__desc {
+            max-width: 300px;
+            margin: 0 auto;
           }
         }
       `}

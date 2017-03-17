@@ -252,16 +252,19 @@ export default class SupportForm extends React.Component {
             }
             .form {
               position: relative;
+              margin: 0 auto;
+              max-width: 540px;
             }
             .form__title {
+              color: #607d8b;
+              font-size: 20px;
               text-align: center;
               font-weight: bold;
-              padding: 5px;
             }
             .form__subTitle {
               text-align: center;
               padding: 5px;
-              font-size: 13px;
+              font-size: 16px;
             }
             fieldset {
               margin: 0;
@@ -308,16 +311,16 @@ export default class SupportForm extends React.Component {
               background: transparent;
             }
             ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-              color: #eee;
+              color: #e0e0e0;
             }
             ::-moz-placeholder { /* Firefox 19+ */
-              color: #eee;
+              color: #e0e0e0;
             }
             :-ms-input-placeholder { /* IE 10+ */
-              color: #eee;
+              color: #e0e0e0;
             }
             :-moz-placeholder { /* Firefox 18- */
-              color: #eee;
+              color: #e0e0e0;
             }
             footer {
               padding: 5px;
@@ -366,6 +369,12 @@ export default class SupportForm extends React.Component {
               float: right;
               font-size: 18px;
               color: red;
+            }
+            @media(max-width: 1200px) {
+              .form {
+                max-width: 600px;
+                margin: 0 auto;
+              }
             }
           `}
         </style>
