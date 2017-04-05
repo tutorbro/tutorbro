@@ -1,5 +1,6 @@
 {
   "rules": [
-    { "dest": "https://now-redirect-rfcwoprska.now.sh" }
+    {"pathname": "/api/**", "dest": "https://api.vtez.tk"},
+    { "dest": "https://vtez.tk" }
   ]
 }

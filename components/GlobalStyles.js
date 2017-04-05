@@ -13,7 +13,8 @@ export default () => (
         font-size: 16px;
         letter-spacing: 2px;
         line-height: 1.8;
-        font-family: -apple-system, 
+        font-family: -apple-system,
+                system-ui,
                 BlinkMacSystemFont,
                 "Segoe UI", 
                 Roboto, 

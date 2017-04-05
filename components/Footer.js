@@ -49,7 +49,8 @@ export default class Footer extends React.Component {
         <style jsx>
           {`
             .footer {
-              background: #f9fbfd;
+              background: #2f2f2f;
+              color: #fff;
             }
             .footer__container {
               max-width: 1280px;
@@ -71,7 +72,7 @@ export default class Footer extends React.Component {
               display: flex;
               justify-content: center;
               align-items: center;
-              background: #fff;
+              background: #1f1f1f;
             }
             strong a{
               font-size: 10px;
@@ -79,16 +80,13 @@ export default class Footer extends React.Component {
             }
             a {
               margin: 0 10px;
-              color: #444;
+              color: #fff;
               font-size: 14px;
             }
             a:hover {
               text-decoration: underline;
             }
             @media (max-width: 800px) {
-              .footer {
-                background: #F3E5F5;
-              }
               .content {
                 flex-direction: column;
                 align-items: center;
@@ -97,9 +95,6 @@ export default class Footer extends React.Component {
                 order: 2;
                 margin-top: 20px;
                 text-align: center;
-              }
-              .credits {
-                background: #f9fbfb;
               }
             }
             @media (max-width: 380px) {
