@@ -20,7 +20,8 @@
   "scripts": {
     "dev": "node server",
     "build": "next build",
-    "start": "NODE_ENV=production node server",
+    "heroku-postbuild": "next build",
+    "start": "next start -p $PORT",
     "lint": "standard",
     "deploy": "now -t $TB",
     "alias": "now -t $TB alias",

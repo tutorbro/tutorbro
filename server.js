@@ -30,7 +30,7 @@ app.prepare().then(_ => {
   })
   server.get('*', (req, res) => handle(req, res))
 
-  server.listen(3000, err => {
+  server.listen(process.env.PORT, err => {
     if (err) throw err
     console.log('> App running on port 3000')
   })

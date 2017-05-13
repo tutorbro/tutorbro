@@ -1,0 +1,11 @@
+{
+  "name": "tutorbro-app",
+  "env": {
+    "NPM_CONFIG_PRODUCTION": false
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    }
+  ]
+}
