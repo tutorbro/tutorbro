@@ -23,6 +23,7 @@ export default class App extends React.Component {
     this.setState({ isBrowser: true })
     initGA()
     logPageView()
+    console.log('from do')
   }
   render () {
     const AlertContainer = this.state.isBrowser && this.alertContainer

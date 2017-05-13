@@ -20,13 +20,17 @@ app.prepare().then(_ => {
       req.socket.remoteAddress ||
       req.connection.socket.remoteAddress
     ip = ip.split(':').pop()
+    console.log(ip)
     axios
       .get(`http://freegeoip.net/json/${ip}`)
       .then(({ data }) => {
         console.log(data)
         res.send(data)
       })
-      .catch(e => res.status(404).send(e.response.statusText))
+      .catch(e => {
+        console.log(e)
+        res.status(404).send(e.response.statusText)
+      })
   })
   server.get('*', (req, res) => handle(req, res))
 
