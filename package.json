@@ -15,7 +15,8 @@
     "react-ga": "^2.2.0",
     "react-headroom": "^2.1.5",
     "react-scrollspy": "^3.1.1",
-    "react-spinjs": "^3.0.0"
+    "react-spinjs": "^3.0.0",
+    "sw-precache-webpack-plugin": "^0.11.0"
   },
   "scripts": {
     "dev": "node server",
@@ -28,7 +29,6 @@
     "deploy-test": "now -t $TB"
   },
   "devDependencies": {
-    "standard": "^10.0.2",
-    "sw-precache-webpack-plugin": "^0.11.0"
+    "standard": "^10.0.2"
   }
 }
