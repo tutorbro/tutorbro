@@ -4,9 +4,14 @@ module.exports = {
   webpack: (config, { dev }) => {
     /* Enable only in Production */
     if (!dev) {
+      if (config.resolve.alias) {
+        delete config.resolve.alias['react']
+        delete config.resolve.alias['react-dom']
+      }
       // Service Worker
       config.plugins.push(new SWPrecacheWebpackPlugin({
         filename: 'sw.js',
+        minify: true,
         staticFileGlobsIgnorePatterns: [ /\.next\// ],
         staticFileGlobs: [
           // Precache all static files by default
@@ -14,12 +19,22 @@ module.exports = {
         ],
         forceDelete: true,
         runtimeCaching: [
-          // Example with different handlers
-          { handler: 'fastest', urlPattern: /[.](png|jpg|css|.svg)/ },
+          {
+            handler: 'fastest',
+            urlPattern: /[.](png|jpg|svg)/
+          },
+          {
+            handler: 'cacheFirst',
+            urlPattern: /\/_next\/.*/,
+            options: {
+              cache: {
+                name: 'nextjs-cache'
+              }
+            }
+          },
           {
             handler: 'networkFirst',
-            // cache all files
-            urlPattern: /.*/
+            urlPattern: /^http.*/ // cache all files
           }
         ]
       }))

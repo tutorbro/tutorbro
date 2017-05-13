@@ -1,4 +1,4 @@
-import {Scrollspy} from 'react-scrollspy'
+import Scrollspy from 'react-scrollspy'
 import LinkScroll from './LinkScroll'
 
 // since styled jsx cant apply scoped styles to classname attached to HOC
