@@ -22,7 +22,7 @@
     "dev": "node server",
     "build": "next build",
     "heroku-postbuild": "next build",
-    "start": "next start -p $PORT",
+    "start": "node server -p $PORT",
     "lint": "standard",
     "deploy": "now -t $TB",
     "alias": "now -t $TB alias",
