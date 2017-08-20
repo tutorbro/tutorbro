@@ -21,15 +21,8 @@ export default (
   }
   return axios({
     method: 'post',
-    url: 'https://api.tutorbro.com/form',
+    url: 'https://formspree.io/sudhanshu@tutorbro.com',
     data: data,
     headers: { 'Content-Type': 'application/json' }
-  }).then(() => {
-    return axios({
-      method: 'post',
-      url: 'https://formspree.io/sudhanshu@tutorbro.com',
-      data: data,
-      headers: { 'Content-Type': 'application/json' }
-    })
   })
 }

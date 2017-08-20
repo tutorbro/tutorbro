@@ -41,5 +41,12 @@ module.exports = {
     }
 
     return config
+  },
+  exportPathMap: function () {
+    return {
+      '/': { page: '/' },
+      '/careers': { page: '/careers' },
+      '/chat': { page: '/chat' }
+    }
   }
 }
