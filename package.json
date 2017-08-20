@@ -22,10 +22,10 @@
     "node": "v8.3.0"
   },
   "scripts": {
-    "dev": "node server",
+    "dev": "next",
     "build": "next build",
     "heroku-postbuild": "next build",
-    "start": "node server -p $PORT",
+    "start": "next start",
     "lint": "standard",
     "deploy": "npm run build && next export && cp .next/sw.js out/"
   },

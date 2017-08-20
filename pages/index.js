@@ -1,49 +1,45 @@
-import React from 'react'
-import Header from '../components/Header'
-import Home from '../components/Home'
-import Subjects from '../components/Subjects'
-import Services from '../components/Services'
-import Footer from '../components/Footer'
-import { initGA, logPageView } from '../utils/analytics'
+import React from 'react';
+import dynamic from 'next/dynamic';
+import Header from '../components/Header';
+import Home from '../components/Home';
+import Subjects from '../components/Subjects';
+import Services from '../components/Services';
+import Footer from '../components/Footer';
+import { initGA, logPageView } from '../utils/analytics';
+const AlertContainer = dynamic(import('react-alert'), { ssr: false });
 
 export default class App extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = { isBrowser: false }
+  constructor(props) {
+    super(props);
     this.alertOptions = {
       offset: 14,
       position: 'top right',
       theme: 'dark',
       time: 5000,
-      transition: 'scale'
-    }
+      transition: 'scale',
+    };
   }
-  componentDidMount () {
-    this.alertContainer = require('react-alert')
-    this.setState({ isBrowser: true })
-    initGA()
-    logPageView()
-    console.log('from do')
+  componentDidMount() {
+    initGA();
+    logPageView();
+    console.log('from do');
   }
-  render () {
-    const AlertContainer = this.state.isBrowser && this.alertContainer
+  render() {
     return (
       <div>
-        <Header title='TutorBro | Get Personal Tutor For Homework Help' />
+        <Header title="TutorBro | Get Personal Tutor For Homework Help" />
         <main>
           <Home />
           <Subjects />
           <Services />
           <Footer home />
         </main>
-        {this.state.isBrowser && (
         <AlertContainer
           ref={a => {
-            global.msg = a
+            global.msg = a;
           }}
           {...this.alertOptions}
-              />
-            )}
+        />
         <style jsx>
           {`
             main {
@@ -52,6 +48,6 @@ export default class App extends React.Component {
           `}
         </style>
       </div>
-    )
+    );
   }
 }
