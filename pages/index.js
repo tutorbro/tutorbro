@@ -6,7 +6,6 @@ import Subjects from '../components/Subjects';
 import Services from '../components/Services';
 import Footer from '../components/Footer';
 import { initGA, logPageView } from '../utils/analytics';
-const AlertContainer = dynamic(import('react-alert'), { ssr: false });
 
 export default class App extends React.Component {
   constructor(props) {
@@ -22,9 +21,9 @@ export default class App extends React.Component {
   componentDidMount() {
     initGA();
     logPageView();
-    console.log('from do');
   }
   render() {
+    const AlertContainer = this.alert;
     return (
       <div>
         <Header title="TutorBro | Get Personal Tutor For Homework Help" />
@@ -34,12 +33,6 @@ export default class App extends React.Component {
           <Services />
           <Footer home />
         </main>
-        <AlertContainer
-          ref={a => {
-            global.msg = a;
-          }}
-          {...this.alertOptions}
-        />
         <style jsx>
           {`
             main {

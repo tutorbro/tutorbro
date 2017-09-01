@@ -1,19 +1,19 @@
 /*
 global msg
  */
-import React from 'react'
-import FilePicker from 'react-filepicker'
-import axios from 'axios'
-import ReactSpinner from 'react-spinjs'
+import React from 'react';
+import FilePicker from 'react-filepicker';
+import axios from 'axios';
+import ReactSpinner from 'react-spinjs';
 
 // TODO: replace fa icons with svg icons
-import validate from '../utils/validate'
-import submitForm from '../utils/submitForm'
-import { logEvent, logException } from '../utils/analytics'
+import validate from '../utils/validate';
+import submitForm from '../utils/submitForm';
+import { logEvent, logException } from '../utils/analytics';
 
 export default class SupportForm extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
       mobilenumber: '',
       email: '',
@@ -22,60 +22,44 @@ export default class SupportForm extends React.Component {
       message: '',
       countryCode: '',
       submitting: false,
-      files: []
-    }
+      files: [],
+    };
   }
-  componentDidMount () {
+  componentDidMount() {
     axios
       .get('https://ip-info.now.sh/')
       .then(({ data }) => {
-        this.setState({ countryCode: data.country_code })
+        this.setState({ countryCode: data.country_code });
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
-  fileUploaded (files) {
-    logEvent('Files', 'File/s uploaded')
+  fileUploaded(files) {
+    logEvent('Files', 'File/s uploaded');
     if (files instanceof Array) {
       files = files.map(({ filename, url }) => {
-        return { filename, url }
-      })
+        return { filename, url };
+      });
     } else {
-      files = [ { filename: files.filename, url: files.url } ]
+      files = [{ filename: files.filename, url: files.url }];
     }
-    files = [ ...files, ...this.state.files ]
-    this.setState({ files })
+    files = [...files, ...this.state.files];
+    this.setState({ files });
   }
-  deleteUploadedFile (f) {
-    const files = this.state.files.filter(file => file.url !== f.url)
-    this.setState({ files })
+  deleteUploadedFile(f) {
+    const files = this.state.files.filter(file => file.url !== f.url);
+    this.setState({ files });
   }
-  handelSubmit (e) {
-    e.preventDefault()
-    logEvent('CTA', 'Query Submit btn is clicked')
-    const {
-      mobilenumber,
-      email,
-      fullname,
-      countryCode,
-      subject,
-      message,
-      files
-    } = this.state
-    if (!validate(mobilenumber, email, fullname, countryCode)) return
-    this.setState({ submitting: true })
-    const phoneNumber = mobilenumber
-    submitForm(
-      phoneNumber,
-      email,
-      fullname,
-      subject,
-      message,
-      files,
-      countryCode
-    )
+  handelSubmit(e) {
+    e.preventDefault();
+    logEvent('CTA', 'Query Submit btn is clicked');
+    const { mobilenumber, email, fullname, countryCode, subject, message, files } = this.state;
+    if (!validate(mobilenumber, email, fullname, countryCode)) return;
+    this.setState({ submitting: true });
+    const phoneNumber = mobilenumber;
+    submitForm(phoneNumber, email, fullname, subject, message, files, countryCode)
       .then(response => {
         if (response.status !== 200) {
-          throw new Error(`status ${response.status} recieved from server`)
+          throw new Error(`status ${response.status} recieved from server`);
         }
         this.setState({
           mobilenumber: '',
@@ -85,110 +69,107 @@ export default class SupportForm extends React.Component {
           message: '',
           countryCode: '',
           submitting: false,
-          files: []
-        })
-        msg.show('Submitted successfully', { type: 'success' })
-        logEvent('QueryForm', 'QueryForm successfully Submitted')
+          files: [],
+        });
+        alert('Submitted successfully');
+        logEvent('QueryForm', 'QueryForm successfully Submitted');
       })
       .catch(e => {
-        this.setState({ submitting: false })
-        msg.show(`Error while submitting form, ${e.message && e.message}`, {
-          type: 'error'
-        })
-        logException(`QueryForm Submission failed`, true)
-      })
+        this.setState({ submitting: false });
+        alert(`Error while submitting form, ${e.message && e.message}`);
+        logException(`QueryForm Submission failed`, true);
+      });
   }
-  render () {
+  render() {
     const filePickerOpts = {
       buttonText: 'Attach Files',
       multiple: true,
-      mimetype: 'image/*, application/*'
-    }
+      mimetype: 'image/*, application/*',
+    };
     return (
-      <form
-        id='form'
-        className='form'
-        autoComplete='off'
-        onSubmit={this.handelSubmit.bind(this)}
-      >
-        <div className='form__title'>
-          Got A Query ?
-        </div>
-        <div className='form__subTitle'>
+      <form id="form" className="form" autoComplete="off" onSubmit={this.handelSubmit.bind(this)}>
+        <div className="form__title">Got A Query ?</div>
+        <div className="form__subTitle">
           Fill this form you will hear from our tutor in 5 mins or less with a quote
         </div>
         <fieldset>
-          <div className='form__field'>
-            <label htmlFor='mobilenumber'>Mobile Number<sup>*</sup></label>
+          <div className="form__field">
+            <label htmlFor="mobilenumber">
+              Mobile Number<sup>*</sup>
+            </label>
             <span>
               <input
                 ref={node => {
-                  global.firstInput = node
+                  global.firstInput = node;
                 }}
-                className='js-mobilenumber'
-                type='tel'
-                name='mobilenumber'
-                id='mobilenumber'
-                placeholder='+91-9999988888'
-                autoComplete='off'
+                className="js-mobilenumber"
+                type="tel"
+                name="mobilenumber"
+                id="mobilenumber"
+                placeholder="+91-9999988888"
+                autoComplete="off"
                 onChange={e => this.setState({ mobilenumber: e.target.value })}
                 value={this.state.mobilenumber}
               />
             </span>
           </div>
-          <div className='form__field'>
-            <label htmlFor='email'>Email<sup>*</sup></label>
+          <div className="form__field">
+            <label htmlFor="email">
+              Email<sup>*</sup>
+            </label>
             <span>
               <input
-                className='js-email'
-                type='email'
-                name='email'
-                id='email'
-                placeholder='name@example.com'
-                autoComplete='off'
+                className="js-email"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="name@example.com"
+                autoComplete="off"
                 onChange={e => this.setState({ email: e.target.value })}
                 value={this.state.email}
               />
             </span>
           </div>
-          <div className='form__field'>
-            <label htmlFor='fullname'>Full Name<sup>*</sup></label>
+          <div className="form__field">
+            <label htmlFor="fullname">
+              Full Name<sup>*</sup>
+            </label>
             <span>
               <input
-                className='js-fullname'
-                type='text'
-                name='fullname'
-                id='fullname'
-                placeholder='your name'
-                autoComplete='off'
+                className="js-fullname"
+                type="text"
+                name="fullname"
+                id="fullname"
+                placeholder="your name"
+                autoComplete="off"
                 onChange={e => this.setState({ fullname: e.target.value })}
                 value={this.state.fullname}
               />
             </span>
           </div>
-          <div className='form__field'>
-            <label htmlFor='subject'>Subject</label>
+          <div className="form__field">
+            <label htmlFor="subject">Subject</label>
             <span>
               <input
-                className='js-subject'
-                type='text'
-                name='subject'
-                id='subject'
-                placeholder='Regarding ...'
-                autoComplete='off'
+                className="js-subject"
+                type="text"
+                name="subject"
+                id="subject"
+                placeholder="Regarding ..."
+                autoComplete="off"
                 onChange={e => this.setState({ subject: e.target.value })}
                 value={this.state.subject}
               />
             </span>
           </div>
-          <div className='form__field'>
-            <label htmlFor='message'>Message</label>
+          <div className="form__field">
+            <label htmlFor="message">Message</label>
             <span>
               <textarea
-                id='message'
-                className='js-message'
-                name='message'
-                placeholder='your message'
+                id="message"
+                className="js-message"
+                name="message"
+                placeholder="your message"
                 onChange={e => this.setState({ message: e.target.value })}
                 value={this.state.message}
               />
@@ -196,44 +177,36 @@ export default class SupportForm extends React.Component {
           </div>
         </fieldset>
         <footer>
-          <div className='attachment__info'>
+          <div className="attachment__info">
             {this.state.files.map(file => {
               return (
-                <div key={file.filename} className='uploaded__file'>
-                  <span className='filename'>
-                    <i className='fa fa-check-circle' />
+                <div key={file.filename} className="uploaded__file">
+                  <span className="filename">
+                    <i className="fa fa-check-circle" />
                     {file.filename}
                   </span>
-                    uploaded successfully
-                    <i
-                      onClick={this.deleteUploadedFile.bind(this, file)}
-                      className='fa fa-trash'
-                    />
+                  uploaded successfully
+                  <i onClick={this.deleteUploadedFile.bind(this, file)} className="fa fa-trash" />
                 </div>
-              )
+              );
             })}
           </div>
-          <div className='btns'>
+          <div className="btns">
             <FilePicker
-              apikey='ApX0B6asXSMiQ7QgsGEmNz'
+              apikey="ApX0B6asXSMiQ7QgsGEmNz"
               options={filePickerOpts}
               onSuccess={this.fileUploaded.bind(this)}
             />
-            <button className='btn' type='submit'>
-              <i className='fa fa-send-o' />
+            <button className="btn" type="submit">
+              <i className="fa fa-send-o" />
               Submit
             </button>
           </div>
         </footer>
-        {
-          this.state.submitting &&
-            (
-              <div
-                className={`overlay ${this.state.submitting && 'submitting'}`}
-              />
-            )
-        }
-        {this.state.submitting && <ReactSpinner className='spinner' />}
+        {this.state.submitting && (
+          <div className={`overlay ${this.state.submitting && 'submitting'}`} />
+        )}
+        {this.state.submitting && <ReactSpinner className="spinner" />}
         <style jsx>
           {`
             .overlay {
@@ -278,7 +251,7 @@ export default class SupportForm extends React.Component {
               position: relative;
               padding: 6px 24px;
               color: #444;
-              border: 1px solid rgba(0, 0, 0, 0.15)
+              border: 1px solid rgba(0, 0, 0, 0.15);
             }
             .form__field:nth-child(2n) {
               border-top: none;
@@ -310,16 +283,20 @@ export default class SupportForm extends React.Component {
               font-size: 16px;
               background: transparent;
             }
-            ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            ::-webkit-input-placeholder {
+              /* Chrome/Opera/Safari */
               color: #e0e0e0;
             }
-            ::-moz-placeholder { /* Firefox 19+ */
+            ::-moz-placeholder {
+              /* Firefox 19+ */
               color: #e0e0e0;
             }
-            :-ms-input-placeholder { /* IE 10+ */
+            :-ms-input-placeholder {
+              /* IE 10+ */
               color: #e0e0e0;
             }
-            :-moz-placeholder { /* Firefox 18- */
+            :-moz-placeholder {
+              /* Firefox 18- */
               color: #e0e0e0;
             }
             footer {
@@ -370,7 +347,7 @@ export default class SupportForm extends React.Component {
               font-size: 18px;
               color: red;
             }
-            @media(max-width: 1200px) {
+            @media (max-width: 1200px) {
               .form {
                 max-width: 600px;
                 margin: 0 auto;
@@ -379,6 +356,6 @@ export default class SupportForm extends React.Component {
           `}
         </style>
       </form>
-    )
+    );
   }
 }

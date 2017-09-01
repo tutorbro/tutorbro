@@ -1,5 +1,5 @@
-import React from 'react'
-import { logEvent } from '../utils/analytics'
+import React from 'react';
+import { logEvent } from '../utils/analytics';
 
 const subjects = [
   {
@@ -14,8 +14,8 @@ const subjects = [
       'Thermodynamics',
       'Integration',
       'Heat Transfer',
-      'Machine Design'
-    ]
+      'Machine Design',
+    ],
   },
   {
     name: 'Mathematics',
@@ -29,8 +29,8 @@ const subjects = [
       'Linear Algebra',
       'Trigonometry',
       'Applied mathematics',
-      'Geometry'
-    ]
+      'Geometry',
+    ],
   },
   {
     name: 'Computer Science',
@@ -43,8 +43,8 @@ const subjects = [
       'MS Access',
       'Data Structure',
       'Computer Networks',
-      'Unix/ Linux'
-    ]
+      'Unix/ Linux',
+    ],
   },
   {
     name: 'Electrical Engineering',
@@ -58,91 +58,74 @@ const subjects = [
       'Digital Signal Processing',
       'Principle of telecommunication',
       'Electrical Machines',
-      'Measurements'
-    ]
+      'Measurements',
+    ],
   },
-  { name: 'Physics', icon: 'physics', lessons: [ 'Physics-I', 'Physics-II' ] },
+  { name: 'Physics', icon: 'physics', lessons: ['Physics-I', 'Physics-II'] },
   {
     name: 'Chemistry',
     icon: 'chemistry',
-    lessons: [
-      'General Chemistry',
-      'Chemistry I',
-      'Chemistry II',
-      'Organic Chemistry'
-    ]
+    lessons: ['General Chemistry', 'Chemistry I', 'Chemistry II', 'Organic Chemistry'],
   },
   {
     name: 'Statistics',
     icon: 'statistics',
-    lessons: [ 'Business Statistics', 'Elementary Statistics' ]
+    lessons: ['Business Statistics', 'Elementary Statistics'],
   },
   {
     name: 'Other Subjects',
     icon: 'others',
-    lessons: [
-      'Biology',
-      'Civil Engineering',
-      'Electronics Engineering',
-      'Essay Writing'
-    ]
-  }
-]
+    lessons: ['Biology', 'Civil Engineering', 'Electronics Engineering', 'Essay Writing'],
+  },
+];
 export default class Subjects extends React.Component {
-  done () {
-    logEvent('CTA', 'Get Quote btn is clicked')
-    global.msg.show('Fill this form we will send you a quote', {
-      type: 'info'
-    })
-    global.firstInput.focus()
+  done() {
+    logEvent('CTA', 'Get Quote btn is clicked');
+    global.firstInput.focus();
   }
-  render () {
+  render() {
     return (
-      <section className='subjects' id='subjects'>
-        <div className='subjects__container'>
-          <div className='subjects__title'>
-            <div className='title__text'>Our Expertise</div>
+      <section className="subjects" id="subjects">
+        <div className="subjects__container">
+          <div className="subjects__title">
+            <div className="title__text">Our Expertise</div>
           </div>
-          <ul className='subjects__list'>
+          <ul className="subjects__list">
             {subjects.map(subject => {
               return (
-                <li key={subject.name} className='subject'>
-                  <div className='subject__title'>
-                    <div className='svg'>
+                <li key={subject.name} className="subject">
+                  <div className="subject__title">
+                    <div className="svg">
                       <img
-                        src={
-                            `https://res.cloudinary.com/tutorbro/image/upload/v1486345678/${subject.icon}.svg`
-                          }
-                        alt='icon'
-                        />
+                        src={`https://res.cloudinary.com/tutorbro/image/upload/v1486345678/${subject.icon}.svg`}
+                        alt="icon"
+                      />
                     </div>
-                    <div className='text'>{subject.name}</div>
+                    <div className="text">{subject.name}</div>
                   </div>
-                  <ul className='subject__lessons'>
+                  <ul className="subject__lessons">
                     {subject.lessons.map(lesson => (
-                      <li key={lesson} className='subject__lesson'>
+                      <li key={lesson} className="subject__lesson">
                         {lesson}
                       </li>
-                        ))}
+                    ))}
                   </ul>
-                  <div className='subject__cta'>
-                    <div className='btns'>
+                  <div className="subject__cta">
+                    <div className="btns">
                       <a
-                        onClick={
-                            () => logEvent('CTA', 'Call Us btn is clicked')
-                          }
-                        href='tel:+91-9958156558'
-                        className='btn show-s'
-                        >
-                          Call Us
-                        </a>
-                      <a onClick={this.done.bind(this)} className='btn'>
-                          Get A Quote
-                        </a>
+                        onClick={() => logEvent('CTA', 'Call Us btn is clicked')}
+                        href="tel:+91-9958156558"
+                        className="btn show-s"
+                      >
+                        Call Us
+                      </a>
+                      <a onClick={this.done.bind(this)} className="btn">
+                        Get A Quote
+                      </a>
                     </div>
                   </div>
                 </li>
-              )
+              );
             })}
           </ul>
         </div>
@@ -179,13 +162,13 @@ export default class Subjects extends React.Component {
               width: calc(25% - 40px);
               margin: 20px;
               background: #fff;
-              box-shadow: 0 24px 32px 0 rgba(60,71,81,.1);
+              box-shadow: 0 24px 32px 0 rgba(60, 71, 81, 0.1);
               border-radius: 8px;
               display: flex;
               flex-direction: column;
               justify-content: space-between;
               transform: scale(1);
-              transition: box-shadow .35s ease-out, transform .3s ease-out, opacity .2s ease-out;
+              transition: box-shadow 0.35s ease-out, transform 0.3s ease-out, opacity 0.2s ease-out;
               will-change: transform;
               cursor: pointer;
             }
@@ -278,12 +261,12 @@ export default class Subjects extends React.Component {
                 transform: scale(1);
               }
               .subject {
-                box-shadow: 0 2px 4px 0 rgba(60,71,81,.1);
+                box-shadow: 0 2px 4px 0 rgba(60, 71, 81, 0.1);
               }
             }
           `}
         </style>
       </section>
-    )
+    );
   }
 }
