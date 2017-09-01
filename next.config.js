@@ -6,13 +6,6 @@ module.exports = {
   webpack: (config, { dev }) => {
     /* Enable only in Production */
     if (!dev) {
-      // preact
-      console.log('> Using Preact instead of React');
-      config.resolve.alias = {
-        react: 'preact-compat/dist/preact-compat',
-        'react-dom': 'preact-compat/dist/preact-compat',
-      };
-
       // Analyzer
       if (ANALYZE) {
         config.plugins.push(
