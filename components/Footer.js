@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { logEvent } from '../utils/analytics'
 
 export default class Footer extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
     window.Tawk_API = window.Tawk_API || {}
     window.Tawk_LoadStart = new Date();
     (function () {
@@ -15,7 +15,7 @@ export default class Footer extends React.Component {
       document.body.appendChild(s1)
     })()
   }
-  render () {
+  render() {
     return (
       <footer className='footer'>
         <div className='footer__container'>
@@ -30,22 +30,16 @@ export default class Footer extends React.Component {
               <Link href='/careers'>
                 <a>Become A Tutor</a>
               </Link>
+              <Link href='/policy'>
+                <a>Policy & Terms</a>
+              </Link>
+              <Link href='/about'>
+                <a>About Us</a>
+              </Link>
             </div>
           </div>
         </div>
-        <div className='credits'>
-          Made with ❤ by
-          <strong>
-            <a
-              onClick={() => logEvent('credits', 'vinaypuppal link is clicked')}
-              rel='noopener'
-              target='_blank'
-              href='https://www.vinaypuppal.com'
-            >
-              {' '}@VinayPuppal
-            </a>
-          </strong>
-        </div>
+
         <style jsx>
           {`
             .footer {
