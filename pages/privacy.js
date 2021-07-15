@@ -11,13 +11,12 @@ export default class chat extends React.Component {
     render() {
         return (
             <div>
-                <Header title="TutorBro | Policy & Terms of Use" />
+                <Header title="TutorBro | Privacy Policy" />
                 <main>
                     <div className="carrers__container">
                         <section className="carrers">
-                            <h1>Policy & Terms of Use</h1>
+                            <h1>Privacy Policy</h1>
                             <div className="profile">
-                                <h4>Privacy Policy for TutorBro Private Limited	</h4>
                                 <p>
 
                                     At TutorBro, accessible from https://tutorbro.com/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by TutorBro and how we use it.
@@ -132,27 +131,6 @@ export default class chat extends React.Component {
                                     TutorBro does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.
 
                                 </p>
-                                <h1>Refund Policy</h1>
-                                <p>
-                                    Thank you for trusting our tutors. We hope you are happy with our tutoring service. However, if you are not completely satisfied with it for any reason, you may request us for a full refund or an exchange. Please see below for more information on our refund policy.
-                                </p>
-                                <h4>Refund Eligibility</h4>
-                                <p>
-                                    (a) In the event that a Student wishes to cancel a Tutoring Service anytime before the starting of service, complete amount paid by a Student is refunded.<br></br>
-                                    (b) If tutor is not available or not able to deliver the service on time, complete amount paid by a Student is refunded.<br></br>
-                                    (c) After the complete delivery of service if Student feels tutor is not up to the expectation & service provided is not satisfactory, they can raise the issue by contacting us and their complaint will be looked into. Though our team tries best to resolve student’s complaints. If our team is satisfied with complainant’s case, a refund will be made and amount for the same will be decided by team as per the case.
-                                </p>
-                                <h4>Refund Process</h4>
-                                <p>
-                                    To apply for a refund, please email us at payment@tutorbro.com mentioning your refund eligibility & payment number.
-                                    <br></br> <br></br>
-                                    After receiving your refund request and inspecting the case, we will process your refund. Please allow at least seven (7) days from the receipt of your case to process your refund. We will notify you by email when your refund has been processed.
-                                </p>
-                                <h4>Questions</h4>
-                                <p>
-                                    If you have any questions concerning our return policy, please contact us at: info@tutorbro.com
-                                </p>
-
 
                             </div>
 

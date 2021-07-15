@@ -30,8 +30,14 @@ export default class Footer extends React.Component {
               <Link href='/careers'>
                 <a>Become A Tutor</a>
               </Link>
-              <Link href='/policy'>
-                <a>Policy & Terms</a>
+              <Link href='/privacy'>
+                <a>Privacy Policy</a>
+              </Link>
+              <Link href='/refund'>
+                <a>Return Policy</a>
+              </Link>
+              <Link href='/terms'>
+                <a>Terms of Use</a>
               </Link>
               <Link href='/about'>
                 <a>About Us</a>
