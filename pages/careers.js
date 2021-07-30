@@ -30,7 +30,7 @@ export default class chat extends React.Component {
                   <li>
                     Answering queries & providing solutions on liveQuestion and Answer Portal.
                   </li>
-                  <li>Quality Review of solutions from pear tutors/SME. </li>
+                  <li>Quality Review of solutions from peer tutors/SME. </li>
                   <li>Making step by step solution of US Textbooks. </li>
                   <li>Checking solutions/answers for Plagiarism. </li>
                   <li>Live/online tutoring if required.</li>

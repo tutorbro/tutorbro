@@ -90,7 +90,7 @@ export default class SupportForm extends React.Component {
       <form id="form" className="form" autoComplete="off" onSubmit={this.handelSubmit.bind(this)}>
         <div className="form__title">Got A Query ?</div>
         <div className="form__subTitle">
-          Fill this form you will hear from our tutor in 5 mins or less with a quote
+          Fill this form, you will hear from our tutor in 5 mins or less with a quote
         </div>
         <fieldset>
           <div className="form__field">
@@ -106,7 +106,7 @@ export default class SupportForm extends React.Component {
                 type="tel"
                 name="mobilenumber"
                 id="mobilenumber"
-                placeholder="+91-9999988888"
+                placeholder="+1 9999988888"
                 autoComplete="off"
                 onChange={e => this.setState({ mobilenumber: e.target.value })}
                 value={this.state.mobilenumber}

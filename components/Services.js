@@ -2,12 +2,12 @@ const services = [
   {
     title: '24/7 Tutor Support',
     icon: '24hrs',
-    desc: "Reach out to us at any time of the day, any day of the week/month/year; our dedicated tutor are always happy to assist you with your queries, be it technical or otherwise - so you don't have to wait!"
+    desc: "Reach out to us at any time of the day, any day of the week/month/year; our dedicated tutors are always happy to assist you with your queries, be it technical or otherwise - so you don't have to wait!"
   },
   {
     title: 'Homework/Assignment Help',
     icon: 'homework',
-    desc: 'Having trouble with a classroom task? Look no further. Find live, assignment help anytime, day or night with our tutor. Get solutions to most challenging homework assignments.'
+    desc: 'Having trouble with a classroom task? Look no further. Find live, assignment help anytime, day or night with our tutor. Get solutions to the most challenging homework assignments.'
   },
   {
     title: 'Examination/Test Preparation',
@@ -17,7 +17,7 @@ const services = [
   {
     title: '100% Money Back Guarantee',
     icon: 'refund',
-    desc: 'Your Bro is happy to refund your full fee - no questions asked - should, for any reason at all, you may feel that the tutor is not up to your expectations or delivering the value they were looking for!'
+    desc: 'Your Bro is happy to refund your full fee. If our tutor do not match your expectation, feel free to message us for refund. Our refund policy is designed to be simple and hassle free. '
   }
 ]
 
@@ -35,10 +35,10 @@ export default () => (
                 <div className='svg'>
                   <img
                     src={
-                        `https://res.cloudinary.com/tutorbro/image/upload/v1486345678/${service.icon}.svg`
-                      }
+                      `https://res.cloudinary.com/tutorbro/image/upload/v1486345678/${service.icon}.svg`
+                    }
                     alt='icon'
-                    />
+                  />
                 </div>
                 <div className='text'>{service.title}</div>
               </div>

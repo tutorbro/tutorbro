@@ -12,16 +12,16 @@ export default () => (
           <TutorSvg />
           <figcaption className='home__caption'>
             <div className='home__captionTitle'>
-          Get Personal Tutor For Your Homework Help
-        </div>
+              Get Personal Tutor For Your Homework Help
+            </div>
             Boost Your Grades With Our Tutor.
             <strong> Guaranteed…!!!</strong>
           </figcaption>
         </figure>
         <p className='home__text'>
-          Our Expert Tutor are available 24x7 for your Homework/Assignment Help, Online Classes or Test Preparation with
+          Our Expert Tutors are available 24x7 for your Homework/Assignment Help, Online Classes or Test Preparation with
           <strong> Zero Plagiarism</strong>
-          . Our Tutor are known for getting the work done
+          . Our Tutors are known for getting the work done
           <strong> On Time </strong>
           with complete satisfaction.
         </p>
