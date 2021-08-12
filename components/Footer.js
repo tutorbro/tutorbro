@@ -34,7 +34,7 @@ export default class Footer extends React.Component {
                 <a>Privacy Policy</a>
               </Link>
               <Link href='/refund'>
-                <a>Return Policy</a>
+                <a>Refund Policy</a>
               </Link>
               <Link href='/terms'>
                 <a>Terms of Use</a>
@@ -54,6 +54,7 @@ export default class Footer extends React.Component {
             }
             .footer__container {
               max-width: 1280px;
+              height: 100px;
               margin: 0 auto;
               padding: 20px;
             }
@@ -87,17 +88,30 @@ export default class Footer extends React.Component {
               text-decoration: underline;
             }
             @media (max-width: 800px) {
+              .footer {
+                height: 200px;
+              }
               .content {
                 flex-direction: column;
                 align-items: center;
               }
               .copyrights {
                 order: 2;
-                margin-top: 20px;
+                margin-top: 0px;
                 text-align: center;
+              }
+              a {
+                margin: 0 5px;
+                color: #fff;
+                font-size: 12px;
               }
             }
             @media (max-width: 380px) {
+              
+              .footer__container {
+                height: 120px;
+                padding: 0px;
+              }
               .credits {
                 font-size: 9px;
               }

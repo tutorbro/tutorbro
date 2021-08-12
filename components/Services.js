@@ -15,9 +15,9 @@ const services = [
     desc: 'Nervous about an upcoming test? Our tutors provide personalized test preparation for any subject of your college with previous year questions & equip you for the best grade in class.'
   },
   {
-    title: '100% Money Back Guarantee',
+    title: 'LIVE Session for doubt clearance',
     icon: 'refund',
-    desc: 'Your Bro is happy to refund your full fee. If our tutor do not match your expectation, feel free to message us for refund. Our refund policy is designed to be simple and hassle free. '
+    desc: 'In case you do not understand any topic or getting stucked in solving a problem. A dedicated tutor will be assign for any kind of doubt. The tutor will be available 24/7 to help you. '
   }
 ]
 
