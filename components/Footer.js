@@ -20,10 +20,17 @@ export default class Footer extends React.Component {
       <footer className='footer'>
         <div className='footer__container'>
           <div className='content'>
-            <div className='copyrights'>
-              © {new Date().getFullYear()} TutorBro Ltd. All Rights Reserved.
+            <div className='footer__contact'>
+              <h3>Contact Us</h3>
+              <ul>
+                <li>+91 9958156558</li>
+                <li>homework@tutorbro.com</li>
+              </ul>
+
             </div>
+
             <div className='links'>
+
               <Link href='/careers'>
                 <a>Careers</a>
               </Link>
@@ -44,6 +51,10 @@ export default class Footer extends React.Component {
               </Link>
             </div>
           </div>
+
+        </div>
+        <div className='copyrights'>
+          © {new Date().getFullYear()} TutorBro Ltd. All Rights Reserved.
         </div>
 
         <style jsx>
@@ -54,16 +65,28 @@ export default class Footer extends React.Component {
             }
             .footer__container {
               max-width: 1280px;
-              height: 100px;
+              height: 140px;
               margin: 0 auto;
-              padding: 20px;
+            }
+            li{
+              list-style: none;
             }
             .content {
               display: flex;
               justify-content: space-around;
             }
+            h3{
+              margin-left: 40px;
+            }
+            .links{
+              margin-top: 40px;
+            }
             .copyrights {
+              background: #090909;
               font-size: 14px;
+              width: 100%;
+              text-align: center;
+              padding: 5px 5px;
             }
             .credits {
               text-align: right;
@@ -76,7 +99,7 @@ export default class Footer extends React.Component {
               background: #1f1f1f;
             }
             strong a{
-              font-size: 10px;
+              font-size: 12px;
               color: #F44336;
             }
             a {
@@ -88,35 +111,31 @@ export default class Footer extends React.Component {
               text-decoration: underline;
             }
             @media (max-width: 800px) {
-              .footer {
-                height: 200px;
-              }
+               .footer__container {
+                  height: 240px;
+            }
+            .links{
+              margin-top: 0px;
+              padding: 0 7px;
+            }
               .content {
                 flex-direction: column;
                 align-items: center;
               }
               .copyrights {
                 order: 2;
-                margin-top: 0px;
+                margin-top: 20px;
                 text-align: center;
-              }
-              a {
-                margin: 0 5px;
-                color: #fff;
-                font-size: 12px;
+                padding: 20px 20px;
+                height: 120px;
               }
             }
             @media (max-width: 380px) {
-              
-              .footer__container {
-                height: 120px;
-                padding: 0px;
-              }
               .credits {
                 font-size: 9px;
               }
               strong a{
-                font-size: 9px;
+                font-size: 12px;
               }
             }
           `}
