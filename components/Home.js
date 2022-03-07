@@ -6,20 +6,20 @@ export default () => (
     <div className='home__container'>
       <div className='home__desc'>
         <div className='home__title'>
-          Get Personal Tutor For Homework Help
+          Get Personal Tutor For Academics Help
         </div>
         <figure className='home__figure'>
           <TutorSvg />
           <figcaption className='home__caption'>
             <div className='home__captionTitle'>
-              Get Personal Tutor For Your Homework Help
+              Get Personal Tutor For Your Academic Help
             </div>
             Boost Your Grades With Our Tutor.
             <strong> Guaranteed…!!!</strong>
           </figcaption>
         </figure>
         <p className='home__text'>
-          Our Expert Tutors are available 24x7 for your Homework/Assignment Help, Online Classes or Test Preparation with
+          Our Expert Tutors are available 24x7 for your Homework/Assignment/Project Help, Online Classes or Test Preparation with
           <strong> Zero Plagiarism</strong>
           . Our Tutors are known for getting the work done
           <strong> On Time </strong>
