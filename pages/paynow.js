@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from "react-helmet";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { initGA, logPageView } from '../utils/analytics';
@@ -7,6 +8,14 @@ export default class chat extends React.Component {
   componentDidMount() {
     initGA();
     logPageView();
+
+    let script = document.createElement("script");
+    let anchor = document.getElementById("payment");
+    script.setAttribute("src", "https://checkout.razorpay.com/v1/payment-button.js");
+    script.setAttribute("data-payment_button_id","pl_J6ykVBO4H4Z19B");
+    script.setAttribute("async", true);
+    anchor.appendChild(script);
+ 
   }
   render() {
     return (
@@ -16,8 +25,9 @@ export default class chat extends React.Component {
           <div className="carrers__container">
             <section className="carrers">
                 <div className="paynow">
+
                     <h4>Click the button to pay</h4>
-                    <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_J6ykVBO4H4Z19B" async> </script> </form>
+                    <form id="payment"> </form>
                 </div>
             </section>
           </div>

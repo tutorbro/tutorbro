@@ -16,6 +16,7 @@
     "react-filepicker": "^0.10.16",
     "react-ga": "^2.2.0",
     "react-headroom": "^2.1.6",
+    "react-helmet": "^6.1.0",
     "react-scrollspy": "^3.3.3",
     "react-spinjs": "^3.0.0",
     "sw-precache-webpack-plugin": "^0.11.4"
