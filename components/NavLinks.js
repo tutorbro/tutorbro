@@ -28,7 +28,11 @@ export default () => (
         <a className='link'>Services</a>
       </LinkScroll>
     </li>
-
+    <li className='nav__listItem'>
+    <LinkScroll href='/paynow'>
+                <button>Pay Now</button>
+    </LinkScroll>
+    </li>
     <style jsx>
       {`
         .link {
@@ -70,6 +74,18 @@ export default () => (
         }
         .nav__listItem {
           margin: 0 20px;
+        }
+        .nav__listItem button{
+          background: deepskyblue;
+          border: 2px solid greenyellow;
+          padding: 5px 10px;
+          color: white;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+        }
+        button:hover{
+          background: #23a5cf;
+          border: 1px solid grey;
         }
         @media (max-width: 1100px) {
           .nav__listItem {

@@ -49,6 +49,9 @@ export default class Footer extends React.Component {
               <Link href='/about'>
                 <a>About Us</a>
               </Link>
+              <Link href='/paynow'>
+              <button>Pay Now</button>
+              </Link>
             </div>
           </div>
 
@@ -81,6 +84,14 @@ export default class Footer extends React.Component {
             .links{
               margin-top: 40px;
             }
+            button{
+              background: deepskyblue;
+          border: 2px solid greenyellow;
+          padding: 5px 10px;
+          color: white;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+            }
             .copyrights {
               background: #090909;
               font-size: 14px;
@@ -112,9 +123,10 @@ export default class Footer extends React.Component {
             }
             @media (max-width: 800px) {
                .footer__container {
-                  height: 240px;
+                  height: 312px;
             }
             .links{
+              display: content;
               margin-top: 0px;
               padding: 0 7px;
             }
@@ -133,6 +145,9 @@ export default class Footer extends React.Component {
             @media (max-width: 380px) {
               .credits {
                 font-size: 9px;
+              }
+              .links{
+                display: content;
               }
               strong a{
                 font-size: 12px;
