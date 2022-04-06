@@ -1,5 +1,6 @@
 import React from 'react';
-import {Helmet} from "react-helmet";
+import { useEffect } from 'react';
+import ScriptTag from 'react-script-tag';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { initGA, logPageView } from '../utils/analytics';
@@ -8,26 +9,26 @@ export default class chat extends React.Component {
   componentDidMount() {
     initGA();
     logPageView();
-
-    let script = document.createElement("script");
-    let anchor = document.getElementById("payment");
-    script.setAttribute("src", "https://checkout.razorpay.com/v1/payment-button.js");
-    script.setAttribute("data-payment_button_id","pl_J6ykVBO4H4Z19B");
-    script.setAttribute("async", true);
-    anchor.appendChild(script);
- 
+//     (function () {
+//     let form = document.getElementById("payment");
+//     const script = document.createElement("script");
+//     script.src = "https://checkout.razorpay.com/v1/payment-button.js";
+//     script.setAttribute("data-payment_button_id","pl_J6ykVBO4H4Z19B");
+//     script.async = true;
+//     form.appendChild(script);
+// })()
   }
   render() {
     return (
+        
       <div>
         <Header title="TutorBro | Careers" />
         <main>
           <div className="carrers__container">
             <section className="carrers">
                 <div className="paynow">
-
                     <h4>Click the button to pay</h4>
-                    <form id="payment"> </form>
+                    <form><ScriptTag isHydrating={true} type="text/javascript" src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_J6ykVBO4H4Z19B" async /> </form> 
                 </div>
             </section>
           </div>
