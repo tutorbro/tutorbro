@@ -3,6 +3,7 @@ import Head from 'next/head'
 export default ({ title }) => (
   <Head>
     <meta charset='utf-8' />
+    
     <meta
       name='google-site-verification'
       content='ZciyDhrj54UAkOkFBeIpP5wwO_A5D-fvdu_I6odsH98'
@@ -10,6 +11,10 @@ export default ({ title }) => (
     <meta
       name='viewport'
       content='width=device-width, initial-scale=1.0, maximum-scale=1.0'
+    />
+    <meta 
+      http-equiv='Content-Security-Policy' 
+      content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;**script-src 'self' http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval';** " 
     />
     <title>{title}</title>
     <link
