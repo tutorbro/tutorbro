@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
+import {Helmet} from "react-helmet";
 import ScriptTag from 'react-script-tag';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -28,7 +29,15 @@ export default class chat extends React.Component {
             <section className="carrers">
                 <div className="paynow">
                     <h4>Click the button to pay</h4>
-                    <form><ScriptTag isHydrating={true} type="text/javascript" src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_J6ykVBO4H4Z19B" async /> </form> 
+                    
+                    <form>
+                    <ScriptTag src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_J6ykVBO4H4Z19B" async /> 
+                   
+                    </form>
+     
+                      
+                    {/* <form id="payment">
+                      </form>  */}
                 </div>
             </section>
           </div>

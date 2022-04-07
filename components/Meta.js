@@ -7,10 +7,6 @@ export default ({ title }) => (
       name='google-site-verification'
       content='ZciyDhrj54UAkOkFBeIpP5wwO_A5D-fvdu_I6odsH98'
     />
-    <meta 
-    http-equiv="Content-Security-Policy" 
-    content="default-src gap://ready file://* *; style-src 'self' http://* https://* 'unsafe-inline'; script-src 'self' http://* https://* 'unsafe-inline' 'unsafe-eval'"
-    />
     <meta
       name='viewport'
       content='width=device-width, initial-scale=1.0, maximum-scale=1.0'
