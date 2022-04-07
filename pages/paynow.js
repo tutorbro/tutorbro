@@ -1,7 +1,5 @@
 import React from 'react';
 import { useEffect } from 'react';
-import {Helmet} from "react-helmet";
-import ScriptTag from 'react-script-tag';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { initGA, logPageView } from '../utils/analytics';
@@ -10,14 +8,13 @@ export default class chat extends React.Component {
   componentDidMount() {
     initGA();
     logPageView();
-//     (function () {
-//     let form = document.getElementById("payment");
-//     const script = document.createElement("script");
-//     script.src = "https://checkout.razorpay.com/v1/payment-button.js";
-//     script.setAttribute("data-payment_button_id","pl_J6ykVBO4H4Z19B");
-//     script.async = true;
-//     form.appendChild(script);
-// })()
+    let form = document.getElementById("payment");
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/payment-button.js";
+    script.setAttribute("data-payment_button_id","pl_J6ykVBO4H4Z19B");
+    script.async = true;
+    form.appendChild(script);
+
   }
   render() {
     return (
@@ -28,16 +25,9 @@ export default class chat extends React.Component {
           <div className="carrers__container">
             <section className="carrers">
                 <div className="paynow">
-                    <h4>Click the button to pay</h4>
-                    
-                    <form>
-                    <ScriptTag src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_J6ykVBO4H4Z19B" async /> 
-                   
-                    </form>
-     
-                      
-                    {/* <form id="payment">
-                      </form>  */}
+                    <h4>Click the button to pay</h4>                      
+                    <form id="payment">
+                      </form> 
                 </div>
             </section>
           </div>

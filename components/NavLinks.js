@@ -28,11 +28,11 @@ export default () => (
         <a className='link'>Services</a>
       </LinkScroll>
     </li>
-    <li className='nav__listItem'>
-    <LinkScroll href='/paynow'>
-                <button>Pay Now</button>
+    {/* <li className='nav__listItem'>
+    <LinkScroll href='/#pay'>
+    <a className='link'>Pay Now</a>
     </LinkScroll>
-    </li>
+    </li> */}
     <style jsx>
       {`
         .link {

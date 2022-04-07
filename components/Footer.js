@@ -50,7 +50,7 @@ export default class Footer extends React.Component {
                 <a>About Us</a>
               </Link>
               <Link href='/paynow'>
-              <button>Pay Now</button>
+                <a>Pay Now</a>
               </Link>
             </div>
           </div>
