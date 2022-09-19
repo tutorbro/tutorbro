@@ -49,8 +49,8 @@ export default class Footer extends React.Component {
               <Link href='/about'>
                 <a>About Us</a>
               </Link>
-              <Link href='/paynow'>
-                <a>Pay Now</a>
+              <Link href='/payment'>
+                <a>Pay</a>
               </Link>
             </div>
           </div>

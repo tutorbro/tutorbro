@@ -3,19 +3,12 @@ import { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { initGA, logPageView } from '../utils/analytics';
+import { Helmet } from 'react-helmet';
 
-export default class chat extends React.Component {
-  componentDidMount() {
-    initGA();
-    logPageView();
-    let form = document.getElementById("payment");
-    const script = document.createElement("script");
-    script.setAttribute("src", "https://checkout.razorpay.com/v1/payment-button.js");
-    script.setAttribute("data-payment_button_id","pl_J6ykVBO4H4Z19B");
-    script.async = true;
-    form.appendChild(script);
 
-  }
+
+export default class Payment extends React.Component {
+ 
   render() {
     return (
         
@@ -25,9 +18,10 @@ export default class chat extends React.Component {
           <div className="carrers__container">
             <section className="carrers">
                 <div className="paynow">
-                    <h4>Click the button to pay</h4>                      
-                    <form id="payment">
-                      </form> 
+                    <Helmet>
+                        <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_J6ykVBO4H4Z19B" async> </script> </form>
+                    </Helmet>
+   
                 </div>
             </section>
           </div>

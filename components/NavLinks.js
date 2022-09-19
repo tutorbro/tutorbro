@@ -29,7 +29,7 @@ export default () => (
       </LinkScroll>
     </li>
     {/* <li className='nav__listItem'>
-    <LinkScroll href='/#pay'>
+    <LinkScroll href='/payment'>
     <a className='link'>Pay Now</a>
     </LinkScroll>
     </li> */}
