@@ -28,11 +28,7 @@ export default () => (
         <a className='link'>Services</a>
       </LinkScroll>
     </li>
-    {/* <li className='nav__listItem'>
-    <LinkScroll href='/payment'>
-    <a className='link'>Pay Now</a>
-    </LinkScroll>
-    </li> */}
+
     <style jsx>
       {`
         .link {
