@@ -1,60 +1,59 @@
-import React from 'react'
-import Link from 'next/link'
-import { logEvent } from '../utils/analytics'
+import React from "react";
+import Link from "next/link";
+import { logEvent } from "../utils/analytics";
 
 export default class Footer extends React.Component {
   componentDidMount() {
-    window.Tawk_API = window.Tawk_API || {}
+    window.Tawk_API = window.Tawk_API || {};
     window.Tawk_LoadStart = new Date();
     (function () {
-      const s1 = document.createElement('script')
-      s1.async = true
-      s1.src = 'https://embed.tawk.to/58982bf385dc370a6b99b7fe/default'
-      s1.charset = 'UTF-8'
-      s1.setAttribute('crossorigin', '*')
-      document.body.appendChild(s1)
-    })()
+      const s1 = document.createElement("script");
+      s1.async = true;
+      s1.src = "https://embed.tawk.to/58982bf385dc370a6b99b7fe/default";
+      s1.charset = "UTF-8";
+      s1.setAttribute("crossorigin", "*");
+      document.body.appendChild(s1);
+    })();
   }
   render() {
     return (
-      <footer className='footer'>
-        <div className='footer__container'>
-          <div className='content'>
-            <div className='footer__contact'>
+      <footer className="footer">
+        <div className="footer__container">
+          <div className="content">
+            <div className="footer__contact">
               <h3>Contact Us</h3>
               <ul>
                 <li>+91 9958156558</li>
                 <li>homework@tutorbro.com</li>
               </ul>
-
             </div>
 
-            <div className='links'>
-
-              <Link href='/careers'>
+            <div className="links">
+              <Link href="/payment">
+                <a>Payments</a>
+              </Link>
+              <Link href="/careers">
                 <a>Careers</a>
               </Link>
-              <Link href='/careers'>
+              <Link href="/careers">
                 <a>Become A Tutor</a>
               </Link>
-              <Link href='/privacy'>
+              <Link href="/privacy">
                 <a>Privacy Policy</a>
               </Link>
-              <Link href='/refund'>
+              <Link href="/refund">
                 <a>Refund Policy</a>
               </Link>
-              <Link href='/terms'>
+              <Link href="/terms">
                 <a>Terms of Use</a>
               </Link>
-              <Link href='/about'>
+              <Link href="/about">
                 <a>About Us</a>
               </Link>
-             
             </div>
           </div>
-
         </div>
-        <div className='copyrights'>
+        <div className="copyrights">
           © {new Date().getFullYear()} TutorBro Ltd. All Rights Reserved.
         </div>
 
@@ -69,26 +68,26 @@ export default class Footer extends React.Component {
               height: 140px;
               margin: 0 auto;
             }
-            li{
+            li {
               list-style: none;
             }
             .content {
               display: flex;
               justify-content: space-around;
             }
-            h3{
+            h3 {
               margin-left: 40px;
             }
-            .links{
+            .links {
               margin-top: 40px;
             }
-            button{
+            button {
               background: deepskyblue;
-          border: 2px solid greenyellow;
-          padding: 5px 10px;
-          color: white;
-          cursor: pointer;
-          transition: all 0.3s ease-in-out;
+              border: 2px solid greenyellow;
+              padding: 5px 10px;
+              color: white;
+              cursor: pointer;
+              transition: all 0.3s ease-in-out;
             }
             .copyrights {
               background: #090909;
@@ -107,9 +106,9 @@ export default class Footer extends React.Component {
               align-items: center;
               background: #1f1f1f;
             }
-            strong a{
+            strong a {
               font-size: 12px;
-              color: #F44336;
+              color: #f44336;
             }
             a {
               margin: 0 10px;
@@ -120,14 +119,14 @@ export default class Footer extends React.Component {
               text-decoration: underline;
             }
             @media (max-width: 800px) {
-               .footer__container {
-                  height: 312px;
-            }
-            .links{
-              display: content;
-              margin-top: 0px;
-              padding: 0 7px;
-            }
+              .footer__container {
+                height: 312px;
+              }
+              .links {
+                display: content;
+                margin-top: 0px;
+                padding: 0 7px;
+              }
               .content {
                 flex-direction: column;
                 align-items: center;
@@ -144,16 +143,16 @@ export default class Footer extends React.Component {
               .credits {
                 font-size: 9px;
               }
-              .links{
+              .links {
                 display: content;
               }
-              strong a{
+              strong a {
                 font-size: 12px;
               }
             }
           `}
         </style>
       </footer>
-    )
+    );
   }
 }
