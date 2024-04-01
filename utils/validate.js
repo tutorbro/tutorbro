@@ -1,40 +1,43 @@
 /* global alert */
-const phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance();
+import phoneUtil from "google-libphonenumber";
+
+const phoneUtils = phoneUtil.PhoneNumberUtil.getInstance();
 
 export default (mobilenumber, email, fullname, countryCode) => {
-  const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const emailRegex =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (!mobilenumber) {
-    alert('Mobile number is required');
+    alert("Mobile number is required");
     return false;
   }
   if (!email) {
-    alert('Email is required');
+    alert("Email is required");
     return false;
   }
   if (!fullname) {
-    alert('Your name is required');
+    alert("Your name is required");
     return false;
   }
   if (countryCode) {
     let phoneNumber;
     try {
-      phoneNumber = phoneUtil.parse(mobilenumber, countryCode);
+      phoneNumber = phoneUtils.parse(mobilenumber, countryCode);
     } catch (e) {
       console.log(e);
-      alert('Enter a valid mobile number');
+      alert("Enter a valid mobile number");
       return false;
     }
-    if (!phoneUtil.isValidNumber(phoneNumber)) {
-      alert('Enter a valid mobile number');
+    if (!phoneUtils.isValidNumber(phoneNumber)) {
+      alert("Enter a valid mobile number");
       return false;
     }
   }
   if (!emailRegex.test(email)) {
-    alert('Enter A Valid Email');
+    alert("Enter A Valid Email");
     return false;
   }
   if (fullname.length < 3) {
-    alert('Enter a valid full name');
+    alert("Enter a valid full name");
     return false;
   }
   return true;

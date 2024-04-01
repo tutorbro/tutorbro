@@ -1,52 +1,47 @@
 const services = [
   {
-    title: '24/7 Tutor Support',
-    icon: '24hrs',
-    desc: "Reach out to us at any time of the day, any day of the week/month/year; our dedicated tutors are always happy to assist you with your queries, be it technical or otherwise - so you don't have to wait!"
+    title: "24/7 Tutor Support",
+    icon: "24hrs",
+    desc: "Reach out to us at any time of the day, any day of the week/month/year; our dedicated tutors are always happy to assist you with your queries, be it technical or otherwise - so you don't have to wait!",
   },
   {
-    title: 'Homework/Assignment Help',
-    icon: 'homework',
-    desc: 'Having trouble with a classroom task? Look no further. Find live, assignment help anytime, day or night with our tutor. Get solutions to the most challenging homework assignments.'
+    title: "Homework/Assignment Help",
+    icon: "homework",
+    desc: "Having trouble with a classroom task? Look no further. Find live, assignment help anytime, day or night with our tutor. Get solutions to the most challenging homework assignments.",
   },
   {
-    title: 'Examination/Test Preparation',
-    icon: 'exam',
-    desc: 'Nervous about an upcoming test? Our tutors provide personalized test preparation for any subject of your college with previous year questions & equip you for the best grade in class.'
+    title: "Examination/Test Preparation",
+    icon: "exam",
+    desc: "Nervous about an upcoming test? Our tutors provide personalized test preparation for any subject of your college with previous year questions & equip you for the best grade in class.",
   },
   {
-    title: 'LIVE Session for doubt clearance',
-    icon: 'refund',
-    desc: 'In case you do not understand any topic or getting stucked in solving a problem. A dedicated tutor will be assign for any kind of doubt. The tutor will be available 24/7 to help you. '
-  }
-]
-
+    title: "LIVE Session for doubt clearance",
+    icon: "refund",
+    desc: "In case you do not understand any topic or getting stucked in solving a problem. A dedicated tutor will be assign for any kind of doubt. The tutor will be available 24/7 to help you. ",
+  },
+];
 export default () => (
-  <section className='services' id='services'>
-    <div className='services__container'>
-      <div className='services__title'>
-        <div className='title__text'>Services</div>
+  <section className="services" id="services">
+    <div className="services__container">
+      <div className="services__title">
+        <div className="title__text">Services</div>
       </div>
-      <ul className='services__list'>
-        {services.map(service => {
+      <ul className="services__list">
+        {services.map((service) => {
           return (
-            <li key={service.title} className='service'>
-              <div className='service__title'>
-                <div className='svg'>
+            <li key={service.title} className="service">
+              <div className="service__title">
+                <div className="svg">
                   <img
-                    src={
-                      `https://res.cloudinary.com/tutorbro/image/upload/v1486345678/${service.icon}.svg`
-                    }
-                    alt='icon'
+                    src={`https://res.cloudinary.com/tutorbro/image/upload/v1486345678/${service.icon}.svg`}
+                    alt="icon"
                   />
                 </div>
-                <div className='text'>{service.title}</div>
+                <div className="text">{service.title}</div>
               </div>
-              <div className='service__desc'>
-                {service.desc}
-              </div>
+              <div className="service__desc">{service.desc}</div>
             </li>
-          )
+          );
         })}
       </ul>
     </div>
@@ -119,12 +114,12 @@ export default () => (
           }
           .service {
             width: calc(50% - 80px);
-            margin:20px 40px;
+            margin: 20px 40px;
           }
         }
         @media (max-width: 800px) {
           .services {
-            background: #EFEBE9;
+            background: #efebe9;
           }
           .services__list {
             flex-direction: column;
@@ -141,4 +136,4 @@ export default () => (
       `}
     </style>
   </section>
-)
+);

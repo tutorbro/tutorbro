@@ -10,7 +10,7 @@ export default class Footer extends React.Component {
       const s1 = document.createElement("script");
       s1.async = true;
       s1.src = "https://embed.tawk.to/58982bf385dc370a6b99b7fe/default";
-      s1.charset = "UTF-8";
+      s1.charSet = "UTF-8";
       s1.setAttribute("crossorigin", "*");
       document.body.appendChild(s1);
     })();
@@ -29,26 +29,26 @@ export default class Footer extends React.Component {
             </div>
 
             <div className="links">
-              <Link href="/payment">
-                <a>Payments</a>
+              <Link href="/payment" style={{ color: "white" }}>
+                <span className="link">Payments</span>
               </Link>
-              <Link href="/careers">
-                <a>Careers</a>
+              <Link href="/careers" style={{ color: "white" }}>
+                <span className="link">Careers</span>
               </Link>
-              <Link href="/careers">
-                <a>Become A Tutor</a>
+              <Link href="/careers" style={{ color: "white" }}>
+                <span className="link">Become A Tutor</span>
               </Link>
-              <Link href="/privacy">
-                <a>Privacy Policy</a>
+              <Link href="/privacy" style={{ color: "white" }}>
+                <span className="link">Privacy Policy</span>
               </Link>
-              <Link href="/refund">
-                <a>Refund Policy</a>
+              <Link href="/refund" style={{ color: "white" }}>
+                <span className="link">Refund Policy</span>
               </Link>
-              <Link href="/terms">
-                <a>Terms of Use</a>
+              <Link href="/terms" style={{ color: "white" }}>
+                <span className="link">Terms of Use</span>
               </Link>
-              <Link href="/about">
-                <a>About Us</a>
+              <Link href="/about" style={{ color: "white" }}>
+                <span className="link">About Us</span>
               </Link>
             </div>
           </div>
@@ -110,12 +110,12 @@ export default class Footer extends React.Component {
               font-size: 12px;
               color: #f44336;
             }
-            a {
+            .link {
               margin: 0 10px;
-              color: #fff;
+              color: white;
               font-size: 14px;
             }
-            a:hover {
+            .link:hover {
               text-decoration: underline;
             }
             @media (max-width: 800px) {

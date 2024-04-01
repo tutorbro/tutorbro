@@ -11,7 +11,7 @@ export default class chat extends React.Component {
   render() {
     return (
       <div>
-        <Header title="TutorBro | Chat" pathname={this.props.url.pathname} />
+        <Header title="TutorBro | Chat" pathname={this.props?.url?.pathname} />
         <main>
           <div className="tawk">
             <div className="title">Have a question?</div>

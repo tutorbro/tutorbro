@@ -50,7 +50,10 @@ export default class chat extends React.Component {
   render() {
     return (
       <div>
-        <Header title="TutorBro | Payment" pathname={this.props.url.pathname} />
+        <Header
+          title="TutorBro | Payment"
+          pathname={this.props?.url?.pathname}
+        />
         <main>
           <form
             id="form"
@@ -58,7 +61,9 @@ export default class chat extends React.Component {
             autoComplete="off"
             onSubmit={this.handelSubmit.bind(this)}
           >
+            <br />
             <div className="form__title">Pay Now</div>
+            <br />
             <div className="form__subTitle">
               Fill this form, you will hear from our tutor in 5 mins or less
             </div>

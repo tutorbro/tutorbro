@@ -1,40 +1,39 @@
 /*
 global msg
  */
-import React from 'react';
-import FilePicker from 'react-filepicker';
-import axios from 'axios';
-import ReactSpinner from 'react-spinjs';
+import React from "react";
+import FilePicker from "react-filepicker";
+import axios from "axios";
 
 // TODO: replace fa icons with svg icons
-import validate from '../utils/validate';
-import submitForm from '../utils/submitForm';
-import { logEvent, logException } from '../utils/analytics';
+import validate from "../utils/validate";
+import submitForm from "../utils/submitForm";
+import { logEvent, logException } from "../utils/analytics";
 
 export default class SupportForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mobilenumber: '',
-      email: '',
-      fullname: '',
-      subject: '',
-      message: '',
-      countryCode: '',
+      mobilenumber: "",
+      email: "",
+      fullname: "",
+      subject: "",
+      message: "",
+      countryCode: "",
       submitting: false,
       files: [],
     };
   }
   componentDidMount() {
     axios
-      .get('https://ip-info.now.sh/')
+      .get("https://ip-info.now.sh/")
       .then(({ data }) => {
         this.setState({ countryCode: data.country_code });
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   }
   fileUploaded(files) {
-    logEvent('Files', 'File/s uploaded');
+    logEvent("Files", "File/s uploaded");
     if (files instanceof Array) {
       files = files.map(({ filename, url }) => {
         return { filename, url };
@@ -46,35 +45,51 @@ export default class SupportForm extends React.Component {
     this.setState({ files });
   }
   deleteUploadedFile(f) {
-    const files = this.state.files.filter(file => file.url !== f.url);
+    const files = this.state.files.filter((file) => file.url !== f.url);
     this.setState({ files });
   }
   handelSubmit(e) {
     e.preventDefault();
-    logEvent('CTA', 'Query Submit btn is clicked');
-    const { mobilenumber, email, fullname, countryCode, subject, message, files } = this.state;
+    logEvent("CTA", "Query Submit btn is clicked");
+    const {
+      mobilenumber,
+      email,
+      fullname,
+      countryCode,
+      subject,
+      message,
+      files,
+    } = this.state;
     if (!validate(mobilenumber, email, fullname, countryCode)) return;
     this.setState({ submitting: true });
     const phoneNumber = mobilenumber;
-    submitForm(phoneNumber, email, fullname, subject, message, files, countryCode)
-      .then(response => {
+    submitForm(
+      phoneNumber,
+      email,
+      fullname,
+      subject,
+      message,
+      files,
+      countryCode
+    )
+      .then((response) => {
         if (response.status !== 200) {
           throw new Error(`status ${response.status} recieved from server`);
         }
         this.setState({
-          mobilenumber: '',
-          email: '',
-          fullname: '',
-          subject: '',
-          message: '',
-          countryCode: '',
+          mobilenumber: "",
+          email: "",
+          fullname: "",
+          subject: "",
+          message: "",
+          countryCode: "",
           submitting: false,
           files: [],
         });
-        alert('Submitted successfully');
-        logEvent('QueryForm', 'QueryForm successfully Submitted');
+        alert("Submitted successfully");
+        logEvent("QueryForm", "QueryForm successfully Submitted");
       })
-      .catch(e => {
+      .catch((e) => {
         this.setState({ submitting: false });
         alert(`Error while submitting form, ${e.message && e.message}`);
         logException(`QueryForm Submission failed`, true);
@@ -82,15 +97,21 @@ export default class SupportForm extends React.Component {
   }
   render() {
     const filePickerOpts = {
-      buttonText: 'Attach Files',
+      buttonText: "Attach Files",
       multiple: true,
-      mimetype: 'image/*, application/*',
+      mimetype: "image/*, application/*",
     };
     return (
-      <form id="form" className="form" autoComplete="off" onSubmit={this.handelSubmit.bind(this)}>
+      <form
+        id="form"
+        className="form"
+        autoComplete="off"
+        onSubmit={this.handelSubmit.bind(this)}
+      >
         <div className="form__title">Got A Query ?</div>
         <div className="form__subTitle">
-          Fill this form, you will hear from our tutor in 5 mins or less with a quote
+          Fill this form, you will hear from our tutor in 5 mins or less with a
+          quote
         </div>
         <fieldset>
           <div className="form__field">
@@ -99,7 +120,7 @@ export default class SupportForm extends React.Component {
             </label>
             <span>
               <input
-                ref={node => {
+                ref={(node) => {
                   global.firstInput = node;
                 }}
                 className="js-mobilenumber"
@@ -108,7 +129,9 @@ export default class SupportForm extends React.Component {
                 id="mobilenumber"
                 placeholder="+1 9999988888"
                 autoComplete="off"
-                onChange={e => this.setState({ mobilenumber: e.target.value })}
+                onChange={(e) =>
+                  this.setState({ mobilenumber: e.target.value })
+                }
                 value={this.state.mobilenumber}
               />
             </span>
@@ -125,7 +148,7 @@ export default class SupportForm extends React.Component {
                 id="email"
                 placeholder="name@example.com"
                 autoComplete="off"
-                onChange={e => this.setState({ email: e.target.value })}
+                onChange={(e) => this.setState({ email: e.target.value })}
                 value={this.state.email}
               />
             </span>
@@ -142,7 +165,7 @@ export default class SupportForm extends React.Component {
                 id="fullname"
                 placeholder="your name"
                 autoComplete="off"
-                onChange={e => this.setState({ fullname: e.target.value })}
+                onChange={(e) => this.setState({ fullname: e.target.value })}
                 value={this.state.fullname}
               />
             </span>
@@ -157,7 +180,7 @@ export default class SupportForm extends React.Component {
                 id="subject"
                 placeholder="Regarding ..."
                 autoComplete="off"
-                onChange={e => this.setState({ subject: e.target.value })}
+                onChange={(e) => this.setState({ subject: e.target.value })}
                 value={this.state.subject}
               />
             </span>
@@ -170,7 +193,7 @@ export default class SupportForm extends React.Component {
                 className="js-message"
                 name="message"
                 placeholder="your message"
-                onChange={e => this.setState({ message: e.target.value })}
+                onChange={(e) => this.setState({ message: e.target.value })}
                 value={this.state.message}
               />
             </span>
@@ -178,7 +201,7 @@ export default class SupportForm extends React.Component {
         </fieldset>
         <footer>
           <div className="attachment__info">
-            {this.state.files.map(file => {
+            {this.state.files.map((file) => {
               return (
                 <div key={file.filename} className="uploaded__file">
                   <span className="filename">
@@ -186,7 +209,10 @@ export default class SupportForm extends React.Component {
                     {file.filename}
                   </span>
                   uploaded successfully
-                  <i onClick={this.deleteUploadedFile.bind(this, file)} className="fa fa-trash" />
+                  <i
+                    onClick={this.deleteUploadedFile.bind(this, file)}
+                    className="fa fa-trash"
+                  />
                 </div>
               );
             })}
@@ -204,9 +230,9 @@ export default class SupportForm extends React.Component {
           </div>
         </footer>
         {this.state.submitting && (
-          <div className={`overlay ${this.state.submitting && 'submitting'}`} />
+          <div className={`overlay ${this.state.submitting && "submitting"}`} />
         )}
-        {this.state.submitting && <ReactSpinner className="spinner" />}
+        {this.state.submitting}
         <style jsx>
           {`
             .overlay {

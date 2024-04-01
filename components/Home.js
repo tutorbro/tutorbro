@@ -1,32 +1,32 @@
-import Form from './Form'
-import TutorSvg from './Tutor'
+import Form from "./Form";
+import TutorSvg from "./Tutor";
 
 export default () => (
-  <section className='home' id='home'>
-    <div className='home__container'>
-      <div className='home__desc'>
-        <div className='home__title'>
-          Get Personal Tutor For Academics Help
-        </div>
-        <figure className='home__figure'>
+  <section className="home" id="home">
+    <div className="home__container">
+      <div className="home__desc">
+        <div className="home__title">Get Personal Tutor For Academics Help</div>
+        <figure className="home__figure">
           <TutorSvg />
-          <figcaption className='home__caption'>
-            <div className='home__captionTitle'>
+          <figcaption className="home__caption">
+            <div className="home__captionTitle">
               Get Personal Tutor For Your Academic Help
             </div>
             Boost Your Grades With Our Tutor.
             <strong> Guaranteed…!!!</strong>
           </figcaption>
         </figure>
-        <p className='home__text'>
-          Our Expert Tutors are available 24x7 for your Homework/Assignment/Project Help, Online Classes or Test Preparation with
-          <strong> Zero Plagiarism</strong>
-          . Our Tutors are known for getting the work done
+        <p className="home__text">
+          Our Expert Tutors are available 24x7 for your
+          Homework/Assignment/Project Help, Online Classes or Test Preparation
+          with
+          <strong> Zero Plagiarism</strong>. Our Tutors are known for getting
+          the work done
           <strong> On Time </strong>
           with complete satisfaction.
         </p>
       </div>
-      <div className='home__query'>
+      <div className="home__query">
         <Form />
       </div>
     </div>
@@ -42,12 +42,14 @@ export default () => (
           flex-wrap: wrap;
           align-items: center;
         }
-        .home__desc, .home__query {
+        .home__desc,
+        .home__query {
           padding: 50px 20px;
           flex: 1;
           position: relative;
         }
-        .home__title, .home__captionTitle {
+        .home__title,
+        .home__captionTitle {
           color: #607d8b;
           text-align: center;
           font-weight: bold;
@@ -64,7 +66,7 @@ export default () => (
         }
         strong {
           font-size: 20px;
-          color: #4183C4;
+          color: #4183c4;
         }
         .home__text {
           text-align: center;
@@ -102,4 +104,4 @@ export default () => (
       `}
     </style>
   </section>
-)
+);

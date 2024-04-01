@@ -22,8 +22,8 @@ export default (props) => (
       </li>
       <li className="contact__listItem hide--l">
         {props.pathname === "/chat" ? (
-          <Link href="/">
-            <a className="link btn">Back</a>
+          <Link href="/" className="link btn">
+            Back
           </Link>
         ) : (
           <a
