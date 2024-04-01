@@ -9,6 +9,7 @@
     "nprogress": "^0.2.0",
     "preact": "^8.2.5",
     "preact-compat": "^3.17.0",
+    "prop-types": "^15.8.1",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
     "react-alert": "^2.2.0",
