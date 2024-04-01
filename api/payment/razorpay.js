@@ -5,8 +5,9 @@ const razorpay = (request) => {
     amount: request.amount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
     currency: "INR",
     name: "TutorBro Ltd", //your business name
-    description: "Test Transaction",
-    image: "https://example.com/your_logo",
+    description: "TutorBro Transaction",
+    image:
+      "https://res.cloudinary.com/dtq6u9rp1/image/upload/v1711986571/tutorbro/tutorbro.png",
     //order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
     callback_url: "https://eneqd3r9zrjok.x.pipedream.net/",
     prefill: {

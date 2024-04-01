@@ -123,7 +123,7 @@ export default class chat extends React.Component {
                 </span>
               </div>
               <div className="form__field">
-                <label htmlFor="amount">Amount</label>
+                <label htmlFor="amount">Amount (in INR)</label>
                 <span>
                   <input
                     className="js-subject"
