@@ -19,7 +19,7 @@
     "heroku-postbuild": "next build",
     "start": "next start",
     "lint": "standard",
-    "deploy": "npm run build",
+    "deploy": "npm run build && next export",
     "analyze": "cross-env ANALYZE=1 next build"
   },
   "devDependencies": {
