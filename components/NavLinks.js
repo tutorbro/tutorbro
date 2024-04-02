@@ -1,31 +1,34 @@
-import Scrollspy from 'react-scrollspy'
-import LinkScroll from './LinkScroll'
+import LinkScroll from "./LinkScroll";
 
 // since styled jsx cant apply scoped styles to classname attached to HOC
 const navListStyle = {
-  display: 'flex',
-  alignItems: 'center',
+  display: "flex",
+  alignItems: "center",
   padding: 0,
   margin: 0,
-  listStyleType: 'none'
-}
+  listStyleType: "none",
+};
 
 export default () => (
-  <Scrollspy style={navListStyle} items={['home', 'subjects', 'services']} currentClassName='is-current' offset={50}>
-
-    <li className='nav__listItem'>
-      <LinkScroll href='/#home'>
-        <a className='link'>Home</a>
+  <div
+    style={navListStyle}
+    items={["home", "subjects", "services"]}
+    currentClassName="is-current"
+    offset={50}
+  >
+    <li className="nav__listItem">
+      <LinkScroll href="/#home">
+        <a className="link">Home</a>
       </LinkScroll>
     </li>
-    <li className='nav__listItem'>
-      <LinkScroll href='/#subjects'>
-        <a className='link'>subjects</a>
+    <li className="nav__listItem">
+      <LinkScroll href="/#subjects">
+        <a className="link">subjects</a>
       </LinkScroll>
     </li>
-    <li className='nav__listItem'>
-      <LinkScroll href='/#services'>
-        <a className='link'>Services</a>
+    <li className="nav__listItem">
+      <LinkScroll href="/#services">
+        <a className="link">Services</a>
       </LinkScroll>
     </li>
 
@@ -40,7 +43,7 @@ export default () => (
           font-size: 15px;
         }
         .link::after {
-          content: '';
+          content: "";
           position: absolute;
           left: 0;
           bottom: -10px;
@@ -71,7 +74,7 @@ export default () => (
         .nav__listItem {
           margin: 0 20px;
         }
-        .nav__listItem button{
+        .nav__listItem button {
           background: deepskyblue;
           border: 2px solid greenyellow;
           padding: 5px 10px;
@@ -79,7 +82,7 @@ export default () => (
           cursor: pointer;
           transition: all 0.3s ease-in-out;
         }
-        button:hover{
+        button:hover {
           background: #23a5cf;
           border: 1px solid grey;
         }
@@ -90,5 +93,5 @@ export default () => (
         }
       `}
     </style>
-  </Scrollspy>
-)
+  </div>
+);

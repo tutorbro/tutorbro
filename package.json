@@ -19,7 +19,6 @@
     "react-headroom": "^3.2.1",
     "react-helmet": "^6.1.0",
     "react-script-tag": "^1.1.2",
-    "react-scrollspy": "^3.3.3",
     "react-spinjs": "^3.0.0"
   },
   "scripts": {
