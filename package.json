@@ -7,19 +7,12 @@
     "google-libphonenumber": "^3.2.34",
     "next": "^14.1.4",
     "nprogress": "^0.2.0",
-    "preact": "^10.20.1",
-    "preact-compat": "^3.19.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-addons-css-transition-group": "^15.6.2",
-    "react-alert": "^7.0.3",
     "react-dom": "^18.2.0",
     "react-filepicker": "^0.11.0",
     "react-ga": "^3.3.1",
-    "react-headroom": "^3.2.1",
-    "react-helmet": "^6.1.0",
-    "react-script-tag": "^1.1.2",
-    "react-spinjs": "^3.0.0"
+    "react-headroom": "^3.2.1"
   },
   "scripts": {
     "dev": "next",

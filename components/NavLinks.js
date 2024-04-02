@@ -13,7 +13,6 @@ export default () => (
   <div
     style={navListStyle}
     items={["home", "subjects", "services"]}
-    currentClassName="is-current"
     offset={50}
   >
     <li className="nav__listItem">
