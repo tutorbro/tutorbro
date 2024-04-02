@@ -2,7 +2,7 @@
 global msg
  */
 import React from "react";
-import FilePicker from "react-filepicker";
+//import FilePicker from "react-filepicker";
 import axios from "axios";
 
 // TODO: replace fa icons with svg icons
@@ -218,11 +218,11 @@ export default class SupportForm extends React.Component {
             })}
           </div>
           <div className="btns">
-            <FilePicker
+            {/* <FilePicker
               apikey="ApX0B6asXSMiQ7QgsGEmNz"
               options={filePickerOpts}
               onSuccess={this.fileUploaded.bind(this)}
-            />
+            /> */}
             <button className="btn" type="submit">
               <i className="fa fa-send-o" />
               Submit
