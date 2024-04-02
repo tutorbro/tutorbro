@@ -89,6 +89,14 @@
 
 const nextConfig = {
   /* config options here */
+  exportPathMap: function () {
+    return {
+      "/": { page: "/" },
+      "/careers": { page: "/careers" },
+      "/chat": { page: "/chat" },
+      "/payment": { page: "/payment" },
+    };
+  },
 };
 
 module.exports = nextConfig;
