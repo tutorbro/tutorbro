@@ -1,6 +1,7 @@
 // const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 // const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
 // const { ANALYZE } = process.env;
+
 // //const { GenerateSW } = require("workbox-webpack-plugin");
 
 // const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
