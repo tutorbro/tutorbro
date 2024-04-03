@@ -83,7 +83,8 @@ module.exports = {
       "/": { page: "/" },
       "/careers": { page: "/careers" },
       "/chat": { page: "/chat" },
-      "/payment": { page: "/payment" },
+      "/payments": { page: "/payment" },
+      "/payments/payment-success": { page: "/payments/payment-success" },
     };
   },
 };
