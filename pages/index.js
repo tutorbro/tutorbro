@@ -40,7 +40,6 @@ export default class App extends React.Component {
             }
           `}
         </style>
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
       </div>
     );
   }
