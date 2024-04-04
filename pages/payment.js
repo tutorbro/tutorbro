@@ -16,6 +16,7 @@ export default class chat extends React.Component {
       amount: 0,
       address: "",
       countryCode: "",
+      currencyCode: "USD",
     };
   }
   componentDidMount() {
@@ -31,8 +32,15 @@ export default class chat extends React.Component {
   async handelSubmit(e) {
     e.preventDefault();
 
-    const { fullname, email, mobilenumber, amount, countryCode, address } =
-      this.state;
+    const {
+      fullname,
+      email,
+      mobilenumber,
+      amount,
+      countryCode,
+      address,
+      currencyCode,
+    } = this.state;
     if (!validate(mobilenumber, email, fullname, countryCode)) return;
     if (amount < 1) {
       alert("Enter valid amount.");
@@ -44,6 +52,7 @@ export default class chat extends React.Component {
       email: email,
       amount: amount,
       address: address,
+      currencyCode: currencyCode,
     };
     razorpay(request);
   }
@@ -65,7 +74,7 @@ export default class chat extends React.Component {
             <div className="form__title">Pay Now</div>
             <br />
             <div className="form__subTitle">
-              Fill this form, you will hear from our tutor in 5 mins or less
+              Fill this form, you will hear from our payment gateway partner
             </div>
             <fieldset>
               <div className="form__field">
@@ -128,7 +137,19 @@ export default class chat extends React.Component {
                 </span>
               </div>
               <div className="form__field">
-                <label htmlFor="amount">Amount (in INR)</label>
+                <label htmlFor="amount">
+                  Amount (in{" "}
+                  <select
+                    value={this.state.currencyCode}
+                    onChange={(e) => {
+                      this.setState({ currencyCode: e.target.value });
+                    }}
+                  >
+                    <option defaultChecked>USD</option>
+                    <option>INR</option>
+                  </select>
+                  )
+                </label>
                 <span>
                   <input
                     className="js-subject"

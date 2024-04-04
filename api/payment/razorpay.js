@@ -1,9 +1,8 @@
 const razorpay = (request) => {
-  console.log(request);
   var options = {
     key: "rzp_live_XzyAfLeHVMcrlS", // Enter the Key ID generated from the Dashboard
     amount: request.amount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-    currency: "INR",
+    currency: request.currencyCode,
     name: "TutorBro Pvt Ltd", //your business name
     description: "TutorBro Transaction",
     image:
@@ -25,7 +24,17 @@ const razorpay = (request) => {
     },
   };
   var rzp1 = new Razorpay(options);
-  rzp1.open();
+  rzp1.on("payment.failed", function (response) {
+    //alert("code : " + response.error.code);
+    alert(response.error.description);
+    // alert("source : " + response.error.source);
+    // alert("step : " + response.error.step);
+    // alert("reason : " + response.error.reason);
+    // alert("order_id : " + response.error.metadata.order_id);
+    // alert("payment_id : " + response.error.metadata.payment_id);
+  });
+  var res = rzp1.open();
+  console.log(res);
 };
 
 export default razorpay;
