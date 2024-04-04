@@ -19,8 +19,8 @@ const razorpay = (request) => {
     prefill: {
       //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
       name: request.name, //your customer's name
-      email: "",
-      contact: "", //Provide the customer's phone number for better conversion rates
+      email: "ramnitesh.saran@gmail.com",
+      contact: "8769886969", //Provide the customer's phone number for better conversion rates
       address: request.address,
       pincode: request.pincode,
     },
