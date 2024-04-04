@@ -14,7 +14,7 @@ export default ({ title }) => (
     />
     <meta
       httpEquiv="Content-Security-Policy"
-      content="default-src img-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;**script-src 'self' http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval';** "
+      content="default-src img-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'unsafe-inline'; media-src *;**script-src 'self' http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval';** "
     />
     <title>{title}</title>
     <link

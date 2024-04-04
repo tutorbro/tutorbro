@@ -14,13 +14,7 @@ export default class chat extends React.Component {
       currencyCode: "USD",
     };
   }
-  componentDidMount() {
-    console.log(process.env.NODE_ENV);
-    const script = document.createElement("script");
-    script.src = "https://checkout.razorpay.com/v1/checkout.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }
+  componentDidMount() {}
   async handelSubmit(e) {
     e.preventDefault();
 
