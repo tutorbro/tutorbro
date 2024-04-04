@@ -1,5 +1,3 @@
-//import axios from "axios";
-import { useEffect } from "react";
 import { RAZORPAY_KEY_ID, RAZORPAY_SECRET_KEY } from "../../config";
 
 const razorpay = (request) => {
@@ -33,24 +31,17 @@ const razorpay = (request) => {
       color: "#2ca5ce",
     },
   };
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://checkout.razorpay.com/v1/checkout.js";
-    script.async = true;
-    document.body.appendChild(script);
-    var rzp1 = new Razorpay(options);
-    rzp1.on("payment.failed", function (response) {
-      //alert("code : " + response.error.code);
-      alert(response.error.description);
-      // alert("source : " + response.error.source);
-      // alert("step : " + response.error.step);
-      // alert("reason : " + response.error.reason);
-      // alert("order_id : " + response.error.metadata.order_id);
-      // alert("payment_id : " + response.error.metadata.payment_id);
-    });
-    rzp1.open();
-  }, []);
+  var rzp1 = new Razorpay(options);
+  rzp1.on("payment.failed", function (response) {
+    //alert("code : " + response.error.code);
+    alert(response.error.description);
+    // alert("source : " + response.error.source);
+    // alert("step : " + response.error.step);
+    // alert("reason : " + response.error.reason);
+    // alert("order_id : " + response.error.metadata.order_id);
+    // alert("payment_id : " + response.error.metadata.payment_id);
+  });
+  rzp1.open();
 };
 
 export default razorpay;
