@@ -18,16 +18,11 @@ export default ({ title }) => (
     /> */}
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src *; script-src-elem *; prefetch-src 'self' js.example.com;
+      content="default-src *; script-src-elem *; prefetch-src * 'self' js.example.com https://tutorbro.com/payments;
 img-src 'self' data: https:; script-src 'self' js.example.com 'unsafe-inline' 'unsafe-eval' *; 
 style-src  'self' 'unsafe-inline' *"
     ></meta>
     <title>{title}</title>
-    <link rel="prefetch" href="https://tutorbro.com/payments"></link>
-    <link
-      rel="prefetch"
-      src="https://checkout.razorpay.com/v1/checkout.js"
-    ></link>
     <link
       rel="apple-touch-icon"
       sizes="57x57"
