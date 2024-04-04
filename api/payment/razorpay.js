@@ -20,8 +20,8 @@ const razorpay = (request) => {
     prefill: {
       //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
       name: request.name, //your customer's name
-      email: "",
-      contact: "", //Provide the customer's phone number for better conversion rates
+      email: "ramnitesh.saran@gmail.com",
+      contact: "+918769886969", //Provide the customer's phone number for better conversion rates
       address: request.address,
       pincode: request.pincode,
     },
@@ -42,8 +42,7 @@ const razorpay = (request) => {
     // alert("order_id : " + response.error.metadata.order_id);
     // alert("payment_id : " + response.error.metadata.payment_id);
   });
-  var res = rzp1.open();
-  console.log("res : " + res);
+  rzp1.open();
 };
 
 export default razorpay;
