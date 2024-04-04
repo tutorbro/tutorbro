@@ -58,7 +58,6 @@ export default class Footer extends React.Component {
         <div className="copyrights">
           © {new Date().getFullYear()} TutorBro Ltd. All Rights Reserved.
         </div>
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
         <style jsx>
           {`
             .footer {
