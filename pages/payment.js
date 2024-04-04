@@ -36,6 +36,14 @@ export default class chat extends React.Component {
     };
     razorpay(request);
   }
+  isNumber(e) {
+    const re = /^[0-9\b]+$/;
+
+    // if value is not blank, then test the regex
+
+    return e.target.value === "" || re.test(e.target.value);
+  }
+
   render() {
     return (
       <div>
@@ -80,28 +88,17 @@ export default class chat extends React.Component {
                 <span>
                   <input
                     className="js-subject"
-                    type="number"
+                    type="text"
                     name="amount"
                     id="amount"
                     placeholder="Enter amount"
                     autoComplete="off"
-                    onChange={(e) => this.setState({ amount: e.target.value })}
+                    onChange={(e) => {
+                      if (this.isNumber(e)) {
+                        this.setState({ amount: e.target.value });
+                      }
+                    }}
                     value={this.state.amount}
-                  />
-                </span>
-              </div>
-              <div className="form__field">
-                <label htmlFor="address">Address</label>
-                <span>
-                  <input
-                    className="js-subject"
-                    type="text"
-                    name="address"
-                    id="address"
-                    placeholder="Enter address"
-                    autoComplete="off"
-                    onChange={(e) => this.setState({ address: e.target.value })}
-                    value={this.state.address}
                   />
                 </span>
               </div>
@@ -110,13 +107,31 @@ export default class chat extends React.Component {
                 <span>
                   <input
                     className="js-subject"
-                    type="number"
+                    type="text"
                     name="pincode"
                     id="address"
                     placeholder="Enter pincode"
                     autoComplete="off"
-                    onChange={(e) => this.setState({ pincode: e.target.value })}
+                    onChange={(e) => {
+                      if (this.isNumber(e))
+                        this.setState({ pincode: e.target.value });
+                    }}
                     value={this.state.pincode}
+                  />
+                </span>
+              </div>
+              <div className="form__field bottom_field">
+                <label htmlFor="address">Address</label>
+                <span>
+                  <textarea
+                    className="js-subject"
+                    type="text"
+                    name="address"
+                    id="address"
+                    placeholder="Enter address"
+                    autoComplete="off"
+                    onChange={(e) => this.setState({ address: e.target.value })}
+                    value={this.state.address}
                   />
                 </span>
               </div>
@@ -138,6 +153,9 @@ export default class chat extends React.Component {
             {this.state.submitting && <ReactSpinner className="spinner" />}
             <style jsx>
               {`
+                .bottom_field {
+                  border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
+                }
                 .overlay {
                   background: #f9f9f9;
                   position: absolute;
