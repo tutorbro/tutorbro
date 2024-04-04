@@ -12,10 +12,16 @@ export default ({ title }) => (
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
     />
-    <meta
+    {/* <meta
       httpEquiv="Content-Security-Policy"
       content="default-src img-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'unsafe-inline'; media-src *;**script-src 'self' http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval';** "
-    />
+    /> */}
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src *; 
+img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; 
+style-src  'self' 'unsafe-inline' *"
+    ></meta>
     <title>{title}</title>
     <link
       rel="apple-touch-icon"
