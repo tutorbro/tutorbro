@@ -18,8 +18,8 @@ export default ({ title }) => (
     /> */}
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src *; script-src-elem *; prefetch-src 'none';
-img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; 
+      content="default-src *; script-src-elem *; prefetch-src 'self' js.example.com;
+img-src 'self' data: https:; script-src 'self' js.example.com 'unsafe-inline' 'unsafe-eval' *; 
 style-src  'self' 'unsafe-inline' *"
     ></meta>
     <title>{title}</title>
