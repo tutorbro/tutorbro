@@ -5,9 +5,19 @@ import Footer from "../../components/Footer";
 export default class paymentsuccess extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      payment_id: "",
+      paid_on: "",
+    };
   }
-  componentDidMount() {}
+  componentDidMount() {
+    this.setState({
+      payment_id: localStorage.getItem("payment_id"),
+    });
+    this.setState({
+      paid_on: new Date().toUTCString(),
+    });
+  }
   render() {
     return (
       <div>
@@ -21,32 +31,14 @@ export default class paymentsuccess extends React.Component {
           <p>Thank you for your purchase.</p>
           <hr className="custom-hr" />
           <h3>Payment Details</h3>
-          <table>
-            <tr>
-              <th className="left">Title</th>
-              <th className="right">Details</th>
-            </tr>
-            <tr>
-              <td className="left">Payment Id</td>
-              <td className="right">pay_NttYeLpTXEGhTP</td>
-            </tr>
-            <tr>
-              <td className="left">Method</td>
-              <td className="right">Card</td>
-            </tr>
-            <tr>
-              <td className="left">Paid On</td>
-              <td className="right">03rd Apr, 2024 02:32:33 AM IST</td>
-            </tr>
-            <tr>
-              <td className="left">Email</td>
-              <td className="right">ravi@tutorbro.com</td>
-            </tr>
-            <tr>
-              <td className="left">Mobile Number</td>
-              <td className="right">+919685517208</td>
-            </tr>
-          </table>
+          <div className="payment-details">
+            <div className="left">Payment Id</div>
+            <div className="right">{this.state.payment_id}</div>
+          </div>
+          <div className="payment-details">
+            <div className="left">Paid On</div>
+            <div className="right">{this.state.paid_on}</div>
+          </div>
           <a href="/payments" className="btn">
             Make New Payment
           </a>
@@ -54,11 +46,17 @@ export default class paymentsuccess extends React.Component {
         <Footer />
         <style jsx>
           {`
+            .payment-details {
+              display: flex;
+              margin: 3%;
+            }
             .left {
               text-align: left;
+              width: 40%;
             }
             .right {
               text-align: right;
+              width: 60%;
             }
             .main-container {
               font-family: Arial, sans-serif;

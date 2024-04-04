@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { logEvent } from "../utils/analytics";
 
 export default class Footer extends React.Component {
   componentDidMount() {
@@ -29,7 +28,10 @@ export default class Footer extends React.Component {
             </div>
 
             <div className="links">
-              <Link href="/payments" style={{ color: "white" }}>
+              <Link
+                href="/payments"
+                style={{ color: "white", visibility: "hidden" }}
+              >
                 <span className="link">Payments</span>
               </Link>
               <Link href="/careers" style={{ color: "white" }}>
@@ -56,7 +58,7 @@ export default class Footer extends React.Component {
         <div className="copyrights">
           © {new Date().getFullYear()} TutorBro Ltd. All Rights Reserved.
         </div>
-
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
         <style jsx>
           {`
             .footer {

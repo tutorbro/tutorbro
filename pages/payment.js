@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import razorpay from "../api/payment/razorpay";
 import validate from "../utils/validate";
-import axios from "axios";
 
 export default class chat extends React.Component {
   constructor(props) {
@@ -15,7 +14,9 @@ export default class chat extends React.Component {
       currencyCode: "USD",
     };
   }
-  componentDidMount() {}
+  componentDidMount() {
+    console.log(process.env.NODE_ENV);
+  }
   async handelSubmit(e) {
     e.preventDefault();
 
@@ -84,7 +85,9 @@ export default class chat extends React.Component {
                 </span>
               </div>
               <div className="form__field">
-                <label htmlFor="amount">Amount (in USD)</label>
+                <label htmlFor="amount">
+                  Amount (in USD)<sup>*</sup>
+                </label>
                 <span>
                   <input
                     className="js-subject"
@@ -139,7 +142,6 @@ export default class chat extends React.Component {
             <footer>
               <div className="btns">
                 <button className="btn" type="submit">
-                  <i className="fa fa-send-o" />
                   Pay
                 </button>
                 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
