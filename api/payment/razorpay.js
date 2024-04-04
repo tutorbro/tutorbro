@@ -31,7 +31,7 @@ const razorpay = (request) => {
       color: "#2ca5ce",
     },
   };
-  var rzp1 = new Razorpay(options);
+  var rzp1 = new window.Razorpay(options);
   rzp1.on("payment.failed", function (response) {
     //alert("code : " + response.error.code);
     alert(response.error.description);
