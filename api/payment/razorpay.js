@@ -5,7 +5,7 @@ const razorpay = (request) => {
   var options = {
     key: RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
     amount: request.amount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-    currency: "INR", //request.currencyCode,
+    currency: "USD", //request.currencyCode,
     name: "TutorBro Pvt Ltd", //your business name
     description: "TutorBro Transaction",
     image:
@@ -19,8 +19,8 @@ const razorpay = (request) => {
     prefill: {
       //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
       name: request.name, //your customer's name
-      // email: "",
-      // contact: "", //Provide the customer's phone number for better conversion rates
+      email: "",
+      contact: "", //Provide the customer's phone number for better conversion rates
       address: request.address,
       pincode: request.pincode,
     },
