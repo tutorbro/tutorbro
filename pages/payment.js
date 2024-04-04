@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { initGA, logPageView } from "../utils/analytics";
 import razorpay from "../api/payment/razorpay";
 import validate from "../utils/validate";
 import axios from "axios";
@@ -11,47 +10,28 @@ export default class chat extends React.Component {
     super(props);
     this.state = {
       fullname: "",
-      email: "",
-      mobilenumber: "",
       amount: 0,
       address: "",
-      countryCode: "",
       currencyCode: "USD",
     };
   }
-  componentDidMount() {
-    initGA();
-    logPageView();
-    axios
-      .get("https://ip-info.now.sh/")
-      .then(({ data }) => {
-        this.setState({ countryCode: data.country_code });
-      })
-      .catch((err) => console.log(err));
-  }
+  componentDidMount() {}
   async handelSubmit(e) {
     e.preventDefault();
 
-    const {
-      fullname,
-      email,
-      mobilenumber,
-      amount,
-      countryCode,
-      address,
-      currencyCode,
-    } = this.state;
-    if (!validate(mobilenumber, email, fullname, countryCode)) return;
+    const { fullname, amount, countryCode, address, pincode, currencyCode } =
+      this.state;
+    if (!validate("9999999999", "example@tutor.com", fullname, countryCode))
+      return;
     if (amount < 1) {
       alert("Enter valid amount.");
       return;
     }
     const request = {
       name: fullname,
-      contact: countryCode + mobilenumber,
-      email: email,
       amount: amount,
       address: address,
+      pincode: pincode,
       currencyCode: currencyCode,
     };
     razorpay(request);
@@ -72,51 +52,10 @@ export default class chat extends React.Component {
           >
             <br />
             <div className="form__title">Pay Now</div>
-            <br />
             <div className="form__subTitle">
               Fill this form, you will hear from our payment gateway partner
             </div>
             <fieldset>
-              <div className="form__field">
-                <label htmlFor="mobilenumber">
-                  Mobile Number<sup>*</sup>
-                </label>
-                <span>
-                  <input
-                    ref={(node) => {
-                      global.firstInput = node;
-                    }}
-                    className="js-mobilenumber"
-                    type="tel"
-                    name="mobilenumber"
-                    id="mobilenumber"
-                    placeholder="9999988888"
-                    autoComplete="off"
-                    onChange={(e) =>
-                      this.setState({ mobilenumber: e.target.value })
-                    }
-                    maxLength={10}
-                    value={this.state.mobilenumber}
-                  />
-                </span>
-              </div>
-              <div className="form__field">
-                <label htmlFor="email">
-                  Email<sup>*</sup>
-                </label>
-                <span>
-                  <input
-                    className="js-email"
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="name@example.com"
-                    autoComplete="off"
-                    onChange={(e) => this.setState({ email: e.target.value })}
-                    value={this.state.email}
-                  />
-                </span>
-              </div>
               <div className="form__field">
                 <label htmlFor="fullname">
                   Full Name<sup>*</sup>
@@ -137,19 +76,7 @@ export default class chat extends React.Component {
                 </span>
               </div>
               <div className="form__field">
-                <label htmlFor="amount">
-                  Amount (in{" "}
-                  <select
-                    value={this.state.currencyCode}
-                    onChange={(e) => {
-                      this.setState({ currencyCode: e.target.value });
-                    }}
-                  >
-                    <option defaultChecked>USD</option>
-                    <option>INR</option>
-                  </select>
-                  )
-                </label>
+                <label htmlFor="amount">Amount (in USD)</label>
                 <span>
                   <input
                     className="js-subject"
@@ -175,6 +102,21 @@ export default class chat extends React.Component {
                     autoComplete="off"
                     onChange={(e) => this.setState({ address: e.target.value })}
                     value={this.state.address}
+                  />
+                </span>
+              </div>
+              <div className="form__field">
+                <label htmlFor="pincode">Pincode</label>
+                <span>
+                  <input
+                    className="js-subject"
+                    type="number"
+                    name="pincode"
+                    id="address"
+                    placeholder="Enter pincode"
+                    autoComplete="off"
+                    onChange={(e) => this.setState({ pincode: e.target.value })}
+                    value={this.state.pincode}
                   />
                 </span>
               </div>
