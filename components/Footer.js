@@ -28,6 +28,9 @@ export default class Footer extends React.Component {
             </div>
 
             <div className="links">
+              <Link href="/payments/payment-success" style={{ color: "white" }}>
+                <span className="link">Payment Status</span>
+              </Link>
               <Link href="/payments" style={{ color: "white" }}>
                 <span className="link">Payments</span>
               </Link>

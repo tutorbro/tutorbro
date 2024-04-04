@@ -29,16 +29,20 @@ export default class paymentsuccess extends React.Component {
           <div className="success-icon">&#10003;</div>
           <h1>Payment Successful!</h1>
           <p>Thank you for your purchase.</p>
-          <hr className="custom-hr" />
-          <h3>Payment Details</h3>
-          <div className="payment-details">
-            <div className="left">Payment Id</div>
-            <div className="right">{this.state.payment_id}</div>
-          </div>
-          <div className="payment-details">
-            <div className="left">Paid On</div>
-            <div className="right">{this.state.paid_on}</div>
-          </div>
+          {this.state.payment_id != null && (
+            <>
+              <hr className="custom-hr" />
+              <h3>Payment Details</h3>
+              <div className="payment-details">
+                <div className="left">Payment Id</div>
+                <div className="right">{this.state.payment_id}</div>
+              </div>
+              <div className="payment-details">
+                <div className="left">Paid On</div>
+                <div className="right">{this.state.paid_on}</div>
+              </div>
+            </>
+          )}
           <a href="/payments" className="btn">
             Make New Payment
           </a>
