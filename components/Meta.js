@@ -18,11 +18,10 @@ export default ({ title }) => (
     /> */}
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src *; script-src-elem *; prefetch-src * 'self' js.example.com https://tutorbro.com/payments;
-img-src 'self' data: https:; script-src 'self' 'report-sample' 'unsafe-inline' https://translate.google.com https://translate.googleapis.com https://embed.tawk.to https://cdn.jsdelivr.net/emojione/ https://static.cloudflareinsights.com https://www.google-analytics.com https://ssl.google-analytics.com https://google-analytics.com *.google.com *.googleapis.com *.tawk.to *.jsdelivr.net *.cloudflareinsights.com *.google-analytics.com google-analytics.com 'unsafe-eval' *; 
+      content="default-src *; script-src-elem 'self' https://translate.google.com https://translate.googleapis.com https://embed.tawk.to https://cdn.jsdelivr.net/emojione/ https://static.cloudflareinsights.com https://www.google-analytics.com https://ssl.google-analytics.com https://google-analytics.com https://translate.google.com https://translate.googleapis.com https://embed.tawk.to https://cdn.jsdelivr.net/emojione/ https://static.cloudflareinsights.com https://www.google-analytics.com https://ssl.google-analytics.com https://google-analytics.com; prefetch-src * 'self' js.example.com https://tutorbro.com/payments;
+img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; 
 style-src  'self' 'unsafe-inline' *"
     ></meta>
-    {/* script-src 'self' 'report-sample' 'unsafe-inline' https://translate.google.com https://translate.googleapis.com https://embed.tawk.to https://cdn.jsdelivr.net/emojione/ https://static.cloudflareinsights.com https://www.google-analytics.com https://ssl.google-analytics.com https://google-analytics.com */}
     <title>{title}</title>
     <link
       rel="apple-touch-icon"
