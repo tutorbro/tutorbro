@@ -18,7 +18,7 @@ export default ({ title }) => (
     /> */}
     <meta
       httpEquiv="Content-Security-Policy"
-      content="default-src * 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; script-src * 'self' http://* https://* 'unsafe-inline' 'unsafe-eval'; style-src  'self' 'unsafe-inline' *"
+      content="default-src *; img-src 'self' data: https:; script-src * 'self' http://* https://* 'unsafe-inline' 'unsafe-eval'; style-src  'self' 'unsafe-inline' *"
     ></meta>
     <title>{title}</title>
     <link rel="prefetch" href="https://checkout.razorpay.com/v1/checkout.js" />
