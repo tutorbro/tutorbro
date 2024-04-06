@@ -20,11 +20,8 @@ export default ({ title }) => (
       httpEquiv="Content-Security-Policy"
       content="default-src *; img-src 'self' data: https:; script-src * 'self' http://* https://* 'unsafe-inline' 'unsafe-eval'; style-src  'self' 'unsafe-inline' *"
     ></meta>
+    {/* script-src 'self' 'report-sample' 'unsafe-inline' https://translate.google.com https://translate.googleapis.com https://embed.tawk.to https://cdn.jsdelivr.net/emojione/ https://static.cloudflareinsights.com https://www.google-analytics.com https://ssl.google-analytics.com https://google-analytics.com */}
     <title>{title}</title>
-    <link rel="prefetch" href="https://checkout.razorpay.com/v1/checkout.js" />
-    <link rel="prerender" href="https://checkout.razorpay.com/v1/checkout.js" />
-    <link rel="prefetch" src="https://checkout.razorpay.com/v1/checkout.js" />
-    <link rel="prerender" src="https://checkout.razorpay.com/v1/checkout.js" />
     <link
       rel="apple-touch-icon"
       sizes="57x57"
