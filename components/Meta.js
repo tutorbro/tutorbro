@@ -18,9 +18,9 @@ export default ({ title }) => (
     /> */}
     <meta
       httpEquiv="Content-Security-Policy"
-      content="default-src *; img-src 'self' data: https:; script-src * 'self' http://* https://* 'unsafe-inline' 'unsafe-eval'; style-src  'self' 'unsafe-inline' *"
+      content="default-src img-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;**script-src 'self' http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval';** "
     ></meta>
-    {/* script-src 'self' 'report-sample' 'unsafe-inline' https://translate.google.com https://translate.googleapis.com https://embed.tawk.to https://cdn.jsdelivr.net/emojione/ https://static.cloudflareinsights.com https://www.google-analytics.com https://ssl.google-analytics.com https://google-analytics.com */}
+    {/* default-src *; img-src 'self' data: https:; script-src * 'self' http://* https://* 'unsafe-inline' 'unsafe-eval'; style-src  'self' 'unsafe-inline' * */}
     <title>{title}</title>
     <link
       rel="apple-touch-icon"
