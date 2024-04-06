@@ -14,7 +14,11 @@ export default class chat extends React.Component {
       currencyCode: "USD",
     };
   }
-  componentDidMount() {}
+  componentDidMount() {
+    if (!window.location.origin.includes("pages.dev")) {
+      window.location.href = "https://tutorbro.pages.dev/payments";
+    }
+  }
   async handelSubmit(e) {
     e.preventDefault();
 
