@@ -93,7 +93,7 @@ export default class chat extends React.Component {
                 <span>
                   <input
                     className="js-subject"
-                    type="text"
+                    type="tel"
                     name="amount"
                     id="amount"
                     placeholder="Enter amount"
@@ -103,6 +103,8 @@ export default class chat extends React.Component {
                         this.setState({ amount: e.target.value });
                       }
                     }}
+                    pattern="\d*"
+                    typeof="number"
                     value={this.state.amount}
                   />
                 </span>
