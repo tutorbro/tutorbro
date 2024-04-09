@@ -114,7 +114,7 @@ export default class chat extends React.Component {
                 <span>
                   <input
                     className="js-subject"
-                    type="text"
+                    type="tel"
                     name="pincode"
                     id="address"
                     placeholder="Enter pincode"
@@ -123,6 +123,8 @@ export default class chat extends React.Component {
                       if (this.isNumber(e))
                         this.setState({ pincode: e.target.value });
                     }}
+                    pattern="\d*"
+                    typeof="number"
                     value={this.state.pincode}
                   />
                 </span>
