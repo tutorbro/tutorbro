@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import razorpay from "../api/payment/razorpay";
+import displayRazorpay from "../api/payment/razorpay";
 import validate from "../utils/validate";
 
 export default class chat extends React.Component {
@@ -14,11 +14,11 @@ export default class chat extends React.Component {
       currencyCode: "USD",
     };
   }
-  componentDidMount() {
-    if (!window.location.origin.includes("pages.dev")) {
-      window.location.href = "https://tutorbro.pages.dev/payments";
-    }
-  }
+  // componentDidMount() {
+  //   if (!window.location.origin.includes("pages.dev")) {
+  //     window.location.href = "https://tutorbro.pages.dev/payments";
+  //   }
+  // }
   async handelSubmit(e) {
     e.preventDefault();
 
@@ -37,7 +37,7 @@ export default class chat extends React.Component {
       pincode: pincode,
       currencyCode: currencyCode,
     };
-    razorpay(request);
+    displayRazorpay(request);
   }
   isNumber(e) {
     const re = /^[0-9\b]+$/;

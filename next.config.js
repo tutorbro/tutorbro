@@ -6,8 +6,10 @@ const { ANALYZE } = process.env;
 
 // const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 module.exports = {
+  generateBuildId: () => "tutorbro",
   output: "export",
   webpack: (config, { dev }) => {
+    config.resolve.fallback = { tls: false, fs: false };
     /* Enable only in Production */
     if (!dev) {
       // Analyzer
