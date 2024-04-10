@@ -16,6 +16,7 @@ export default class payments extends React.Component {
     };
   }
   componentDidMount() {
+    console.log("componentDidMount");
     const res = axios
       .get(`https://checkout.razorpay.com/v1/checkout.js`)
       .then(({ data }) => {
