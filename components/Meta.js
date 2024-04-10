@@ -20,10 +20,10 @@ export default ({ title }) => (
       httpEquiv="Content-Security-Policy"
       content="connect-src 'self' about: wss://*.tawk.to *.gstatic.com *.google.com *.googleapis.com *.tawk.to cloudflareinsights.com *.google-analytics.com *.doubleclick.net *.cloudinary.com *.now.sh *.vercel.app formspree.io"
     ></meta>
-    <meta
+    {/* <meta
       httpEquiv="Content-Security-Policy"
       content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;"
-    ></meta>
+    ></meta> */}
     {/* default-src *; img-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src * 'unsafe-inline'; media-src *;script-src * http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval'; connect-src * https://checkout.razorpay.com/v1/checkout.js; object-src 'none'; base-uri 'none'; */}
     {/* default-src *; img-src 'self' data: https:; script-src * 'self' http://* https://* 'unsafe-inline' 'unsafe-eval'; style-src  'self' 'unsafe-inline' * */}
     <title>{title}</title>
