@@ -32,10 +32,6 @@ export default (props) => (
       <div className="header__container">
         <Nav {...props} />
       </div>
-      <script
-        type="text/javascript"
-        src="https://checkout.razorpay.com/v1/checkout.js"
-      ></script>
       <style jsx>
         {`
           header {
