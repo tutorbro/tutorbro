@@ -145,7 +145,10 @@ export default class payments extends React.Component {
                 <button className="btn" type="submit">
                   Pay
                 </button>
-                <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+                <script
+                  type="text/javascript"
+                  src="https://checkout.razorpay.com/v1/checkout.js"
+                ></script>
               </div>
             </footer>
             {this.state.submitting && (

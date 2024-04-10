@@ -1,37 +1,41 @@
-import NProgress from 'nprogress'
-import Router from 'next/router'
-import Headroom from 'react-headroom'
+import NProgress from "nprogress";
+import Router from "next/router";
+import Headroom from "react-headroom";
 
-import Meta from './Meta'
-import GlobalStyles from './GlobalStyles'
-import Nav from './Nav'
-import '../utils/offlineInstaller'
-import { logEvent, logException } from '../utils/analytics'
+import Meta from "./Meta";
+import GlobalStyles from "./GlobalStyles";
+import Nav from "./Nav";
+import "../utils/offlineInstaller";
+import { logEvent, logException } from "../utils/analytics";
 
 Router.onRouteChangeStart = () => {
-  NProgress.start()
-}
+  NProgress.start();
+};
 
-Router.onRouteChangeComplete = url => {
-  logEvent('Navigation', `Navigated to ${url}`)
-  NProgress.done()
-}
+Router.onRouteChangeComplete = (url) => {
+  logEvent("Navigation", `Navigated to ${url}`);
+  NProgress.done();
+};
 
 Router.onRouteChangeError = (err, url) => {
   if (err.cancelled) {
-    logException(`Route to ${url} was cancelled!`)
+    logException(`Route to ${url} was cancelled!`);
   }
-  NProgress.done()
-}
+  NProgress.done();
+};
 
-export default props => (
+export default (props) => (
   <Headroom>
     <header>
       <Meta title={props.title} />
       <GlobalStyles />
-      <div className='header__container'>
+      <div className="header__container">
         <Nav {...props} />
       </div>
+      <script
+        type="text/javascript"
+        src="https://checkout.razorpay.com/v1/checkout.js"
+      ></script>
       <style jsx>
         {`
           header {
@@ -48,4 +52,4 @@ export default props => (
       </style>
     </header>
   </Headroom>
-)
+);
