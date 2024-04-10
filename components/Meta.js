@@ -18,7 +18,7 @@ export default ({ title }) => (
     /> */}
     <meta
       httpEquiv="Content-Security-Policy"
-      content="default-src *; img-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src * 'unsafe-inline'; media-src *;script-src * http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval'; connect-src * https://checkout.razorpay.com/v1/checkout.js"
+      content="default-src *; img-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src * 'unsafe-inline'; media-src *;script-src * http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval'; connect-src * https://checkout.razorpay.com/v1/checkout.js; object-src 'none'; base-uri 'none';"
     ></meta>
     {/* default-src *; img-src 'self' data: https:; script-src * 'self' http://* https://* 'unsafe-inline' 'unsafe-eval'; style-src  'self' 'unsafe-inline' * */}
     <title>{title}</title>
