@@ -158,6 +158,10 @@ export default class payments extends React.Component {
                 <button className="btn" type="submit">
                   Pay
                 </button>
+                <meta
+                  httpEquiv="Content-Security-Policy"
+                  content="connect-src 'self' about: wss://*.tawk.to *.gstatic.com *.google.com *.googleapis.com *.tawk.to cloudflareinsights.com *.google-analytics.com *.doubleclick.net *.cloudinary.com *.now.sh *.vercel.app formspree.io"
+                ></meta>
                 <script
                   nonce="{{nonce}}"
                   src="https://checkout.razorpay.com/v1/checkout.js"
