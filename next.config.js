@@ -24,7 +24,8 @@ module.exports = {
       "/": { page: "/" },
       "/careers": { page: "/careers" },
       "/chat": { page: "/chat" },
-      "/payments": { page: "/payment" },
+      "/payments": { page: "/payments" },
+      "/payment": { page: "/payment" },
       "/payments/payment-success": { page: "/payments/payment-success" },
     };
   },
