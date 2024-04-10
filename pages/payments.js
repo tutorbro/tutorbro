@@ -14,12 +14,6 @@ export default class payments extends React.Component {
       currencyCode: "USD",
     };
   }
-  componentDidMount() {
-    window.location.href = "https://rzp.io/l/qQF1kEU";
-    if (!window.location.origin.includes("pages.dev")) {
-      window.location.href = "https://tutorbro.pages.dev/payments";
-    }
-  }
   async handelSubmit(e) {
     e.preventDefault();
 
