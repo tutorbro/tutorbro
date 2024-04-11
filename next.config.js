@@ -1,16 +1,8 @@
 const { ANALYZE } = process.env;
+
 module.exports = {
   generateBuildId: () => "tutorbro",
   output: "export",
-  matcher: [
-    {
-      source: "/((?!api|_next/static|_next/image|favicon.ico).*)",
-      missing: [
-        { type: "header", key: "next-router-prefetch" },
-        { type: "header", key: "purpose", value: "prefetch" },
-      ],
-    },
-  ],
   webpack: (config, { dev }) => {
     config.resolve.fallback = { tls: false, fs: false };
     /* Enable only in Production */
