@@ -16,6 +16,7 @@ export default ({ title }) => (
       httpEquiv="Content-Security-Policy"
       content="default-src *; img-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src * 'unsafe-inline'; media-src *;script-src * 'self' http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval';"
     ></meta>
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>{title}</title>
     <link
       rel="apple-touch-icon"

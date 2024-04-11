@@ -146,7 +146,9 @@ export default class payments extends React.Component {
                   Pay
                 </button>
                 <script
-                  type="text/javascript"
+                  type="text/plain"
+                  data-cookiescript="accepted"
+                  data-cookiecategory="functionality"
                   src="https://checkout.razorpay.com/v1/checkout.js"
                 ></script>
               </div>
