@@ -1,8 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import useRazorpay from "react-razorpay";
-import { RAZORPAY_KEY_ID, RAZORPAY_SECRET_KEY } from "../config";
+import razorpaySdk from "../sdk/payments/razorpay.sdk";
 
 const Payments = (props) => {
   const [fullname, setFullname] = React.useState("");
@@ -10,51 +9,8 @@ const Payments = (props) => {
   const [address, setAddress] = React.useState("");
   const [pincode, setPincode] = React.useState("");
 
-  const [Razorpay] = useRazorpay();
-
   const displayRazorpay = (request) => {
-    var options = {
-      key: RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
-      key_secret: RAZORPAY_SECRET_KEY,
-      amount: request.amount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-      currency: "USD",
-      name: "TUTORBRO PRIVATE LIMITED", //your business name
-      description: "TutorBro Transaction",
-      image:
-        "https://res.cloudinary.com/dtq6u9rp1/image/upload/v1711986571/tutorbro/tutorbro.png",
-      //order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      callback_url: window.location.origin + "/payments/payment-success",
-      redirect: true,
-      handler: function (response) {
-        localStorage.setItem("payment_id", response.razorpay_payment_id);
-        console.log(response.razorpay_payment_id);
-      },
-      prefill: {
-        //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
-        name: request.name, //your customer's name
-        email: "",
-        contact: "", //Provide the customer's phone number for better conversion rates
-        address: request.address,
-        pincode: request.pincode,
-      },
-      notes: {
-        address: "Razorpay Corporate Office",
-      },
-      theme: {
-        color: "#2ca5ce",
-      },
-    };
-    var rzp = new Razorpay(options);
-    rzp.on("payment.failed", function (response) {
-      alert(response.error.code);
-      alert(response.error.description);
-      alert(response.error.source);
-      alert(response.error.step);
-      alert(response.error.reason);
-      alert(response.error.metadata.order_id);
-      alert(response.error.metadata.payment_id);
-    });
-    rzp.open();
+    razorpaySdk.open(request);
   };
 
   const handelSubmit = (e) => {
