@@ -43,7 +43,7 @@ class RazorpaySdk {
         color: "#2ca5ce",
       },
     };
-    const rzp = new (window as any).Razorpay(webOptions);
+    const rzp = new window.Razorpay(webOptions);
 
     rzp.on("payment.failed", function (response) {
       alert(response.error.code);
