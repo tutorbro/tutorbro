@@ -1,6 +1,8 @@
 import { RAZORPAY_KEY_ID, RAZORPAY_SECRET_KEY } from "../../config";
+import useRazorpay from "react-razorpay";
 
-const displayRazorpay = (request) => {
+function displayRazorpay(request) {
+  const [Razorpay] = useRazorpay();
   var options = {
     key: RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
     key_secret: RAZORPAY_SECRET_KEY,
@@ -43,6 +45,6 @@ const displayRazorpay = (request) => {
     // alert("payment_id : " + response.error.metadata.payment_id);
   });
   rzp1.open();
-};
+}
 
 export default displayRazorpay;
