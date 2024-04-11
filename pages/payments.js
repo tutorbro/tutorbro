@@ -4,9 +4,6 @@ import Footer from "../components/Footer";
 import useRazorpay from "react-razorpay";
 import { RAZORPAY_KEY_ID, RAZORPAY_SECRET_KEY } from "../config";
 
-//import displayRazorpay from "../api/payment/razorpay";
-import validate from "../utils/validate";
-
 const Payments = (props) => {
   const [fullname, setFullname] = React.useState("");
   const [amount, setAmount] = React.useState(0);
@@ -47,23 +44,30 @@ const Payments = (props) => {
         color: "#2ca5ce",
       },
     };
-    var rzp1 = new Razorpay(options);
-    rzp1.on("payment.failed", function (response) {
-      //alert("code : " + response.error.code);
+    var rzp = new Razorpay(options);
+    rzp.on("payment.failed", function (response) {
+      alert(response.error.code);
       alert(response.error.description);
-      // alert("source : " + response.error.source);
-      // alert("step : " + response.error.step);
-      // alert("reason : " + response.error.reason);
-      // alert("order_id : " + response.error.metadata.order_id);
-      // alert("payment_id : " + response.error.metadata.payment_id);
+      alert(response.error.source);
+      alert(response.error.step);
+      alert(response.error.reason);
+      alert(response.error.metadata.order_id);
+      alert(response.error.metadata.payment_id);
     });
-    rzp1.open();
+    rzp.open();
   };
 
   const handelSubmit = (e) => {
     e.preventDefault();
 
-    //if (!validate("9999999999", "example@tutor.com", fullname, "+91")) return;
+    if (!fullname) {
+      alert("Your name is required");
+      return;
+    }
+    if (fullname.length < 3) {
+      alert("Enter a valid full name");
+      return;
+    }
     if (amount < 1) {
       alert("Enter valid amount.");
       return;
@@ -180,14 +184,6 @@ const Payments = (props) => {
               <button className="btn" type="submit">
                 Pay
               </button>
-              <script
-                type="text/plain"
-                data-cookiescript="accepted"
-                data-cookiecategory="functionality"
-                referrerPolicy="no-referrer"
-                rel="prefetch"
-                src="https://checkout.razorpay.com/v1/checkout.js"
-              ></script>
             </div>
           </footer>
           <style jsx>
