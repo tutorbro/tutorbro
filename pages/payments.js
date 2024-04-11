@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import displayRazorpay from "../api/payment/razorpay";
 import validate from "../utils/validate";
+import axios from "axios";
 
 export default class payments extends React.Component {
   constructor(props) {
@@ -13,6 +14,18 @@ export default class payments extends React.Component {
       address: "",
       currencyCode: "USD",
     };
+  }
+  componentDidMount() {
+    console.log("componentDidMount");
+    const scrpt = axios
+      .get("https://checkout.razorpay.com/v1/checkout.js")
+      .then((res) => {
+        console.log(res.data);
+        return scrpt;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
   async handelSubmit(e) {
     e.preventDefault();
