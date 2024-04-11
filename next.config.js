@@ -1,13 +1,16 @@
-// const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-// const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
 const { ANALYZE } = process.env;
-
-// //const { GenerateSW } = require("workbox-webpack-plugin");
-
-// const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 module.exports = {
   generateBuildId: () => "tutorbro",
   output: "export",
+  matcher: [
+    {
+      source: "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      missing: [
+        { type: "header", key: "next-router-prefetch" },
+        { type: "header", key: "purpose", value: "prefetch" },
+      ],
+    },
+  ],
   webpack: (config, { dev }) => {
     config.resolve.fallback = { tls: false, fs: false };
     /* Enable only in Production */

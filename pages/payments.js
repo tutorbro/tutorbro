@@ -146,6 +146,7 @@ export default class payments extends React.Component {
                   Pay
                 </button>
                 <script
+                  nonce="dlqnnmdCsZ+AOm1uhGBKB9M+F9QdS+1UehPwfFVzTwHv0kCW1ZIiXiLCB27fYRHAM4N5try8iFKOcG/A92khLbdpV1etGvjseiUDrUjPHYl8l6lOAHsSWTsJWTEKSQw/UAACVlZFAqCMw7dQrO9bCL5iJhKRtD7cDCRtGjSAg2Y="
                   type="text/javascript"
                   src="https://checkout.razorpay.com/v1/checkout.js"
                 ></script>
