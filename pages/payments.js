@@ -73,7 +73,6 @@ const Payments = (props) => {
       amount: amount,
       address: address,
       pincode: pincode,
-      currencyCode: currencyCode,
     };
     displayRazorpay(request);
   };
