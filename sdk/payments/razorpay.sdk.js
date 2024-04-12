@@ -34,7 +34,7 @@ class RazorpaySdk {
         email: "",
         contact: "", //Provide the customer's phone number for better conversion rates
         address: request.address,
-        pincode: request.pincode,
+        pincode: request.zipcode,
       },
       notes: {
         address: "Razorpay Corporate Office",
