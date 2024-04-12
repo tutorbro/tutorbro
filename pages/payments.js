@@ -7,7 +7,7 @@ const Payments = (props) => {
   const [fullname, setFullname] = React.useState("");
   const [amount, setAmount] = React.useState(0);
   const [address, setAddress] = React.useState("");
-  const [pincode, setPincode] = React.useState("");
+  const [zipcode, setzipcode] = React.useState("");
 
   const displayRazorpay = (request) => {
     razorpaySdk.open(request);
@@ -32,7 +32,7 @@ const Payments = (props) => {
       name: fullname,
       amount: amount,
       address: address,
-      pincode: pincode,
+      zipcode: zipcode,
     };
     displayRazorpay(request);
   };
@@ -101,21 +101,21 @@ const Payments = (props) => {
               </span>
             </div>
             <div className="form__field">
-              <label htmlFor="pincode">Pincode</label>
+              <label htmlFor="zipcode">Zipcode</label>
               <span>
                 <input
                   className="js-subject"
                   type="tel"
-                  name="pincode"
+                  name="zipcode"
                   id="address"
-                  placeholder="Enter pincode"
+                  placeholder="Enter zipcode"
                   autoComplete="off"
                   onChange={(e) => {
-                    if (isNumber(e)) setPincode(e.target.value);
+                    if (isNumber(e)) setzipcode(e.target.value);
                   }}
                   pattern="\d*"
                   typeof="number"
-                  value={pincode}
+                  value={zipcode}
                 />
               </span>
             </div>
