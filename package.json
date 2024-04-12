@@ -3,6 +3,10 @@
   "name": "tutorbro-next",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
     "axios": "^1.6.8",
     "express": "^4.19.2",
     "google-libphonenumber": "^3.2.34",

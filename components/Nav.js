@@ -12,7 +12,7 @@ export default (props) => (
     </div>
     <div className="nav__links">
       <NavLinks />
-      <ContactLinks {...props} />
+      {/* <ContactLinks {...props} /> */}
     </div>
     <style jsx>
       {`
