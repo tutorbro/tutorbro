@@ -1,25 +1,30 @@
 import React from "react";
-import LinkScroll from "../../LinkScroll";
 
-const MenuModal = () => {
+const MenuModal = (props) => {
   return (
     <div className="menu-modal">
       <div className="menu">
         <ul>
           <li className="nav__listItem">
-            <LinkScroll href="/#home">
-              <a className="link">Home</a>
-            </LinkScroll>
+            <a href="/#home" onClick={() => props.setVisibileMenuIcon(true)}>
+              Home
+            </a>
           </li>
           <li className="nav__listItem">
-            <LinkScroll href="/#subjects">
-              <a className="link">subjects</a>
-            </LinkScroll>
+            <a
+              href="/#subjects"
+              onClick={() => props.setVisibileMenuIcon(true)}
+            >
+              subjects
+            </a>
           </li>
           <li className="nav__listItem">
-            <LinkScroll href="/#services">
-              <a className="link">Services</a>
-            </LinkScroll>
+            <a
+              href="/#services"
+              onClick={() => props.setVisibileMenuIcon(true)}
+            >
+              Services
+            </a>
           </li>
         </ul>
       </div>
@@ -30,7 +35,7 @@ const MenuModal = () => {
           }
           .menu {
             width: 125px;
-            margin-top: 120px;
+            margin-top: 80px;
             position: absolute;
             transform: translate(-50%, -50%);
             background-color: white;
@@ -43,29 +48,22 @@ const MenuModal = () => {
           .menu ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
+          }
+          .menu li {
+            padding: 5px;
           }
 
-          .menu li {
-            padding: 10px 0;
-            border-bottom: 1px solid #ccc;
+          .menu a:hover {
+            color: #1976d2;
+          }
+          a {
+            text-decoration: none;
+            color: #888;
           }
 
           .menu li:last-child {
             border-bottom: none;
-          }
-
-          .menu button {
-            margin-top: 10px;
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-          }
-
-          .menu button:hover {
-            background-color: #0056b3;
           }
         `}
       </style>

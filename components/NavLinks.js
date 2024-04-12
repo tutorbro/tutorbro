@@ -16,6 +16,9 @@ const navListStyle = {
 
 const NavLinks = () => {
   const [isVisibileMenuIcon, setVisibileMenuIcon] = useState(true);
+  const handleVisibleMenuIcon = (check) => {
+    setVisibileMenuIcon(check);
+  };
   return (
     <div
       style={navListStyle}
@@ -41,7 +44,9 @@ const NavLinks = () => {
         <Button onClick={() => setVisibileMenuIcon(!isVisibileMenuIcon)}>
           {isVisibileMenuIcon ? <MenuIcon /> : <CloseIcon />}
         </Button>
-        {!isVisibileMenuIcon && <MenuModal />}
+        {!isVisibileMenuIcon && (
+          <MenuModal setVisibileMenuIcon={handleVisibleMenuIcon} />
+        )}
         {!isVisibileMenuIcon && (
           <div>
             <li className="nav__listItem">
