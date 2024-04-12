@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
+import MenuModal from "./modals/MenuModal/MenuModal";
 
 // since styled jsx cant apply scoped styles to classname attached to HOC
 const navListStyle = {
@@ -40,6 +41,7 @@ const NavLinks = () => {
         <Button onClick={() => setVisibileMenuIcon(!isVisibileMenuIcon)}>
           {isVisibileMenuIcon ? <MenuIcon /> : <CloseIcon />}
         </Button>
+        {!isVisibileMenuIcon && <MenuModal />}
         {!isVisibileMenuIcon && (
           <div>
             <li className="nav__listItem">
@@ -58,6 +60,7 @@ const NavLinks = () => {
               </LinkScroll>
             </li>
           </div>
+          //use MenuModal here
         )}
       </div>
       <style jsx>
