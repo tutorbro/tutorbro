@@ -17,8 +17,8 @@ const Payments = (props) => {
       }
     }, 1000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   const displayRazorpay = (request) => {
     razorpaySdk.open(request);
