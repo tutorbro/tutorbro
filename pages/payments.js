@@ -12,8 +12,7 @@ const Payments = (props) => {
   React.useEffect(() => {
     const interval = setInterval(() => {
       if (localStorage.getItem("payment_id") != null) {
-        window.location.href =
-          window.location.origin + "/payments/payment-success";
+        window.location.href = `${window.location.origin}/payments/payment-success`;
       }
     }, 1000);
 
