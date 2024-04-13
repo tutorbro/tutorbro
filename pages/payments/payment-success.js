@@ -17,6 +17,7 @@ export default class paymentsuccess extends React.Component {
     this.setState({
       paid_on: new Date().toUTCString(),
     });
+    localStorage.removeItem("payment_id");
   }
   render() {
     return (
@@ -28,7 +29,10 @@ export default class paymentsuccess extends React.Component {
         <div className="main-container container">
           <div className="success-icon">&#10003;</div>
           <h1>Payment Successful!</h1>
-          <p>Thank you for your purchase.</p>
+          <p>
+            Thank you for your purchase.
+            <br /> Get more information to check your email.
+          </p>
           {this.state.payment_id != null && (
             <>
               <hr className="custom-hr" />
