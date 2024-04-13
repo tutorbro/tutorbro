@@ -18,6 +18,7 @@ export default class success extends React.Component {
     this.setState({
       paid_on: formattedDate,
     });
+    localStorage.removeItem("payment_id");
   }
   render() {
     return (
