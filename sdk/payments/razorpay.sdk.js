@@ -16,7 +16,7 @@ class RazorpaySdk {
       key: RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
       key_secret: RAZORPAY_SECRET_KEY,
       amount: request.amount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-      currency: "USD",
+      currency: "INR",
       name: "TUTORBRO PRIVATE LIMITED", //your business name
       description: "TutorBro Transaction",
       image:
