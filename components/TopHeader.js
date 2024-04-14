@@ -29,8 +29,8 @@ const TopHeader = () => {
             }
             .top-header {
               background: #c8c7c7;
-              height: 30px;
-              padding: 0 20px;
+              height: 40px;
+              padding: 5px;
               box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
             .container {
