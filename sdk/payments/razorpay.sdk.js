@@ -22,11 +22,13 @@ class RazorpaySdk {
       image:
         "https://res.cloudinary.com/dtq6u9rp1/image/upload/v1711986571/tutorbro/tutorbro.png",
       //order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      callback_url: `${window.location.origin}/payments/success`,
-      redirect: true,
+      callback_url: "", //`${window.location.origin}/payments/success`,
+      redirect: false,
       handler: function (response) {
         localStorage.setItem("payment_id", response.razorpay_payment_id);
+        localStorage.setItem("paid_on", response.razorpay_paid_on);
         console.log(response.razorpay_payment_id);
+        console.log(response.razorpay_paid_on);
         window.location.href = `${window.location.origin}/payments/success`;
       },
       prefill: {
