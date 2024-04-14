@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import formattedDate from "../../utils/dateFormat";
 
 export default class success extends React.Component {
   constructor(props) {
@@ -15,9 +16,8 @@ export default class success extends React.Component {
       payment_id: localStorage.getItem("payment_id"),
     });
     this.setState({
-      paid_on: new Date().toUTCString(),
+      paid_on: formattedDate,
     });
-    localStorage.removeItem("payment_id");
   }
   render() {
     return (
