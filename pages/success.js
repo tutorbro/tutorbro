@@ -1,24 +1,24 @@
 import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default class success extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     payment_id: "",
-  //     paid_on: "",
-  //   };
-  // }
-  // componentDidMount() {
-  //   this.setState({
-  //     payment_id: localStorage.getItem("payment_id"),
-  //   });
-  //   this.setState({
-  //     paid_on: new Date().toUTCString(),
-  //   });
-  //   localStorage.removeItem("payment_id");
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      payment_id: "",
+      paid_on: "",
+    };
+  }
+  componentDidMount() {
+    this.setState({
+      payment_id: localStorage.getItem("payment_id"),
+    });
+    this.setState({
+      paid_on: new Date().toUTCString(),
+    });
+    localStorage.removeItem("payment_id");
+  }
   render() {
     return (
       <div>
