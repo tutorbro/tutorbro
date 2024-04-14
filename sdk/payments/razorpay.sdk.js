@@ -26,8 +26,8 @@ class RazorpaySdk {
       redirect: false,
       handler: function (response) {
         localStorage.setItem("payment_id", response.razorpay_payment_id);
+        localStorage.setItem("paid_on", response.razorpay_paid_on);
         console.log(response.razorpay_payment_id);
-        window.location.href = `${window.location.origin}/payments/success`;
       },
       prefill: {
         //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
