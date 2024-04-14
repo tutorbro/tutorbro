@@ -26,9 +26,7 @@ class RazorpaySdk {
       redirect: false,
       handler: function (response) {
         localStorage.setItem("payment_id", response.razorpay_payment_id);
-        localStorage.setItem("paid_on", response.razorpay_paid_on);
         console.log(response.razorpay_payment_id);
-        console.log(response.razorpay_paid_on);
         window.location.href = `${window.location.origin}/payments/success`;
       },
       prefill: {
