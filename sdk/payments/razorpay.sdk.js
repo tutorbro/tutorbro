@@ -56,7 +56,7 @@ class RazorpaySdk {
       alert(response.error.metadata.order_id);
       alert(response.error.metadata.payment_id);
     });
-    return rzp.open();
+    rzp.open();
   }
 }
 
