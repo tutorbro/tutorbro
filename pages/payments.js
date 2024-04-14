@@ -9,12 +9,12 @@ const Payments = (props) => {
   const [address, setAddress] = React.useState("");
   const [zipcode, setzipcode] = React.useState("");
 
-  // React.useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (localStorage.getItem("payment_id") != null) {
-  //       window.location.href = `${window.location.origin}/payments/payment-success`;
-  //     }
-  //   }, 1000);
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      if (localStorage.getItem("payment_id") != null) {
+        window.location.href = `${window.location.origin}/payments/payment-success`;
+      }
+    }, 1000);
 
   //   return () => clearInterval(interval);
   // }, []);

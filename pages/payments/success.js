@@ -2,23 +2,23 @@ import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-export default class paymentsuccess extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      payment_id: "",
-      paid_on: "",
-    };
-  }
-  componentDidMount() {
-    this.setState({
-      payment_id: localStorage.getItem("payment_id"),
-    });
-    this.setState({
-      paid_on: new Date().toUTCString(),
-    });
-    localStorage.removeItem("payment_id");
-  }
+export default class success extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     payment_id: "",
+  //     paid_on: "",
+  //   };
+  // }
+  // componentDidMount() {
+  //   this.setState({
+  //     payment_id: localStorage.getItem("payment_id"),
+  //   });
+  //   this.setState({
+  //     paid_on: new Date().toUTCString(),
+  //   });
+  //   localStorage.removeItem("payment_id");
+  // }
   render() {
     return (
       <div>
@@ -33,7 +33,7 @@ export default class paymentsuccess extends React.Component {
             Thank you for your purchase.
             <br /> Get more information to check your email.
           </p>
-          {this.state.payment_id != null && (
+          {/* {this.state.payment_id != null && (
             <>
               <hr className="custom-hr" />
               <h3>Payment Details</h3>
@@ -46,7 +46,7 @@ export default class paymentsuccess extends React.Component {
                 <div className="right">{this.state.paid_on}</div>
               </div>
             </>
-          )}
+          )} */}
           <a href="/payments" className="btn">
             Make New Payment
           </a>
