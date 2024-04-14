@@ -21,7 +21,7 @@ module.exports = {
       "/chat": { page: "/chat" },
       "/payments": { page: "/payments" },
       "/payment": { page: "/payment" },
-      "/payments/success": { page: "/payments/success" },
+      "/success": { page: "/success" },
     };
   },
 };
