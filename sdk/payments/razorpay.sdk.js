@@ -16,14 +16,14 @@ class RazorpaySdk {
       key: RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
       key_secret: RAZORPAY_SECRET_KEY,
       amount: request.amount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-      currency: "USD",
+      currency: "INR",
       name: "TUTORBRO PRIVATE LIMITED", //your business name
       description: "TutorBro Transaction",
       image:
         "https://res.cloudinary.com/dtq6u9rp1/image/upload/v1711986571/tutorbro/tutorbro.png",
       //order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      callback_url: `${window.location.origin}/payments/payment-success`,
-      redirect: false,
+      callback_url: `${window.location.origin}/payments/success`,
+      redirect: true,
       handler: function (response) {
         localStorage.setItem("payment_id", response.razorpay_payment_id);
         console.log(response.razorpay_payment_id);
