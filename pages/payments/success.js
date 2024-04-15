@@ -28,22 +28,30 @@ export default class success extends React.Component {
         />
         <div className="main-container container">
           <div className="success-icon">&#10003;</div>
-          <h1>Payment Successful!</h1>
-          <p>
+          <h3>Payment Successful!</h3>
+          <span>
             Thank you for your purchase.
             <br /> Get more information to check your email.
-          </p>
+          </span>
           {this.state.payment_id != null && (
             <>
               <hr className="custom-hr" />
-              <h3>Payment Details</h3>
+              <strong>Payment Details</strong>
               <div className="payment-details">
-                <div className="left">Payment Id</div>
-                <div className="right">{this.state.payment_id}</div>
+                <div className="left">
+                  <span>Payment Id</span>
+                </div>
+                <div className="right">
+                  <span>{this.state.payment_id}</span>
+                </div>
               </div>
               <div className="payment-details">
-                <div className="left">Paid On</div>
-                <div className="right">{this.state.paid_on}</div>
+                <div className="left">
+                  <span>Paid On</span>
+                </div>
+                <div className="right">
+                  <span>{this.state.paid_on}</span>
+                </div>
               </div>
             </>
           )}
@@ -54,6 +62,10 @@ export default class success extends React.Component {
         <Footer />
         <style jsx>
           {`
+            span {
+              font-size: 0.8rem;
+              color: #666;
+            }
             .payment-details {
               display: flex;
               margin: 3%;
@@ -75,14 +87,14 @@ export default class success extends React.Component {
             }
             .container {
               max-width: 600px;
-              margin: 50px auto;
+              margin: 10px auto;
               background-color: #fff;
               padding: 20px;
               border-radius: 10px;
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             }
 
-            h1 {
+            h3 {
               color: #333;
             }
 
@@ -117,12 +129,8 @@ export default class success extends React.Component {
             }
 
             .success-icon {
-              font-size: 100px;
+              font-size: 50px;
               color: #5cb85c;
-            }
-
-            h1 {
-              color: #333;
             }
 
             p {
