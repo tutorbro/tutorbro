@@ -3,8 +3,11 @@
   "name": "tutorbro-next",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
     "axios": "^1.6.8",
-    "crypto": "^1.0.1",
     "express": "^4.19.2",
     "google-libphonenumber": "^3.2.34",
     "net": "^1.0.2",
@@ -15,7 +18,8 @@
     "react-dom": "^18.2.0",
     "react-filepicker": "^0.11.0",
     "react-ga": "^3.3.1",
-    "react-headroom": "^3.2.1"
+    "react-headroom": "^3.2.1",
+    "react-modal": "^3.16.1"
   },
   "scripts": {
     "dev": "next",

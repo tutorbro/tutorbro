@@ -7,6 +7,7 @@ import GlobalStyles from "./GlobalStyles";
 import Nav from "./Nav";
 import "../utils/offlineInstaller";
 import { logEvent, logException } from "../utils/analytics";
+import TopHeader from "./TopHeader";
 
 Router.onRouteChangeStart = () => {
   NProgress.start();
@@ -26,6 +27,7 @@ Router.onRouteChangeError = (err, url) => {
 
 export default (props) => (
   <Headroom>
+    <TopHeader />
     <header>
       <Meta title={props.title} />
       <GlobalStyles />

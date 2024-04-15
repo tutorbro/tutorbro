@@ -22,7 +22,7 @@ class RazorpaySdk {
       image:
         "https://res.cloudinary.com/dtq6u9rp1/image/upload/v1711986571/tutorbro/tutorbro.png",
       //order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      callback_url: "", //`${window.location.origin}/payments/success`,
+      callback_url: "",
       redirect: false,
       handler: function (response) {
         localStorage.setItem("payment_id", response.razorpay_payment_id);
@@ -38,6 +38,8 @@ class RazorpaySdk {
         pincode: request.zipcode,
       },
       notes: {
+        clientaddress: request.address,
+        clientzipcode: request.zipcode,
         address: "Razorpay Corporate Office",
       },
       theme: {
@@ -55,7 +57,7 @@ class RazorpaySdk {
       alert(response.error.metadata.order_id);
       alert(response.error.metadata.payment_id);
     });
-    return rzp.open();
+    rzp.open();
   }
 }
 
