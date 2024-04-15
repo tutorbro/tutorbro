@@ -22,7 +22,7 @@ export default class Footer extends React.Component {
             <div className="footer__contact">
               <h3>Contact Us</h3>
               <ul>
-                <li>+91 9685517208</li>
+                <li>+91 9958156558</li>
                 <li>homework@tutorbro.com</li>
               </ul>
             </div>
