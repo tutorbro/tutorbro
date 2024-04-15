@@ -15,7 +15,7 @@ const MenuModal = (props) => {
               href="/#subjects"
               onClick={() => props.setVisibileMenuIcon(true)}
             >
-              subjects
+              Subjects
             </a>
           </li>
           <li className="nav__listItem">

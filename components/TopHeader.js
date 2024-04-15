@@ -4,17 +4,18 @@ const TopHeader = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(
-      navigator.userAgent.indexOf("like Mac") > -1 ||
-        window.navigator.userAgent.indexOf("Android") > -1
+      (navigator.userAgent.indexOf("like Mac") > -1 ||
+        window.navigator.userAgent.indexOf("Android") > -1) &&
+        window.localStorage.getItem("geo") == "IN"
     );
-  }, []);
+  }, [isVisible]);
 
   return (
     <>
       {isVisible && (
         <header className="top-header">
           <a
-            href="https://wa.me/919958156558?text=I'd like to chat with you regarding tutor for my work and asssignments."
+            href="https://wa.me/919685517208?text=I'd like to chat with you regarding tutor for my work and asssignments."
             target="_blank"
             rel="noopener noreferrer"
           >

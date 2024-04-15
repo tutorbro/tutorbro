@@ -10,7 +10,7 @@ const BlinkingComponent = () => {
         LIVE CHAT
       </div>
       <div className="whatsapp-icon">
-        <WhatsAppIcon /> +919958156558
+        <WhatsAppIcon /> +919685517208
       </div>
       <style jsx>
         {`

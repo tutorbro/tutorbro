@@ -92,9 +92,6 @@ export default () => (
             text-align: center;
             font-size: 14px;
           }
-          .home__title {
-            display: none;
-          }
           .home__captionTitle {
             display: block;
             font-size: 24px;

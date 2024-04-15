@@ -32,7 +32,7 @@ const NavLinks = () => {
       </li>
       <li className="web nav__listItem">
         <LinkScroll href="/#subjects">
-          <a className="link">subjects</a>
+          <a className="link">Subjects</a>
         </LinkScroll>
       </li>
       <li className="web nav__listItem">
@@ -56,7 +56,7 @@ const NavLinks = () => {
             </li>
             <li className="nav__listItem">
               <LinkScroll href="/#subjects">
-                <a className="link">subjects</a>
+                <a className="link">Subjects</a>
               </LinkScroll>
             </li>
             <li className="nav__listItem">
@@ -83,11 +83,10 @@ const NavLinks = () => {
           }
           .link {
             text-decoration: none;
-            text-transform: uppercase;
             color: #999;
             transition: all 0.3s ease-in-out;
             position: relative;
-            font-size: 15px;
+            font-size: 14px;
           }
           .link::after {
             content: "";
@@ -133,7 +132,7 @@ const NavLinks = () => {
             background: #23a5cf;
             border: 1px solid grey;
           }
-          @media (max-width: 1100px) {
+          @media (max-width: 600px) {
             .nav__listItem {
               display: none;
             }
