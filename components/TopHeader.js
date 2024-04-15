@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import BlinkingComponent from "./BlinkingComponent";
+import detectIPInfo from "../utils/detectIPInfo";
 const TopHeader = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
+    detectIPInfo();
     setIsVisible(
       (navigator.userAgent.indexOf("like Mac") > -1 ||
         window.navigator.userAgent.indexOf("Android") > -1) &&
