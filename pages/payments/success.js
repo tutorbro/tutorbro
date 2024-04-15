@@ -33,7 +33,7 @@ export default class success extends React.Component {
             Thank you for your purchase.
             <br /> Get more information to check your email.
           </p>
-          {/* {this.state.payment_id != null && (
+          {this.state.payment_id != null && (
             <>
               <hr className="custom-hr" />
               <h3>Payment Details</h3>
@@ -46,7 +46,7 @@ export default class success extends React.Component {
                 <div className="right">{this.state.paid_on}</div>
               </div>
             </>
-          )} */}
+          )}
           <a href="/payments" className="btn">
             Make New Payment
           </a>
