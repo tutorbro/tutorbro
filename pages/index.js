@@ -6,6 +6,7 @@ import Subjects from "../components/Subjects";
 import Services from "../components/Services";
 import Footer from "../components/Footer";
 import { initGA, logPageView } from "../utils/analytics";
+import Slider from "../components/Slider";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -28,6 +29,7 @@ export default class App extends React.Component {
       <div>
         <Header title="TutorBro | Get Personal Tutor For Homework Help" />
         <main>
+          <Slider />
           <Home />
           <Subjects />
           <Services />
