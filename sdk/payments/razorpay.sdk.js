@@ -1,4 +1,5 @@
 import { RAZORPAY_KEY_ID, RAZORPAY_SECRET_KEY } from "../../config";
+import formattedDate from "../../utils/dateFormat";
 
 class RazorpaySdk {
   constructor() {
@@ -26,6 +27,8 @@ class RazorpaySdk {
       redirect: false,
       handler: function (response) {
         localStorage.setItem("payment_id", response.razorpay_payment_id);
+        localStorage.setItem("payment_amount", request.amount);
+        localStorage.setItem("payment_paid_on", formattedDate);
         console.log(response.razorpay_payment_id);
         window.location.href = `${window.location.origin}/payments/success`;
       },
