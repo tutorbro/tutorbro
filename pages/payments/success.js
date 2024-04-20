@@ -1,22 +1,21 @@
 import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import formattedDate from "../../utils/dateFormat";
 
 export default class success extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       payment_id: "",
+      payment_amount: 0,
       paid_on: "",
     };
   }
   componentDidMount() {
     this.setState({
       payment_id: localStorage.getItem("payment_id"),
-    });
-    this.setState({
-      paid_on: formattedDate,
+      payment_amount: localStorage.getItem("payment_amount"),
+      paid_on: localStorage.getItem("payment_paid_on"),
     });
   }
   render() {
@@ -28,11 +27,13 @@ export default class success extends React.Component {
         />
         <div className="main-container container">
           <div className="success-icon">&#10003;</div>
-          <h3>Payment Successful!</h3>
-          <span>
-            Thank you for your purchase.
-            <br /> Get more information to check your email.
-          </span>
+          <h3>
+            {this.state.payment_id != null && (
+              <strong>&#36;{this.state.payment_amount}</strong>
+            )}
+            <br /> Payment Recieved.
+          </h3>
+          <span>Get more information to check your email.</span>
           {this.state.payment_id != null && (
             <>
               <hr className="custom-hr" />
@@ -94,7 +95,8 @@ export default class success extends React.Component {
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             }
 
-            h3 {
+            h3,
+            h2 {
               color: #333;
             }
 
