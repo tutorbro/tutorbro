@@ -160,12 +160,12 @@ const SliderData = [
     heading: "Homework/Assignment Help",
     text: `Look no further. Find live, assignment help anytime, day or night with our tutor. Get solutions to the most challenging homework assignments.`,
     icon: "assignment",
-    color: "",
+    color: "#eadabd",
   },
   {
     heading: "LIVE Session for doubt clearance",
     text: "In case you do not understand any topic or getting stucked in solving a problem. A dedicated tutor will be assign for any kind of doubt. The tutor will be available <strong> 24/7 </strong> to help you.",
     icon: "livesession",
-    color: "",
+    color: "#d5f5ff",
   },
 ];

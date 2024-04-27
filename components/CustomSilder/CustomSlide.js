@@ -27,6 +27,7 @@ const CustomeSlide = (props) => {
         {`
           .home {
             position: relative;
+            background-color: ${props.subject.color};
           }
           .container {
             position: relative;
@@ -38,7 +39,6 @@ const CustomeSlide = (props) => {
             top: 10%;
             left: 10%;
             max-width: 25em;
-            background-color: ${props.subject.color};
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             padding: 1vw;
           }
