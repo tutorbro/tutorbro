@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import CustomeSlider from "./CustomSlider";
+import CustomeSlide from "./CustomSlide";
 
 const Slider = () => {
   const [current, setCurrent] = useState(0);
@@ -10,7 +10,7 @@ const Slider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [current]);
 
@@ -30,7 +30,15 @@ const Slider = () => {
     <section className="slider">
       <div style={{ display: "flex" }}>
         <div className="left-arrow">
-          <KeyboardArrowLeftIcon fontSize="large" onClick={prevSlide} />
+          <KeyboardArrowLeftIcon
+            fontSize="large"
+            style={{
+              borderRadius: 20,
+              backgroundColor: "#2ca5ce",
+              color: "white",
+            }}
+            onClick={prevSlide}
+          />
         </div>
         <div>
           <ul className="subjects__list">
@@ -40,21 +48,22 @@ const Slider = () => {
                   className={index === current ? "slide active" : "slide"}
                   key={index}
                 >
-                  {index === current && (
-                    <CustomeSlider subject={slide} />
-                    // <img
-                    //   src={slide.image}
-                    //   alt="travel image"
-                    //   className="image"
-                    // />
-                  )}
+                  {index === current && <CustomeSlide subject={slide} />}
                 </div>
               );
             })}
           </ul>
         </div>
         <div className="right-arrow">
-          <ChevronRightIcon fontSize="large" onClick={nextSlide} />
+          <ChevronRightIcon
+            fontSize="large"
+            style={{
+              borderRadius: 20,
+              backgroundColor: "#2ca5ce",
+              color: "white",
+            }}
+            onClick={nextSlide}
+          />
         </div>
       </div>
 
@@ -83,15 +92,9 @@ const Slider = () => {
             align-items: center;
           }
 
-          .image {
-            width: 1000px;
-            height: 600px;
-            border-radius: 10px;
-          }
-
           .right-arrow {
             position: absolute;
-            top: 50%;
+            top: 40%;
             right: 32px;
             font-size: 3rem;
             color: #000;
@@ -102,7 +105,7 @@ const Slider = () => {
 
           .left-arrow {
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 32px;
             font-size: 3rem;
             color: #000;
@@ -136,15 +139,16 @@ const Slider = () => {
 export default Slider;
 
 const SliderData = [
-  { name: "Physics", icon: "physics", lessons: ["Physics-I", "Physics-II"] },
   {
-    name: "Statistics",
-    icon: "statistics",
-    lessons: ["Business Statistics", "Elementary Statistics"],
+    heading: "Homework/Assignment Help",
+    text: `Look no further. Find live, assignment help anytime, day or night with our tutor. Get solutions to the most challenging homework assignments.`,
+    icon: "assignment",
+    color: "",
   },
   {
-    name: "Other Subjects",
-    icon: "others",
-    lessons: ["Biology", "Essay Writing"],
+    heading: "LIVE Session for doubt clearance",
+    text: "In case you do not understand any topic or getting stucked in solving a problem. A dedicated tutor will be assign for any kind of doubt. The tutor will be available <strong> 24/7 </strong> to help you.",
+    icon: "livesession",
+    color: "",
   },
 ];

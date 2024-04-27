@@ -1,12 +1,11 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import Header from "../components/Header";
 import Home from "../components/Home";
 import Subjects from "../components/Subjects";
 import Services from "../components/Services";
 import Footer from "../components/Footer";
 import { initGA, logPageView } from "../utils/analytics";
-import Slider from "../components/Slider";
+import Slider from "../components/CustomSilder/Slider";
 
 export default class App extends React.Component {
   constructor(props) {
