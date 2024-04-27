@@ -33,9 +33,9 @@ const Slider = () => {
         setXCordinate(e.changedTouches[0].clientX);
       }}
       onTouchEnd={(e) => {
-        if (xCordinate < e.changedTouches[0].clientX) {
+        if (xCordinate + 50 < e.changedTouches[0].clientX) {
           nextSlide();
-        } else if (xCordinate > e.changedTouches[0].clientX) {
+        } else if (xCordinate > 50 + e.changedTouches[0].clientX) {
           prevSlide();
         }
       }}
