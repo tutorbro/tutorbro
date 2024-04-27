@@ -6,6 +6,7 @@ import Services from "../components/Services";
 import Footer from "../components/Footer";
 import { initGA, logPageView } from "../utils/analytics";
 import Slider from "../components/CustomSilder/Slider";
+import TopHeader from "../components/TopHeader";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ export default class App extends React.Component {
     const AlertContainer = this.alert;
     return (
       <div>
+        <TopHeader />
         <Header title="TutorBro | Get Personal Tutor For Homework Help" />
         <main>
           <Slider />

@@ -9,6 +9,7 @@ const CustomeSlide = (props) => {
             style={{
               width: "100%",
               aspectRatio: 8 / 3,
+              top: 50,
             }}
           />
           <div className="desc">
@@ -73,6 +74,7 @@ const CustomeSlide = (props) => {
               left: 0;
               max-width: 100%;
               padding: 30px 30px;
+              box-shadow: none;
             }
             .home__title {
               font-size: 30px;

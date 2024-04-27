@@ -5,6 +5,7 @@ import CustomeSlide from "./CustomSlide";
 
 const Slider = () => {
   const [current, setCurrent] = useState(0);
+  const [xCordinate, setXCordinate] = useState(0);
   const length = SliderData.length;
 
   useEffect(() => {
@@ -25,11 +26,22 @@ const Slider = () => {
   if (!Array.isArray(SliderData) || SliderData.length <= 0) {
     return null;
   }
-
   return (
-    <section className="slider">
+    <section
+      className="slider"
+      onTouchStart={(e) => {
+        setXCordinate(e.changedTouches[0].clientX);
+      }}
+      onTouchEnd={(e) => {
+        if (xCordinate < e.changedTouches[0].clientX) {
+          nextSlide();
+        } else if (xCordinate > e.changedTouches[0].clientX) {
+          prevSlide();
+        }
+      }}
+    >
       <div style={{ display: "flex" }}>
-        <div className="left-arrow">
+        <div className="left-arrow arrow">
           <KeyboardArrowLeftIcon
             fontSize="large"
             style={{
@@ -54,7 +66,7 @@ const Slider = () => {
             })}
           </ul>
         </div>
-        <div className="right-arrow">
+        <div className="right-arrow arrow">
           <ChevronRightIcon
             fontSize="large"
             style={{
@@ -128,6 +140,11 @@ const Slider = () => {
             .subjects__list {
               max-width: 800px;
               margin: 0 auto;
+            }
+          }
+          @media (max-width: 600px) {
+            .arrow {
+              display: none;
             }
           }
         `}
