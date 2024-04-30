@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import Logo from "./Logo";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -24,69 +23,83 @@ export default class Footer extends React.Component {
         <div className="footer__container">
           <div className="content">
             <div className="links">
-              <Link href="/">
-                <Logo />
-              </Link>
-            </div>
-            <div className="links social">
-              <div className="social-icon">
-                <FacebookIcon />
-              </div>
-              <div className="social-icon">
-                <InstagramIcon />
-              </div>
-              <div className="social-icon">
-                <LinkedInIcon />
-              </div>
-            </div>
-          </div>
-          <div className="content">
-            <div className="links">
-              <h3>Contact Us</h3>
-              <ul>
-                <li className="contact-li">
-                  <a href={`tel:+91-9958156558`}>
-                    <span>+91-9958156558</span>
-                  </a>
-                </li>
-                <li className="contact-li">
-                  <a href={`mailto:${"homework@tutorbro.com"}`}>
-                    <span>homework@tutorbro.com</span>
+              <ul className="logo-footer">
+                <li>
+                  <a href="/">
+                    <Logo />
                   </a>
                 </li>
               </ul>
             </div>
             <div className="links">
+              <ul className="social">
+                <li>
+                  <a href="/facebook">
+                    <FacebookIcon />
+                  </a>
+                </li>
+                <li>
+                  <a href="/instagram">
+                    <InstagramIcon />
+                  </a>
+                </li>
+                <li>
+                  <a href="/instagram">
+                    <LinkedInIcon />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="content">
+            <div className="links">
+              <div>
+                <h3>Contact Us</h3>
+                <ul>
+                  <li>
+                    <a href={`tel:+91-9958156558`}>
+                      <span>+91-9958156558</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href={`mailto:${"homework@tutorbro.com"}`}>
+                      <span>homework@tutorbro.com</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="links">
               <ul>
                 <li>
-                  <Link href="/careers" style={style.link}>
-                    <span className="link">Careers</span>
-                  </Link>
+                  <a href="/careers">
+                    <span>Careers</span>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/careers" style={style.link}>
-                    <span className="link">Become A Tutor</span>
-                  </Link>
+                  <a href="/careers">
+                    <span>Become A Tutor</span>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/privacy" style={style.link}>
-                    <span className="link">Privacy Policy</span>
-                  </Link>
+                  <a href="/privacy">
+                    <span>Privacy Policy</span>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/refund" style={style.link}>
-                    <span className="link">Refund Policy</span>
-                  </Link>
+                  <a href="/refund">
+                    <span>Refund Policy</span>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/terms" style={style.link}>
-                    <span className="link">Terms of Use</span>
-                  </Link>
+                  <a href="/terms">
+                    <span>Terms of Use</span>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/about" style={style.link}>
-                    <span className="link">About Us</span>
-                  </Link>
+                  <a href="/about">
+                    <span>About Us</span>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -122,6 +135,7 @@ export default class Footer extends React.Component {
             }
             .links {
               margin: 10px;
+              justify-content: center;
             }
             button {
               background: deepskyblue;
@@ -152,38 +166,33 @@ export default class Footer extends React.Component {
               font-size: 12px;
               color: #f44336;
             }
-            .link {
-              margin: 0 10px;
-              color: white;
-              font-size: 14px;
-            }
             .social {
               display: flex;
             }
-            .social-icon {
-              margin: 0 10px;
+            .social li {
+              margin: 0px 5px;
               color: white;
               font-size: 30px;
             }
-            .social-icon:hover {
-              color: #2ca5ce;
-              cursor: pointer;
-            }
-            .contact-li a {
+            .links a {
               color: white;
               text-decoration: none;
+              font-size: 14px;
             }
-            .contact-li a:hover {
+            .links a:hover {
               cursor: pointer;
-              text-decoration: underline;
+              color: #2ca5ce;
             }
-            .contact-li {
-              padding: 5px;
+            @media (min-width: 1000px) {
+              .logo-footer {
+                padding-left: 0px;
+              }
             }
             @media (max-width: 800px) {
               .links {
                 display: content;
                 padding: 0 7px;
+                width: 100%;
               }
               .content {
                 flex-direction: column;
@@ -214,10 +223,3 @@ export default class Footer extends React.Component {
     );
   }
 }
-
-const style = {
-  link: {
-    textDecoration: "none",
-    color: "white",
-  },
-};

@@ -1,7 +1,7 @@
 const CustomeSlide = (props) => {
   return (
     <section className="home" id="home">
-      <div class="container">
+      <div className="container">
         <div>
           <img
             src={`../static/images/${props.subject.icon}.jpeg`}
@@ -27,7 +27,6 @@ const CustomeSlide = (props) => {
         {`
           .home {
             position: relative;
-            background-color: ${props.subject.color};
           }
           .container {
             position: relative;
@@ -81,6 +80,9 @@ const CustomeSlide = (props) => {
             }
             .home__text {
               font-size: 20px;
+            }
+            .home {
+              background-color: ${props.subject.color};
             }
           }
         `}
