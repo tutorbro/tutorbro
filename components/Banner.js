@@ -29,7 +29,7 @@ export default class Banner extends React.Component {
                 </li>
                 <li>
                   <a href="/facebook">
-                    <span>Verified Tutor</span>
+                    <span>Qualified Tutor</span>
                   </a>
                 </li>
               </ul>
@@ -40,7 +40,7 @@ export default class Banner extends React.Component {
                   <TimelineIcon />
                 </li>
                 <li>
-                  <span>More that 8+ years in the industry</span>
+                  <span>More than 8+ years in the industry</span>
                 </li>
               </ul>
             </div>
