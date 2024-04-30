@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { initGA, logPageView } from "../utils/analytics";
 import Slider from "../components/CustomSilder/Slider";
 import TopHeader from "../components/TopHeader";
+import Banner from "../components/Banner";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -31,6 +32,7 @@ export default class App extends React.Component {
         <Header title="TutorBro | Get Personal Tutor For Homework Help" />
         <main>
           <Slider />
+          <Banner />
           <Home />
           <Subjects />
           <Services />

@@ -40,6 +40,7 @@ const CustomeSlide = (props) => {
             max-width: 25em;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             padding: 1vw;
+            background: ${props.subject.color};
           }
 
           .home__title {

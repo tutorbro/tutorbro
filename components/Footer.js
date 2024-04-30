@@ -72,12 +72,12 @@ export default class Footer extends React.Component {
             <div className="links">
               <ul>
                 <li>
-                  <a href="/careers">
+                  <a href="/careers/">
                     <span>Careers</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/careers">
+                  <a href="/careers/">
                     <span>Become A Tutor</span>
                   </a>
                 </li>

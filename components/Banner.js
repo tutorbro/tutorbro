@@ -1,9 +1,8 @@
 import React from "react";
-import Link from "next/link";
-import Logo from "./Logo";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GroupsIcon from "@mui/icons-material/Groups";
+import TimelineIcon from "@mui/icons-material/Timeline";
+import HowToRegIcon from "@mui/icons-material/HowToReg";
+import PriceCheckIcon from "@mui/icons-material/PriceCheck";
 
 export default class Banner extends React.Component {
   render() {
@@ -13,29 +12,55 @@ export default class Banner extends React.Component {
           <div className="content">
             <div className="links">
               <ul className="logo-banner">
-                <li className="contact-li">
-                  <Link href="/">
-                    <Logo />
-                  </Link>
+                <li>
+                  <a href="/">
+                    <img src="../static/images/since2017.png" height={150} />
+                    <h1>Since 2017</h1>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="content">
+            <div className="links">
+              <ul className="social">
+                <li>
+                  <HowToRegIcon />
+                </li>
+                <li>
+                  <a href="/facebook">
+                    <span>Verified Tutor</span>
+                  </a>
                 </li>
               </ul>
             </div>
             <div className="links">
               <ul className="social">
-                <li className="social-icon">
-                  <Link href="/facebook" style={style.link}>
-                    <FacebookIcon />
-                  </Link>
+                <li>
+                  <TimelineIcon />
                 </li>
-                <li className="social-icon">
-                  <Link href="/instagram" style={style.link}>
-                    <InstagramIcon />
-                  </Link>
+                <li>
+                  <span>More that 8+ years in the industry</span>
                 </li>
-                <li className="social-icon">
-                  <Link href="/linkedin" style={style.link}>
-                    <LinkedInIcon />
-                  </Link>
+              </ul>
+            </div>
+            <div className="links">
+              <ul className="social">
+                <li>
+                  <GroupsIcon />
+                </li>
+                <li>
+                  <span>2.1+ million students</span>
+                </li>
+              </ul>
+            </div>
+            <div className="links">
+              <ul className="social">
+                <li>
+                  <PriceCheckIcon />
+                </li>
+                <li>
+                  <span>100% money back guarantee</span>
                 </li>
               </ul>
             </div>
@@ -47,8 +72,15 @@ export default class Banner extends React.Component {
               text-decoration: none;
             }
             .banner {
-              background: #2f2f2f;
+              background: linear-gradient(
+                -180deg,
+                #fff 20%,
+                rgba(0, 0, 0, 0) 100%
+              );
+              background-color: #2ca5ce;
               color: #fff;
+              font-size: 14px;
+              padding-top: 5px;
             }
             .banner__container {
               max-width: 1280px;
@@ -60,47 +92,25 @@ export default class Banner extends React.Component {
             .content {
               display: flex;
               justify-content: space-around;
-              border-top: 1px solid #3e4143;
-            }
-            h3 {
-              margin-left: 40px;
-              margin-bottom: 0px;
             }
             .links {
               margin: 10px;
               justify-content: center;
             }
-            strong a {
-              font-size: 12px;
-              color: #f44336;
-            }
-            .link {
-              margin: 0 10px;
-              color: white;
-              font-size: 14px;
-            }
             .social {
               display: flex;
             }
-            .social-icon {
+            .social li {
               margin: 0px 5px;
               color: white;
-              font-size: 30px;
             }
-            .social-icon:hover {
-              color: #2ca5ce;
-              cursor: pointer;
-            }
-            .contact-li a {
+            .links a {
               color: white;
               text-decoration: none;
             }
-            .contact-li a:hover {
+            .links a:hover {
               cursor: pointer;
-              text-decoration: underline;
-            }
-            .contact-li {
-              padding: 5px;
+              color: #2ca5ce;
             }
             @media (min-width: 1000px) {
               .logo-banner {
@@ -109,9 +119,13 @@ export default class Banner extends React.Component {
             }
             @media (max-width: 800px) {
               .links {
-                display: content;
+                display: flex;
                 padding: 0 7px;
                 width: 100%;
+                justify-content: center;
+              }
+              .links ul {
+                padding-left: 0px;
               }
               .content {
                 flex-direction: column;
@@ -122,9 +136,6 @@ export default class Banner extends React.Component {
               .links {
                 display: content;
               }
-              strong a {
-                font-size: 12px;
-              }
             }
           `}
         </style>
@@ -132,10 +143,3 @@ export default class Banner extends React.Component {
     );
   }
 }
-
-const style = {
-  link: {
-    textDecoration: "none",
-    color: "white",
-  },
-};
