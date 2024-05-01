@@ -28,9 +28,7 @@ export default class Banner extends React.Component {
                   <HowToRegIcon />
                 </li>
                 <li>
-                  <a href="/facebook">
-                    <span>Qualified Tutor</span>
-                  </a>
+                  <span>Qualified Tutor</span>
                 </li>
               </ul>
             </div>

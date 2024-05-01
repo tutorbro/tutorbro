@@ -131,7 +131,10 @@ export default class Subjects extends React.Component {
                       >
                         Call Us
                       </a>
-                      <a onClick={this.done.bind(this)} className="btn">
+                      <a
+                        onClick={() => (window.location.href = "/contact")}
+                        className="btn"
+                      >
                         Get A Quote
                       </a>
                     </div>
