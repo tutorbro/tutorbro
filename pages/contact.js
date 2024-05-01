@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import Form from "../components/Form";
-import TutorSvg from "../components/Tutor";
+import TutorSvg from "../static/images/Tutor";
 export default class contact extends React.Component {
   render() {
     return (

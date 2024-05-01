@@ -1,7 +1,7 @@
-import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { initGA, logPageView } from '../utils/analytics';
+import React from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { initGA, logPageView } from "../utils/analytics";
 
 export default class chat extends React.Component {
   componentDidMount() {
@@ -19,16 +19,17 @@ export default class chat extends React.Component {
               <div className="profile">
                 <h4>Profile:</h4>
                 <p>
-                  <strong>Subject Matter Expert </strong>
-                  – Mechanical / Electrical / Civil / Matlab / Mathematics / Chemistry / Physics /
-                  Accounts / Economics / Finance
+                  <strong>Subject Matter Expert </strong>– Mechanical /
+                  Electrical / Civil / Matlab / Mathematics / Chemistry /
+                  Physics / Accounts / Economics / Finance
                 </p>
               </div>
               <div className="roles">
                 <h4>Roles & Responsibility:</h4>
                 <ul>
                   <li>
-                    Answering queries & providing solutions on liveQuestion and Answer Portal.
+                    Answering queries & providing solutions on liveQuestion and
+                    Answer Portal.
                   </li>
                   <li>Quality Review of solutions from peer tutors/SME. </li>
                   <li>Making step by step solution of US Textbooks. </li>
@@ -40,13 +41,16 @@ export default class chat extends React.Component {
                 <h4>Desired Candidate:</h4>
                 <ul>
                   <li>
-                    Having bachelors or masters in Mechanical / Electrical / Civil / Matlab /
-                    Mathematics / Chemistry / Physics / Accounts / Economics / Finance with grade
-                    more than 60%.{' '}
+                    Having bachelors or masters in Mechanical / Electrical /
+                    Civil / Matlab / Mathematics / Chemistry / Physics /
+                    Accounts / Economics / Finance with grade more than 60%.{" "}
                   </li>
-                  <li>Having good rank in GATE/IES or NET-JRF/IIT- JAM</li> (Preferred rank under
-                  AIR 3000).
-                  <li>Willing to learn new concepts & skills over a period of time.</li>
+                  <li>Having good rank in GATE/IES or NET-JRF/IIT- JAM</li>{" "}
+                  (Preferred rank under AIR 3000).
+                  <li>
+                    Willing to learn new concepts & skills over a period of
+                    time.
+                  </li>
                   <li>Having Sound and diversified subject knowledge. </li>
                   <li>Proficient with Computer & use of Internet. </li>
                   <li>Willing to work in rotational shifts.</li>
@@ -69,13 +73,17 @@ export default class chat extends React.Component {
               </div>
               <div>
                 <h4>
-                  Location: <span>Delhi</span>
+                  Location: <span>Delhi / WFH</span>
                 </h4>
               </div>
               <div className="cta">
                 <a
                   className="btn"
-                  href="                      https://docs.google.com/a/tutorbro.com/forms/d/e/1FAIpQLSdxFNjOUrrZejqP5u_KSzvTSto5uWw-HACF3Y-hLqwnKvFZgg/viewform"
+                  onClick={() => {
+                    window.open(
+                      "https://docs.google.com/forms/d/e/1FAIpQLSdxFNjOUrrZejqP5u_KSzvTSto5uWw-HACF3Y-hLqwnKvFZgg/viewform"
+                    );
+                  }}
                 >
                   Apply Here
                 </a>

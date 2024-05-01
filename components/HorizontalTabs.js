@@ -1,6 +1,76 @@
 import React, { useState } from "react";
 import CheckIcon from "@mui/icons-material/Check";
-
+const tabs = [
+  {
+    label: "Mechanical Engineering",
+    content: [
+      "Statics",
+      "Dynamics",
+      "Mechanics of Material",
+      "Fluid Mechanics",
+      "Strength of Material",
+      "Thermodynamics",
+      "Integration",
+      "Heat Transfer",
+      "Machine Design",
+    ],
+  },
+  {
+    label: "Mathematics",
+    content: [
+      "Algebra",
+      "Calculus I",
+      "Calculus II",
+      "Calculus III",
+      "Deferential Equation",
+      "Linear Algebra",
+      "Trigonometry",
+      "Applied mathematics",
+      "Geometry",
+    ],
+  },
+  {
+    label: "Computer Science",
+    content: [
+      "C, C++ , PHP Programming",
+      "Web Designing and Development",
+      "Java Programming",
+      "Database Management (Oracle, SQL)",
+      "MS Access",
+      "Data Structure",
+      "Computer Networks",
+      "Unix/ Linux",
+    ],
+  },
+  {
+    label: "Electrical Engineering",
+    content: [
+      "Electrical Circuits",
+      "Power Electronics",
+      "Signal Theory",
+      "Microelectronics",
+      "Introduction to Power Systems",
+      "Digital Signal Processing",
+      "Principle of telecommunication",
+      "Electrical Machines",
+    ],
+  },
+  { label: "Science", content: ["Chemistry", "Physics", "Biology"] },
+  {
+    label: "Statistics",
+    content: ["Business Studies", "Elementry Statistics"],
+  },
+  {
+    label: "Other Subjects",
+    content: [
+      "Civil",
+      "Electrical",
+      "History",
+      "Geography",
+      "Political Science",
+    ],
+  },
+];
 const Tab = ({ label, isActive, onClick }) => (
   <div className={`links tab${isActive ? "-active" : ""}`} onClick={onClick}>
     <ul>
@@ -46,7 +116,12 @@ const TabContent = ({ children }) => (
     <div className="tab-content">
       <ul className="tab-item">
         {children.map((item, index) => (
-          <li key={index}>
+          <li
+            key={index}
+            onClick={() => {
+              window.location.href = "/contact";
+            }}
+          >
             <div>
               <CheckIcon
                 style={{ paddingRight: 5, paddingTop: 5, color: "#2ca5ce" }}
@@ -74,6 +149,9 @@ const TabContent = ({ children }) => (
         cursor: pointer;
         color: #2ca5ce;
       }
+      a {
+        text-decoration: none;
+      }
       @media only screen and (max-width: 1000px) {
         .tab-content li {
           width: 33%;
@@ -93,7 +171,7 @@ const TabContent = ({ children }) => (
   </div>
 );
 
-const HorizontalTabs = ({ tabs }) => {
+const HorizontalTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -101,7 +179,11 @@ const HorizontalTabs = ({ tabs }) => {
       <div className="banner__container">
         <div className="banner__text">
           <h1>All the requirements you need in one place</h1>
-          <span>Tutor bro support your query.</span>
+          <span>
+            Here are the most popular subjects we deal with, but don’t worry if
+            yours is not here—just drop us a line, and we’ll find an expert for
+            your task.
+          </span>
         </div>
         <div className="content">
           <div className="tab-header">
@@ -115,7 +197,7 @@ const HorizontalTabs = ({ tabs }) => {
             ))}
           </div>
         </div>
-        <div>
+        <div className="tab-container">
           <TabContent>{tabs[activeTab].content}</TabContent>
         </div>
       </div>
@@ -130,6 +212,9 @@ const HorizontalTabs = ({ tabs }) => {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
+          }
+          .tab-container {
+            width: 100%;
           }
           .banner__text {
             padding-left: 20px;
